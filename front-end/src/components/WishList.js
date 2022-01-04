@@ -1,8 +1,11 @@
 import React from "react";
+import NavBar from "./NavBar"
 
 function WishList() {
     return (
-        <div></div>
+        <div>
+            <NavBar />
+        </div>
     )
 }
 

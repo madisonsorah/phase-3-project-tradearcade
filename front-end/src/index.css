@@ -51,7 +51,7 @@ code {
 
 .homePageFormDiv {
   margin: auto;
-  width: 600px;
+  width: 400px;
   height: 355px;
   border-radius: 5px;
   background-color: #fff;
@@ -82,4 +82,96 @@ code {
   font-weight: 700;
   color: #000;
 }
+
+.loginPageDiv {
+  margin: auto;
+  text-align: center;
+  padding-top: 150px;
+  padding-bottom: 70px;
+}
+
+.loginPageFormDiv {
+  margin: auto;
+  width: 400px;
+  height: 255px;
+  border-radius: 5px;
+  background-color: #fff;
+  padding: 5px;
+  padding-top: 20px;
+}
+
+.loginPageFormInput {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.loginPageFormButton {
+ margin-top: 10px;
+ margin-bottom: 10px;
+ padding: 10px;
+ font-size: medium;
+ font-weight: 700;
+ background-color: #000;
+ color: #fff;
+}
+
+.loginPageSignUp {
+  font-weight: 700;
+  color: #000;
+}
+
+.accountPageDiv {
+  margin: auto;
+  margin-top: 150px;
+  width: 545px;
+  height: 545px;
+}
+
+.accountPageH1 {
+  width: 545px;
+  padding-bottom: 20px;
+  border-bottom: #000;
+}
+
+.accountPageListLeft {
+  float: left;
+  margin: 0 20px 0 0;
+  background-color: rgb(224, 224, 224);
+  padding: 10px;
+  margin-right: 40px;
+}
+
+.accountPageListRight {
+  float: left;
+  margin: 0 20px 0 0;
+  background-color: rgb(224, 224, 224);
+  padding: 10px;
+}
+
+.accountPageUl {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  float: none;
+  justify-content: space-between;
+}
+
+.accountPageLink {
+  display: block;
+  padding: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color:#000;
+  font-size: x-large;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+
 

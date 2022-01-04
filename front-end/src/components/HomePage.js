@@ -8,7 +8,7 @@ function HomePage() {
             <NavBar />
             <div className="homePageDiv">
                 <h1>Welcome to TradeArcade</h1>
-                <p className="homePageP">Register</p>
+                <p className="homePageP">Sign up to trade games with thousands of community members.</p>
                 <div className="homePageFormDiv">
                     <form>
                         <input className="homePageFormInput" placeholder="First Name"></input>
