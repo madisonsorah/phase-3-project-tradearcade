@@ -128,29 +128,30 @@ code {
 .accountPageDiv {
   margin: auto;
   margin-top: 150px;
-  width: 545px;
+  width: 800px;
   height: 545px;
 }
 
 .accountPageH1 {
-  width: 545px;
+  width: 800px;
   padding-bottom: 20px;
-  border-bottom: #000;
+  border-bottom: 0.09rem solid #000;
 }
 
 .accountPageListLeft {
   float: left;
   margin: 0 20px 0 0;
-  background-color: rgb(224, 224, 224);
-  padding: 10px;
-  margin-right: 40px;
+  background-color: rgb(240, 240, 240);
+  padding: 30px;
+  margin-right: 60px;
+  margin-left: 90px;
 }
 
 .accountPageListRight {
   float: left;
   margin: 0 20px 0 0;
-  background-color: rgb(224, 224, 224);
-  padding: 10px;
+  background-color: rgb(240, 240, 240);
+  padding: 30px;
 }
 
 .accountPageUl {
@@ -171,6 +172,16 @@ code {
   font-size: x-large;
   text-decoration: none;
   box-sizing: border-box;
+}
+
+.accountPageLink:hover {
+  text-decoration: underline;
+}
+
+.accountPageLogout {
+  float: right;
+  font-size: small;
+  font-weight: 700;
 }
 
 
