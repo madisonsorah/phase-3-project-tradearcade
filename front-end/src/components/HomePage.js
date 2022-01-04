@@ -20,8 +20,7 @@ function HomePage() {
                     </form>
                 </div>
                 <div>
-                    <p>Already have an account?</p>
-                    <Link to="/login" className="homePageLogin">Login</Link>
+                    <p>Already have an account? <Link to="/login" className="homePageLogin">Login</Link></p>
                 </div>
             </div>
         </div>

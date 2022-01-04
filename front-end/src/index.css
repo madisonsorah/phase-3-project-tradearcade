@@ -52,10 +52,10 @@ code {
 .homePageFormDiv {
   margin: auto;
   width: 600px;
-  height: 305px;
+  height: 355px;
   border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
+  background-color: #fff;
+  padding: 5px;
 }
 
 .homePageFormInput {
@@ -69,11 +69,17 @@ code {
 }
 
 .homePageFormButton {
- margin-top: 5px;
- margin-bottom: 5px;
+ margin-top: 10px;
+ margin-bottom: 10px;
+ padding: 10px;
+ font-size: medium;
+ font-weight: 700;
+ background-color: #000;
+ color: #fff;
 }
 
 .homePageLogin {
-  text-decoration: none;
+  font-weight: 700;
+  color: #000;
 }
 
