@@ -11,3 +11,66 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.mainNavDiv {
+  position: fixed;
+   top: 0;
+   z-index: 100;
+  padding-top: 10px;
+  padding-bottom: 60px;
+  width: 1442px;
+  background-color: #000;
+}
+
+.navBarUl {
+  position: absolute;
+  white-space: nowrap;
+  overflow: hidden;
+  float: left;
+  list-style-type: none;
+  font-size: medium;
+  font-weight: 700;
+  color: #fff;
+}
+
+.navBarLi {
+  display: inline;
+  padding: 10px;
+}
+
+.homePageDiv {
+  margin: auto;
+  text-align: center;
+  padding-top: 150px;
+  padding-bottom: 70px;
+}
+
+.homePageP {
+  font-weight: 700;
+}
+
+.homePageFormDiv {
+  margin: auto;
+  width: 600px;
+  height: 305px;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.homePageFormInput {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.homePageFormButton {
+ margin-top: 5px;
+ margin-bottom: 5px;
+}
+
+
