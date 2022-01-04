@@ -1,0 +1,2 @@
+# tradearcade
+TradeArcade is a community for borrowing and reviewing games. Members can create a profile, note which gaming consoles and game genres they are interested in, and send in an old game to receive another at random. Once members have played a borrowed game, they can leave a review for other members to reference and send it back in to continue to refresh their game collection. Members within the community can also follow each other and swap games directly. 
