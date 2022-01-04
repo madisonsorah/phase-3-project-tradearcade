@@ -1,5 +1,6 @@
 import React from "react";
 import NavBar from "./NavBar";
+import { Link } from "react-router-dom";
 
 function HomePage() {
     return (
@@ -20,7 +21,7 @@ function HomePage() {
                 </div>
                 <div>
                     <p>Already have an account?</p>
-                    <a>Login</a>
+                    <Link to="/login" className="homePageLogin">Login</Link>
                 </div>
             </div>
         </div>
