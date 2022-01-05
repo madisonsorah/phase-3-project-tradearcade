@@ -38,6 +38,13 @@ code {
   padding: 10px;
 }
 
+.navBarLink {
+  display: inline;
+  padding: 10px;
+  text-decoration: none;
+  color: #fff;
+}
+
 .homePageDiv {
   margin: auto;
   text-align: center;
