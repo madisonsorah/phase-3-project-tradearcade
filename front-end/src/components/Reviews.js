@@ -6,7 +6,12 @@ function Reviews() {
         <div>
             <NavBar />
             <div className="reviewsDiv">
-                <ul></ul>
+                <h1>My Game Reviews</h1>
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
             </div>
         </div>
     )
