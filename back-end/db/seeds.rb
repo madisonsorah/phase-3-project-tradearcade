@@ -15,7 +15,7 @@ Review.create(game_id: 1, user_id: 1, review: "It's alright", score: 5)
 Review.create(game_id: 2, user_id: 1, review: "Better than the first", score: 6)
 
 #users
-User.create(name: "Todd")
+User.create(first_name: "Todd", last_name: "Berkley", username: "TBerk00", email: "TBerk00@gmail.com", password: "password123")
 
 #ownerships
 Ownership.create(game_id: 1, user_id: 1)

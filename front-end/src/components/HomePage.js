@@ -1,8 +1,40 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import NavBar from "./NavBar";
 import { Link } from "react-router-dom";
 
 function HomePage() {
+    const userData = "http://localhost:9292/users"
+
+    const [firstName, setFirstName] = useState()
+    const [lastName, setLastName] = useState()
+    const [username, setUsername] = useState()
+    const [email, setEmail] = useState()
+    const [password, setPassword] = useState()
+
+    let data = {
+        first_name: firstName,
+        last_name: lastName,
+        username: username,
+        email: email,
+        password: password
+    }
+    function createAccount(e) {
+        e.preventDefault()
+        const config = {
+            method: "POST",
+            headers: {
+                "Content-type": "application/json",
+                Accepts: "application/json",
+            },
+            body: JSON.stringify(data),
+        };
+        console.log(data)
+        
+        fetch(userData, config)
+        .then((resp) => resp.json())
+        .then((userData) => console.log(userData))
+        
+      }
     return (
         <div>
             <NavBar />
@@ -11,12 +43,12 @@ function HomePage() {
                 <p className="homePageP">Sign up to trade games with thousands of community members.</p>
                 <div className="homePageFormDiv">
                     <form>
-                        <input className="homePageFormInput" placeholder="First Name"></input>
-                        <input className="homePageFormInput" placeholder="Last Name"></input>
-                        <input className="homePageFormInput" placeholder="Username"></input>
-                        <input className="homePageFormInput" placeholder="Email"></input>
-                        <input className="homePageFormInput" placeholder="Password"></input>
-                        <button className="homePageFormButton">Create Account</button>
+                        <input className="homePageFormInput" placeholder="First Name" onChange={(e) => setFirstName(e.target.value)}></input>
+                        <input className="homePageFormInput" placeholder="Last Name" onChange={(e) => setLastName(e.target.value)}></input>
+                        <input className="homePageFormInput" placeholder="Username" onChange={(e) => setUsername(e.target.value)}></input>
+                        <input className="homePageFormInput" placeholder="Email" onChange={(e) => setEmail(e.target.value)}></input>
+                        <input className="homePageFormInput" placeholder="Password" onChange={(e) => setPassword(e.target.value)}></input>
+                        <button className="homePageFormButton" onClick={(e) => createAccount(e)}>Create Account</button>
                     </form>
                 </div>
                 <div>
