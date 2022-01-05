@@ -184,5 +184,56 @@ code {
   font-weight: 700;
 }
 
+.sendGameDiv {
+    margin: auto;
+    padding-top: 120px;
+    padding-bottom: 70px;
+}
+
+.sendGameFormDiv {
+  margin: auto;
+  width: 400px;
+  height: 355px;
+  border-radius: 5px;
+  background-color: #fff;
+  padding: 5px;
+}
+
+.sendGameFormEnterAddress {
+  font-weight: 700;
+}
+
+.sendGameFormInput {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.sendGameFormFreeLabel {
+  text-align: center;
+  font-size: medium;
+}
+
+.sendGameFormButton {
+  margin-left: 145px;
+  font-weight: 700;
+  padding: 10px;
+  background-color: #000;
+  color: #fff;
+}
+
+.tradeHistorySentListUl {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  float: none;
+  justify-content: space-between;
+}
+
 
 
