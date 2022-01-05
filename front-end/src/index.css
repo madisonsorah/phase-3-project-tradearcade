@@ -289,5 +289,34 @@ code {
   justify-content: space-between;
 }
 
+.reviewsDiv {
+  margin: auto;
+  padding-top: 120px;
+  padding-bottom: 70px;
+}
+
+/* .wishListContainer {
+
+} */
+
+.wishListHeader {
+  font-size: 50px;
+}
+
+.wishListP {
+  padding: 5px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  width: 1300px;
+  font-size: 18px;
+  font-weight: 300;
+  border-bottom: 0.09rem solid #000;
+}
+
+/* .wishListDiv {
+
+} */
+
+
 
 

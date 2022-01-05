@@ -5,6 +5,9 @@ function Reviews() {
     return (
         <div>
             <NavBar />
+            <div className="reviewsDiv">
+                <ul></ul>
+            </div>
         </div>
     )
 }
