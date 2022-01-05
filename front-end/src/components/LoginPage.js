@@ -16,7 +16,7 @@ function LoginPage() {
                     </form>
                 </div>
                 <div>
-                    <p>Don't have an account? <Link to="/tradearcade" className="loginPageSignUp">Sign up</Link></p>
+                    <p>Don't have an account? <Link to="/" className="loginPageSignUp">Sign up</Link></p>
                 </div>
             </div>
         </div>
