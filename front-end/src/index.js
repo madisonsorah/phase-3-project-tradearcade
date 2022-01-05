@@ -9,8 +9,8 @@ import LoginPage from './components/LoginPage';
 import BrowseGames from './components/BrowseGames';
 import Followers from './components/Followers';
 import Following from './components/Following';
-import GamesBorrowed from './components/GamesBorrowed';
-import GamesSent from './components/GamesSent';
+import TradeHistory from './components/TradeHistory';
+import SendGame from './components/SendGame';
 import Reviews from './components/Reviews';
 import WishList from './components/WishList';
 import reportWebVitals from './reportWebVitals';
@@ -26,8 +26,8 @@ ReactDOM.render(
         <Route path="browsegames" element={<BrowseGames />} />
         <Route path="followers" element={<Followers />} />
         <Route path="followlist" element={<Following />} />
-        <Route path="tradehistory" element={<GamesBorrowed />} />
-        <Route path="tradegame" element={<GamesSent />} />
+        <Route path="tradehistory" element={<TradeHistory />} />
+        <Route path="tradegame" element={<SendGame />} />
         <Route path="gamereviews" element={<Reviews />} />
         <Route path="gamewishlist" element={<WishList />} />
       </Routes>
