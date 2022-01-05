@@ -226,6 +226,28 @@ code {
   color: #fff;
 }
 
+.tradeHistoryDiv {
+  margin: auto;
+  padding-top: 120px;
+  padding-bottom: 70px;
+}
+
+.tradeHistorySentListDiv {
+ margin-left: 50px;
+}
+
+.tradeHistorySentListH1 {
+  border-bottom: 0.09rem solid #000;
+  width: 1000px;
+  padding-bottom: 10px;
+}
+
+.tradeHistorySentListLi {
+  margin: 10px;
+  padding: 20px;
+  display: inline-block;
+}
+
 .tradeHistorySentListUl {
   list-style-type: none;
   margin: 0;
@@ -233,6 +255,22 @@ code {
   display: inline-block;
   float: none;
   justify-content: space-between;
+}
+
+.tradeHistoryReceivedListDiv {
+  margin-left: 50px;
+}
+
+.tradeHistoryReceivedListH1 {
+  border-bottom: 0.09rem solid #000;
+  width: 1000px;
+  padding-bottom: 10px;
+}
+
+.tradeHistoryReceivedListLi {
+  margin: 10px;
+  padding: 20px;
+  display: inline-block;
 }
 
 .tradeHistoryReceivedListUl {
