@@ -3,6 +3,7 @@ import NavBar from "./NavBar"
 import { Link } from "react-router-dom";
 
 function LoginPage() {
+
     return (
         <div>
             <NavBar />
