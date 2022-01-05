@@ -1,7 +1,7 @@
 import React from "react";
 import NavBar from "./NavBar"
 
-function WishList(gameData) {
+function WishList() {
     // wishListGames = gameData.map((game) => {
     //     // return (
     //     //     <div className="wishListGame">
