@@ -8,7 +8,7 @@ function NavBar() {
             <ul className="navBarUl">
                 <li className="navBarLi">TradeArcade</li>
                 <li className="navBarLi">Browse Games</li>
-                <li className="navBarLi">Login</li>
+                <Link to="/login" className="navBarLink">Login</Link>
                 <Link to="/account" className="navBarLink">Account</Link>
             </ul>
         </div>
