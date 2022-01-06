@@ -325,6 +325,30 @@ code {
   display: inline-block;
 }
 
+.browseGamesDiv {
+  margin: auto;
+  padding-top: 80px;
+  padding-bottom: 10px;
+  height: 800px;
+  overflow: scroll;
+}
+
+.gameDiv {
+  margin: 10px;
+  padding: 20px;
+  display: inline-block;
+}
+
+.gameImage {
+  margin: auto;
+  padding: 5px;
+  width: 200px;
+  height: 200px;
+  display: block;
+}
+
+
+
 
 
 

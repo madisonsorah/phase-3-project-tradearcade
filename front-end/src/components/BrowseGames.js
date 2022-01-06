@@ -17,7 +17,7 @@ function BrowseGames() {
     ))
 
     return (
-        <div>
+        <div className="browseGamesDiv">
             <NavBar />
             <div>
                 { renderedGames }
