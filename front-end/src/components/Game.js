@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Game({ game, handleGameClick }) {
+function Game({game}) {
     return (
-        <div className="gameDiv" onClick={() => handleGameClick(game)} > 
+        <div className="gameDiv"> 
             <img className="gameImage" src={game.image}></img>
-            <h2>{game.title}</h2>
+            <Link to={`/games/${game.id}`}>{game.title}</Link>
             <p>{game.platform}</p>
         </div>
     )
