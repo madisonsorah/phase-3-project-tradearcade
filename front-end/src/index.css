@@ -347,6 +347,34 @@ code {
   display: block;
 }
 
+.memberPageDiv {
+  margin: auto;
+  padding-top: 120px;
+  padding-bottom: 70px;
+}
+
+.memberGameUl {
+  margin: auto;
+  padding-top: 80px;
+  padding-bottom: 10px;
+  height: 800px;
+  overflow: scroll;
+}
+
+.memberGameLi {
+  margin: 10px;
+  padding: 20px;
+  display: inline-block;
+}
+
+.memberGameImage {
+  margin: auto;
+  padding: 5px;
+  width: 200px;
+  height: 200px;
+  display: block;
+}
+
 
 
 
