@@ -32,7 +32,7 @@ function App() {
           <Route path="/browsegames" element={<BrowseGames />} />
           <Route path="/followers" element={<Followers />} />
           <Route path="/followlist" element={<Following />} />
-          <Route path="/member/:id" element={<MemberPage />} />
+          <Route path="/member/:id" element={<MemberPage currentUser={currentUser} setCurrentUser={setCurrentUser}/>} />
           <Route path="/tradehistory" element={<TradeHistory />} />
           <Route path="/tradegame" element={<SendGame />} />
           <Route path="/gamereviews" element={<Reviews />} />
