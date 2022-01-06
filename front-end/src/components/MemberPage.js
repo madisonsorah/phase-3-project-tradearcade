@@ -37,10 +37,6 @@ function MemberPage() {
                 <h1>{user.first_name} {user.last_name}</h1>
                 <h3>{user.username}</h3>
                 {user.bio ? (<p>{user.bio}</p>) : null}
-                <p>Followers</p>
-                <p>Following</p>
-                <button>Follow</button> 
-                <button>Unfollow</button>
                 <h2>Games Available For Trade</h2>
                 <ul>
                     {renderedUserGames}
