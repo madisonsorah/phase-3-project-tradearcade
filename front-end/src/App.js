@@ -1,9 +1,11 @@
 import React, {useState, useEffect} from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 import HomePage from './components/HomePage'
 import AccountPage from './components/AccountPage';
 import LoginPage from './components/LoginPage';
 import BrowseGames from './components/BrowseGames';
+import GamePage from './components/GamePage';
 import MemberPage from './components/MemberPage';
 import TradeHistory from './components/TradeHistory';
 import SendGame from './components/SendGame';
@@ -18,22 +20,29 @@ function App() {
     .then(users => console.log(users))
   }, []);
 
-  const [currentUser, setCurrentUser] = useState()
+  const [currentUser, setCurrentUser] = useState(false)
   
+  function isLoggedIn() {
+    if(currentUser == false) {
+      return <Link to="/login" className="navBarLink" currentUser={currentUser} setCurrentUser={setCurrentUser}>Login</Link>
+    } else {
+      return <Link to="/account" className="navBarLink">Account</Link>
+    }
+}
   
   return (
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<HomePage currentUser={currentUser} setCurrentUser={setCurrentUser}/>} />
-          <Route path="/account" element={<AccountPage />} />
-          <Route path="/login" element={<LoginPage currentUser={currentUser} setCurrentUser={setCurrentUser}/>} />
-          <Route path="/browsegames" element={<BrowseGames />} />
-          <Route path="/member/:id" element={<MemberPage currentUser={currentUser} setCurrentUser={setCurrentUser}/>} />
-          <Route path="/tradehistory" element={<TradeHistory />} />
-          <Route path="/tradegame" element={<SendGame />} />
-          <Route path="/gamereviews" element={<Reviews />} />
-          <Route path="/gamewishlist" element={<WishList />} />
+          <Route path="/" element={<HomePage currentUser={currentUser} setCurrentUser={setCurrentUser} isLoggedIn={isLoggedIn}/>} />
+          <Route path="/account" element={<AccountPage isLoggedIn={isLoggedIn}/>} />
+          <Route path="/login" element={<LoginPage currentUser={currentUser} setCurrentUser={setCurrentUser} isLoggedIn={isLoggedIn}/>} />
+          <Route path="/browsegames" element={<BrowseGames isLoggedIn={isLoggedIn}/>} />
+          <Route path="/member/:id" element={<MemberPage currentUser={currentUser} setCurrentUser={setCurrentUser} isLoggedIn={isLoggedIn}/>} />
+          <Route path="/tradehistory" element={<TradeHistory isLoggedIn={isLoggedIn}/>} />
+          <Route path="/tradegame" element={<SendGame isLoggedIn={isLoggedIn}/>} />
+          <Route path="/gamereviews" element={<Reviews isLoggedIn={isLoggedIn}/>} />
+          <Route path="/gamewishlist" element={<WishList isLoggedIn={isLoggedIn}/>} />
         </Routes>
       </BrowserRouter>
     </div>

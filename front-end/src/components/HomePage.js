@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import NavBar from "./NavBar";
 import { Link } from "react-router-dom";
 
-function HomePage({currentUser, setCurrentUser}) {
+function HomePage({currentUser, setCurrentUser, isLoggedIn}) {
     const userData = "http://localhost:9292/users"
     const [allUsers, setAllUsers] = useState()
     const [firstName, setFirstName] = useState()
@@ -51,7 +51,7 @@ function HomePage({currentUser, setCurrentUser}) {
       }
     return (
         <div>
-            <NavBar />
+            <NavBar isLoggedIn={isLoggedIn} />
             <div className="homePageDiv">
                 <h1>Welcome to TradeArcade</h1>
                 <p className="homePageP">Sign up to trade games with thousands of community members.</p>

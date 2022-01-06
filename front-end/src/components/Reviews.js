@@ -1,10 +1,10 @@
 import React from "react";
 import NavBar from "./NavBar";
 
-function Reviews() {
+function Reviews({isLoggedIn}) {
     return (
         <div>
-            <NavBar />
+            <NavBar isLoggedIn={isLoggedIn}/>
             <div className="reviewsDiv">
                 <h1>My Game Reviews</h1>
                 <ul>

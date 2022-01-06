@@ -3,11 +3,10 @@ import NavBar from "./NavBar"
 import { Link } from "react-router-dom";
 import { findDOMNode } from "react-dom";
 
-function LoginPage({currentUser, setCurrentUser}) {
+function LoginPage({currentUser, setCurrentUser, isLoggedIn}) {
     const [email, setEmail] = useState()
     const [password, setPassword] = useState()
     const [allUsers, setAllUsers] = useState()
-    const [loggedIn, setLoggedIn] = useState(false)
 
     useEffect(() => {
         fetch("http://localhost:9292/users")
@@ -30,25 +29,14 @@ function LoginPage({currentUser, setCurrentUser}) {
         if (password == correctPassword){
             console.log("Logged In!")
             setCurrentUser(validEmails[0])
-            console.log(currentUser)
         }else {
             console.log("Incorrect Credentials!")
         }
-        setTimeout((isLoggedIn()),3000)
+        isLoggedIn()
     }
-    
-  function isLoggedIn() {
-    if (currentUser == undefined) {
-        setLoggedIn(false)
-        console.log(currentUser)
-    } else {
-        setLoggedIn(true)
-        console.log(currentUser)
-    }}
-    
     return (
         <div>
-            <NavBar isLoggedIn={isLoggedIn} loggedIn={loggedIn} setLoggedIn={setLoggedIn}/>
+            <NavBar isLoggedIn={isLoggedIn}/>
             <div className="loginPageDiv">
                 <h1>Welcome back!</h1>
                 <div className="loginPageFormDiv">

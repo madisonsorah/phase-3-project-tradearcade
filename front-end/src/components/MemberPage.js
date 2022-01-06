@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
 import NavBar from "./NavBar";
 
-function MemberPage({currentUser, setCurrentUser}) {
+function MemberPage({currentUser, setCurrentUser, isLoggedIn}) {
     let { id } = useParams();
     const [user, setUser] = useState([]);
     const [games, setGames] = useState([]);
@@ -30,7 +30,7 @@ function MemberPage({currentUser, setCurrentUser}) {
 
     return (
         <div> 
-            <NavBar />
+            <NavBar isLoggedIn={isLoggedIn} />
             <div className="memberPageDiv">
                 <img alt="avatar"></img>
                 <h1>{user.first_name} {user.last_name}</h1>
