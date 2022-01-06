@@ -9,9 +9,9 @@ class ApplicationController < Sinatra::Base
         Game.all.to_json
     end
 
-        get '/games/:id' do
-            Game.find(params[:id]).to_json
-        end
+    get '/games/:id' do
+        Game.find(params[:id]).to_json
+    end
 
     get '/reviews' do
         Review.all.to_json
@@ -25,6 +25,9 @@ class ApplicationController < Sinatra::Base
         Ownership.all.to_json
     end
 
+    get '/users/:id' do
+        User.find(params[:id]).to_json
+    end
 
     post "/users" do
         user = User.create({first_name:params[:first_name], last_name:params[:last_name], username:params[:username], email:params[:email], password:params[:password]})
