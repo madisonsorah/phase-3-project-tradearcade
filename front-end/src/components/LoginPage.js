@@ -7,6 +7,7 @@ function LoginPage({currentUser, setCurrentUser}) {
     const [email, setEmail] = useState()
     const [password, setPassword] = useState()
     const [allUsers, setAllUsers] = useState()
+    const [loggedIn, setLoggedIn] = useState(false)
 
     useEffect(() => {
         fetch("http://localhost:9292/users")
@@ -33,11 +34,21 @@ function LoginPage({currentUser, setCurrentUser}) {
         }else {
             console.log("Incorrect Credentials!")
         }
+        setTimeout((isLoggedIn()),3000)
     }
+    
+  function isLoggedIn() {
+    if (currentUser == undefined) {
+        setLoggedIn(false)
+        console.log(currentUser)
+    } else {
+        setLoggedIn(true)
+        console.log(currentUser)
+    }}
     
     return (
         <div>
-            <NavBar />
+            <NavBar isLoggedIn={isLoggedIn} loggedIn={loggedIn} setLoggedIn={setLoggedIn}/>
             <div className="loginPageDiv">
                 <h1>Welcome back!</h1>
                 <div className="loginPageFormDiv">

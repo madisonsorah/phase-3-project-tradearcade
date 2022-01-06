@@ -4,8 +4,6 @@ import HomePage from './components/HomePage'
 import AccountPage from './components/AccountPage';
 import LoginPage from './components/LoginPage';
 import BrowseGames from './components/BrowseGames';
-import Followers from './components/Followers';
-import Following from './components/Following';
 import MemberPage from './components/MemberPage';
 import TradeHistory from './components/TradeHistory';
 import SendGame from './components/SendGame';
@@ -22,6 +20,7 @@ function App() {
 
   const [currentUser, setCurrentUser] = useState()
   
+  
   return (
     <div>
       <BrowserRouter>
@@ -30,8 +29,6 @@ function App() {
           <Route path="/account" element={<AccountPage />} />
           <Route path="/login" element={<LoginPage currentUser={currentUser} setCurrentUser={setCurrentUser}/>} />
           <Route path="/browsegames" element={<BrowseGames />} />
-          <Route path="/followers" element={<Followers />} />
-          <Route path="/followlist" element={<Following />} />
           <Route path="/member/:id" element={<MemberPage currentUser={currentUser} setCurrentUser={setCurrentUser}/>} />
           <Route path="/tradehistory" element={<TradeHistory />} />
           <Route path="/tradegame" element={<SendGame />} />
