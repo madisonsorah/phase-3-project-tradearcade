@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import NavBar from "./NavBar";
 import { Link } from "react-router-dom";
 
-function HomePage() {
+function HomePage({currentUser, setCurrentUser}) {
     const userData = "http://localhost:9292/users"
     const [allUsers, setAllUsers] = useState()
     const [firstName, setFirstName] = useState()
@@ -43,7 +43,8 @@ function HomePage() {
             //If there is no email match, and the inputted email is unique, this will run
             fetch(userData, config)
             .then((resp) => resp.json())
-            .then((userData) => console.log(userData))
+            .then((userData) => setCurrentUser(userData))
+            .then(console.log(currentUser))
         }else{
             console.log("email already exists!")
         }
