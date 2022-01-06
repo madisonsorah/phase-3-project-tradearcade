@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from './components/HomePage'
 import AccountPage from './components/AccountPage';
@@ -13,11 +13,19 @@ import WishList from './components/WishList';
 
 
 function App() {
+  useEffect(() => {
+    fetch("http://localhost:9292/users")
+    .then(resp => resp.json())
+    .then(users => console.log(users))
+  }, []);
+
+  const [currentUser, setCurrentUser] = useState()
+  
   return (
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<HomePage currentUser={currentUser} setCurrentUser={setCurrentUser}/>} />
           <Route path="account" element={<AccountPage />} />
           <Route path="login" element={<LoginPage />} />
           <Route path="browsegames" element={<BrowseGames />} />

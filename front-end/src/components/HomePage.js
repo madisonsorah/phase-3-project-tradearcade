@@ -4,12 +4,20 @@ import { Link } from "react-router-dom";
 
 function HomePage() {
     const userData = "http://localhost:9292/users"
-
+    const [allUsers, setAllUsers] = useState()
     const [firstName, setFirstName] = useState()
     const [lastName, setLastName] = useState()
     const [username, setUsername] = useState()
     const [email, setEmail] = useState()
     const [password, setPassword] = useState()
+
+
+    useEffect(() => {
+        fetch(userData)
+        .then(resp => resp.json())
+        .then(users => setAllUsers(users))
+    },[])
+
 
     let data = {
         first_name: firstName,
@@ -29,11 +37,16 @@ function HomePage() {
             body: JSON.stringify(data),
         };
         console.log(data)
-        
-        fetch(userData, config)
-        .then((resp) => resp.json())
-        .then((userData) => console.log(userData))
-        
+        const matchingEmail = allUsers.find(u => u.email == email)
+        console.log(matchingEmail)
+        if(matchingEmail == undefined) {
+            //If there is no email match, and the inputted email is unique, this will run
+            fetch(userData, config)
+            .then((resp) => resp.json())
+            .then((userData) => console.log(userData))
+        }else{
+            console.log("email already exists!")
+        }
       }
     return (
         <div>
