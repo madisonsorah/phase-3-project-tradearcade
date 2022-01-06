@@ -25,7 +25,7 @@ function BrowseGames() {
         <div className="browseGamesDiv">
             <NavBar />
             <div>
-               {displayedGame ? <GamePage displayedGame={displayedGame} setDisplayedGame={setDisplayedGame}/> : renderedGames }
+               {displayedGame ? <GamePage displayedGame={displayedGame} setDisplayedGame={setDisplayedGame} /> : renderedGames }
             </div>
         </div>
     )
