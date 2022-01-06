@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import NavBar from "./NavBar"
 
 function BrowseGames() {
-    const [games, setGames] = useEffect([])
+    const [games, setGames] = useState([])
 
     useEffect(() => {
         fetch('http://localhost:9292/games')
@@ -25,7 +25,7 @@ function BrowseGames() {
         <div>
             <NavBar />
             <div>
-                {/* {renderedGames} */}
+                {renderedGames}
             </div>
         </div>
     )
