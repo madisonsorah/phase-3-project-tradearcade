@@ -27,7 +27,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage currentUser={currentUser} setCurrentUser={setCurrentUser}/>} />
           <Route path="account" element={<AccountPage />} />
-          <Route path="login" element={<LoginPage />} />
+          <Route path="login" element={<LoginPage currentUser={currentUser} setCurrentUser={setCurrentUser}/>} />
           <Route path="browsegames" element={<BrowseGames />} />
           <Route path="followers" element={<Followers />} />
           <Route path="followlist" element={<Following />} />
