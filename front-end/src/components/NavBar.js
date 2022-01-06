@@ -7,7 +7,7 @@ function NavBar(currentUser, setCurrentUser) {
         <div className="mainNavDiv">
             <ul className="navBarUl">
                 <li className="navBarLi">TradeArcade</li>
-                <li className="navBarLi">Browse Games</li>
+                <Link to="/browsegames" className="navBarLink">Browse Games</Link>
                 <Link to="/login" className="navBarLink" currentUser={currentUser} setCurrentUser={setCurrentUser}>Login</Link>
                 <Link to="/account" className="navBarLink">Account</Link>
             </ul>

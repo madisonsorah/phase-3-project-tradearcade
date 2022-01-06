@@ -1,8 +1,11 @@
 import React from "react";
 
-function Game() {
+function Game({ game }) {
     return (
-        <div>  
+        <div> 
+            <img src={game.image}></img>
+            <h2>{game.title}</h2>
+            <p>{game.platform}</p>
         </div>
     )
 }

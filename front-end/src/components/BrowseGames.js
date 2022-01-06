@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import NavBar from "./NavBar"
+import Game from "./Game"
 
 function BrowseGames() {
     const [games, setGames] = useState([])
@@ -11,21 +12,15 @@ function BrowseGames() {
     }, []);
 
 
-    renderedGames = games.map((game) => {
-        return (
-            <div>
-                <img src={game.img}></img>
-                <h2>{game.title}</h2>
-                <p>{game.platform}</p>
-            </div>
-        )
-    })
+    const renderedGames = games.map((game) => (
+        <Game game={ game }/>
+    ))
 
     return (
         <div>
             <NavBar />
             <div>
-                {renderedGames}
+                { renderedGames }
             </div>
         </div>
     )
