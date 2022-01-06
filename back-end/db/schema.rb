@@ -15,6 +15,8 @@ ActiveRecord::Schema.define(version: 2022_01_04_204940) do
   create_table "games", force: :cascade do |t|
     t.string "title"
     t.string "platform"
+    t.string "description"
+    t.string "image"
   end
 
   create_table "ownerships", force: :cascade do |t|
