@@ -6,7 +6,7 @@ class ApplicationController < Sinatra::Base
       end
 
     get '/games' do
-        Game.all.to_json
+        Game.all.to_json({include: [:reviews]})
     end
 
     get '/games/:id' do

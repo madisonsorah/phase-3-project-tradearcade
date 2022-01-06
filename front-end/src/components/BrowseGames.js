@@ -5,6 +5,7 @@ import GamePage from "./GamePage"
 
 function BrowseGames() {
     const [games, setGames] = useState([])
+    const [allUsers, setAllUsers] = useState([])
     const [displayedGame, setDisplayedGame] = useState(false)
 
     useEffect(() => {
@@ -12,6 +13,12 @@ function BrowseGames() {
         .then((response) => response.json())
         .then((gameData) => setGames(gameData))
     }, []);
+
+    useEffect(() => {
+        fetch("http://localhost:9292/users")
+        .then(resp => resp.json())
+        .then(users => setAllUsers(users))
+    },[])
 
     function handleGameClick(game) {
         setDisplayedGame(game)
@@ -25,7 +32,7 @@ function BrowseGames() {
         <div className="browseGamesDiv">
             <NavBar />
             <div>
-               {displayedGame ? <GamePage displayedGame={displayedGame} setDisplayedGame={setDisplayedGame} /> : renderedGames }
+               {displayedGame ? <GamePage displayedGame={displayedGame} setDisplayedGame={setDisplayedGame} allUsers={allUsers} /> : renderedGames }
             </div>
         </div>
     )
