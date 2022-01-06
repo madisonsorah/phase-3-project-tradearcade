@@ -1,8 +1,8 @@
 import React from "react";
 
-function Game({ game }) {
+function Game({ game, handleGameClick }) {
     return (
-        <div className="gameDiv"> 
+        <div className="gameDiv" onClick={() => handleGameClick(game)}> 
             <img className="gameImage" src={game.image}></img>
             <h2>{game.title}</h2>
             <p>{game.platform}</p>

@@ -1,8 +1,9 @@
 import React from "react";
 
-function GamePage() {
+function GamePage({displayedGame, setDisplayedGame}) {
     return (
-        <div>  
+        <div>
+            
         </div>
     )
 }
