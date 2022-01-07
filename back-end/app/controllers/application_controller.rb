@@ -41,8 +41,13 @@ class ApplicationController < Sinatra::Base
         User.find(params[:id]).games.to_json
     end
 
+    get '/tradehistory' do
+        History.all.to_json({include: [:game]})
+    end
+
     post "/users" do
         user = User.create({first_name:params[:first_name], last_name:params[:last_name], username:params[:username], email:params[:email], password:params[:password]})
         user.to_json
     end
+
 end
