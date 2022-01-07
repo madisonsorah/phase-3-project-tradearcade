@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_07_180108) do
+ActiveRecord::Schema.define(version: 2022_01_07_184415) do
 
   create_table "games", force: :cascade do |t|
     t.string "title"
@@ -36,6 +36,16 @@ ActiveRecord::Schema.define(version: 2022_01_07_180108) do
     t.integer "user_id"
     t.string "review"
     t.float "score"
+  end
+
+  create_table "trades", force: :cascade do |t|
+    t.integer "requesterID"
+    t.integer "requester_gameID"
+    t.integer "approverID"
+    t.integer "approver_gameID"
+    t.boolean "pending"
+    t.boolean "accepted"
+    t.boolean "denied"
   end
 
   create_table "users", force: :cascade do |t|
