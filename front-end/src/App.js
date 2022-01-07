@@ -38,6 +38,7 @@ function App() {
           <Route path="/account" element={<AccountPage isLoggedIn={isLoggedIn}/>} />
           <Route path="/login" element={<LoginPage currentUser={currentUser} setCurrentUser={setCurrentUser} isLoggedIn={isLoggedIn}/>} />
           <Route path="/browsegames" element={<BrowseGames isLoggedIn={isLoggedIn}/>} />
+          <Route path="/games/:id" element={<GamePage />} />
           <Route path="/member/:id" element={<MemberPage currentUser={currentUser} setCurrentUser={setCurrentUser} isLoggedIn={isLoggedIn}/>} />
           <Route path="/tradehistory" element={<TradeHistory isLoggedIn={isLoggedIn}/>} />
           <Route path="/tradegame" element={<SendGame isLoggedIn={isLoggedIn}/>} />
