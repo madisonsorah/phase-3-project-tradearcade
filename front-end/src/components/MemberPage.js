@@ -51,7 +51,7 @@ function MemberPage({currentUser, setCurrentUser, isLoggedIn}) {
         if (matchingTrade == undefined){
             fetch("http://localhost:9292/trades", config)
             .then((resp) => resp.json())
-            .then((trades) => setExistingTrades(trades))
+            .then((trades) => console.log(trades))
             .then(
                 fetch("http://localhost:9292/trades")
                 .then(resp => resp.json())
