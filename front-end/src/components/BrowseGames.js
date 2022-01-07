@@ -42,7 +42,7 @@ function BrowseGames({isLoggedIn}) {
             <NavBar isLoggedIn={isLoggedIn}/>
             <input value={search} placeholder="Search for Games" onChange={(e) => setSearch(e.target.value)}></input>
             <div>
-               {displayedGame ? <GamePage displayedGame={displayedGame} setDisplayedGame={setDisplayedGame} allUsers={allUsers} /> : renderedGames }
+               {displayedGame ? <GamePage isLoggedIn={isLoggedIn} displayedGame={displayedGame} setDisplayedGame={setDisplayedGame} allUsers={allUsers} /> : renderedGames }
             </div>
         </div>
     )

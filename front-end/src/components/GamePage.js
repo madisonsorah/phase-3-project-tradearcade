@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import {useParams} from "react-router-dom";
 import NavBar from "./NavBar";
 
-function GamePage() {
+function GamePage({isLoggedIn}) {
     let { id } = useParams();
     const [game, setGame] = useState([]);
     const [reviews, setReviews] = useState([]);
@@ -27,7 +27,7 @@ function GamePage() {
 
     return (
         <div>
-            <NavBar />
+            <NavBar isLoggedIn={isLoggedIn}/>
             <div>
                 <h1>{game.title}</h1>
                 <img src={game.image} alt={game.title}></img>
