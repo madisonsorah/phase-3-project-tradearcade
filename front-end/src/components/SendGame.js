@@ -11,7 +11,8 @@ function SendGame({isLoggedIn, currentUser}) {
 
     // score: gameScore,
     // review: gameReview,
-
+    console.log(currentUser)
+    
     let data = {
         title: gameTitle,
         platform: gamePlatform,
