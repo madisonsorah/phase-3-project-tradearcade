@@ -10,7 +10,7 @@ function AccountPage({isLoggedIn}) {
                 <h1 className="accountPageH1">My Account</h1>
                 <div className="accountPageListLeft">
                     <ul className="accountPageUl">
-                        <Link to="/tradegame" className="accountPageLink">Trade in Game</Link>
+                        <Link to="/tradegame" className="accountPageLink">Trade in a Game</Link>
                         <Link to="/tradehistory" className="accountPageLink">Game Trade History</Link>
                         <Link to="/gamereviews" className="accountPageLink">Game Reviews</Link>
                         <Link to="/gamewishlist" className="accountPageLink">Game Wishlist</Link>
