@@ -18,6 +18,8 @@ function MemberPage({currentUser, setCurrentUser, isLoggedIn}) {
     function renderRequestTradeButtons(game) {
         if (id == currentUser.id){
             console.log("Your Page")
+        } else if (currentUser.id == undefined) {
+            console.log("Not Logged in")
         } else {
           return <button onClick={() => tradeGame(game)}>Request Trade</button>
         }
