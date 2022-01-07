@@ -378,6 +378,26 @@ code {
   padding-bottom: 70px;
 }
 
+.gamePageReviewForm {
+  width: 400px;
+}
+
+.gamePageReviewFormP {
+  font-weight: 700;
+}
+
+.gamePageReviewInput {
+  width: 300px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.reviewsP {
+  font-weight: 700;
+}
+
 
 
 

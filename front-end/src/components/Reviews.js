@@ -1,17 +1,30 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import NavBar from "./NavBar";
 
-function Reviews({isLoggedIn}) {
+function Reviews({isLoggedIn, currentUser}) {
+    const [reviewsList, setReviews] = useState([])
+
+    useEffect(() => {
+        fetch(`http://localhost:9292/users/${currentUser.id}/reviews`)
+        .then((response) => response.json())
+        .then((reviewData) => setReviews(reviewData))
+    }, [])
+
+    const renderReviews = reviewsList.map((review) => (
+        <div>
+            <p className="reviewsP">{review.game.title}</p>
+            <p>"{review.review}" - Rating: {review.score} / 10</p>
+        </div>
+        ))
+
     return (
         <div>
             <NavBar isLoggedIn={isLoggedIn}/>
             <div className="reviewsDiv">
                 <h1>My Game Reviews</h1>
-                <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
+                <div>
+                    {renderReviews}
+                </div>
             </div>
         </div>
     )

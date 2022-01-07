@@ -11,8 +11,6 @@ import MemberList from './components/MemberList';
 import TradeHistory from './components/TradeHistory';
 import SendGame from './components/SendGame';
 import Reviews from './components/Reviews';
-import WishList from './components/WishList';
-
 
 function App() {
   useEffect(() => {
@@ -56,13 +54,12 @@ function App() {
           <Route path="/account" element={<AccountPage isLoggedIn={isLoggedIn} currentUser={currentUser} allUsers={allUsers} allGames={allGames} allTrades={allTrades}/>} />
           <Route path="/login" element={<LoginPage currentUser={currentUser} setCurrentUser={setCurrentUser} isLoggedIn={isLoggedIn}/>} />
           <Route path="/browsegames" element={<BrowseGames isLoggedIn={isLoggedIn}/>} />
-          <Route path="/games/:id" element={<GamePage isLoggedIn={isLoggedIn}/>} />
+          <Route path="/games/:id" element={<GamePage isLoggedIn={isLoggedIn} currentUser={currentUser}/>} />
           <Route path="/member/:id" element={<MemberPage currentUser={currentUser} setCurrentUser={setCurrentUser} isLoggedIn={isLoggedIn}/>} />
           <Route path="/members" element={<MemberList isLoggedIn={isLoggedIn}/>} />
           <Route path="/tradehistory" element={<TradeHistory isLoggedIn={isLoggedIn} currentUser={currentUser}/>} />
           <Route path="/tradegame" element={<SendGame isLoggedIn={isLoggedIn} currentUser={currentUser}/>} />
-          <Route path="/gamereviews" element={<Reviews isLoggedIn={isLoggedIn}/>} />
-          <Route path="/gamewishlist" element={<WishList isLoggedIn={isLoggedIn}/>} />
+          <Route path="/gamereviews" element={<Reviews isLoggedIn={isLoggedIn} currentUser={currentUser}/>} />
         </Routes>
       </BrowserRouter>
     </div>
