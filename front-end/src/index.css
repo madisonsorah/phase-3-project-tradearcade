@@ -375,6 +375,12 @@ code {
   display: block;
 }
 
+.memberListDiv {
+  margin: auto;
+  padding-top: 120px;
+  padding-bottom: 70px;
+}
+
 
 
 

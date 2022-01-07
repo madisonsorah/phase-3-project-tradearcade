@@ -8,6 +8,7 @@ function NavBar({currentUser, setCurrentUser, isLoggedIn}) {
             <ul className="navBarUl">
                 <li className="navBarLi">TradeArcade</li>
                 <Link to="/browsegames" className="navBarLink">Browse Games</Link>
+                <Link to="/members" className="navBarLink">Member List</Link>
                 {isLoggedIn()}
             </ul>
         </div>

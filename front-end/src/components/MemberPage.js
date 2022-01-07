@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
+import { Link } from "react-router-dom";
 import NavBar from "./NavBar";
 
 function MemberPage({currentUser, setCurrentUser, isLoggedIn}) {
@@ -17,11 +18,11 @@ function MemberPage({currentUser, setCurrentUser, isLoggedIn}) {
         .then((userGamesData) => setGames(userGamesData))
     }, [])
 
-    const renderedUserGames = games.map((game) => {
+    const renderedUserGames = games.map((game) =>  {
         return (
             <li className="memberGameLi">
                 <img className="memberGameImage" src={game.image}></img>
-                <h2>{game.title}</h2>
+                <Link to={`/games/${game.id}`}>{game.title}</Link>
                 <p>{game.platform}</p>
                 <button>Request Trade</button>
             </li>

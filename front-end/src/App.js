@@ -7,6 +7,7 @@ import LoginPage from './components/LoginPage';
 import BrowseGames from './components/BrowseGames';
 import GamePage from './components/GamePage';
 import MemberPage from './components/MemberPage';
+import MemberList from './components/MemberList';
 import TradeHistory from './components/TradeHistory';
 import SendGame from './components/SendGame';
 import Reviews from './components/Reviews';
@@ -40,6 +41,7 @@ function App() {
           <Route path="/browsegames" element={<BrowseGames isLoggedIn={isLoggedIn}/>} />
           <Route path="/games/:id" element={<GamePage isLoggedIn={isLoggedIn}/>} />
           <Route path="/member/:id" element={<MemberPage currentUser={currentUser} setCurrentUser={setCurrentUser} isLoggedIn={isLoggedIn}/>} />
+          <Route path="/members" element={<MemberList isLoggedIn={isLoggedIn}/>} />
           <Route path="/tradehistory" element={<TradeHistory isLoggedIn={isLoggedIn}/>} />
           <Route path="/tradegame" element={<SendGame isLoggedIn={isLoggedIn}/>} />
           <Route path="/gamereviews" element={<Reviews isLoggedIn={isLoggedIn}/>} />
