@@ -57,6 +57,14 @@ class ApplicationController < Sinatra::Base
         History.all.to_json({include: [:game]})
     end
 
+    get '/trades' do
+        Trade.all.to_json
+    end
+
+    post '/trades' do
+        trade = Trade.create(params)
+    end
+
     post "/users" do
         user = User.create({first_name:params[:first_name], last_name:params[:last_name], username:params[:username], email:params[:email], password:params[:password]})
         user.to_json
