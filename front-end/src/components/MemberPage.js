@@ -7,7 +7,18 @@ function MemberPage({currentUser, setCurrentUser, isLoggedIn}) {
     let { id } = useParams();
     const [user, setUser] = useState([]);
     const [games, setGames] = useState([]);
-    
+    const [ownPage, setOwnPage] = useState(false)
+
+    function renderRequestTradeButtons() {
+        if (id == currentUser.id){
+            console.log("Your Page")
+        } else {
+            console.log(id)
+            console.log(currentUser.id)
+          return <button>Request Trade</button>
+        }
+        
+    }
     useEffect(() => {
         fetch(`http://localhost:9292/users/${id}`)
         .then((response) => response.json())
@@ -24,7 +35,7 @@ function MemberPage({currentUser, setCurrentUser, isLoggedIn}) {
                 <img className="memberGameImage" src={game.image}></img>
                 <Link to={`/games/${game.id}`}>{game.title}</Link>
                 <p>{game.platform}</p>
-                <button>Request Trade</button>
+                {renderRequestTradeButtons()}
             </li>
         )
     })
