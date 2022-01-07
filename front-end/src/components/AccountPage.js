@@ -2,10 +2,10 @@ import React from "react";
 import NavBar from "./NavBar"
 import { Link } from "react-router-dom";
 
-function AccountPage() {
+function AccountPage({isLoggedIn}) {
     return (
         <div>
-            <NavBar />
+            <NavBar isLoggedIn={isLoggedIn}/>
             <div className="accountPageDiv">
                 <h1 className="accountPageH1">My Account</h1>
                 <div className="accountPageListLeft">

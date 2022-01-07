@@ -1,10 +1,10 @@
 import React from "react";
 import NavBar from "./NavBar"
 
-function TradeHistory() {
+function TradeHistory({isLoggedIn}) {
     return (
         <div>
-            <NavBar />
+            <NavBar isLoggedIn={isLoggedIn} />
             <div className="tradeHistoryDiv">
                 <div className="tradeHistorySentListDiv">
                     <h1 className="tradeHistorySentListH1">Games Sent</h1>

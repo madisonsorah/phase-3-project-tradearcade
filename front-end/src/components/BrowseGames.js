@@ -3,7 +3,7 @@ import NavBar from "./NavBar"
 import Game from "./Game"
 import GamePage from "./GamePage"
 
-function BrowseGames() {
+function BrowseGames({isLoggedIn}) {
     const [games, setGames] = useState([])
     const [allUsers, setAllUsers] = useState([])
     const [displayedGame, setDisplayedGame] = useState(false)
@@ -39,7 +39,7 @@ function BrowseGames() {
 
     return (
         <div className="browseGamesDiv">
-            <NavBar />
+            <NavBar isLoggedIn={isLoggedIn}/>
             <input value={search} placeholder="Search for Games" onChange={(e) => setSearch(e.target.value)}></input>
             <div>
                {displayedGame ? <GamePage displayedGame={displayedGame} setDisplayedGame={setDisplayedGame} allUsers={allUsers} /> : renderedGames }

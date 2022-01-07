@@ -1,10 +1,10 @@
 import React from "react";
 import NavBar from "./NavBar";
 
-function SendGame() {
+function SendGame({isLoggedIn}) {
     return (
         <div>
-            <NavBar />
+            <NavBar isLoggedIn={isLoggedIn}/>
             <div className="sendGameDiv">
                 <div className="sendGameFormDiv">
                     <form><p className="sendGameFormEnterAddress">Enter Your Address</p>

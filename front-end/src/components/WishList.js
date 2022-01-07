@@ -1,7 +1,7 @@
 import React from "react";
 import NavBar from "./NavBar"
 
-function WishList() {
+function WishList({isLoggedIn}) {
     // wishListGames = gameData.map((game) => {
     //     // return (
     //     //     <div className="wishListGame">
@@ -15,7 +15,7 @@ function WishList() {
 
     return (
         <div>
-            <NavBar />
+            <NavBar isLoggedIn={isLoggedIn}/>
             <div className="wishListContainer">
                 <h1 className="wishListHeader">My Wish List</h1>
                 <div className="wishListDiv">

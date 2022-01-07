@@ -3,7 +3,7 @@ import NavBar from "./NavBar"
 import { Link } from "react-router-dom";
 import { findDOMNode } from "react-dom";
 
-function LoginPage({currentUser, setCurrentUser}) {
+function LoginPage({currentUser, setCurrentUser, isLoggedIn}) {
     const [email, setEmail] = useState()
     const [password, setPassword] = useState()
     const [allUsers, setAllUsers] = useState()
@@ -29,15 +29,14 @@ function LoginPage({currentUser, setCurrentUser}) {
         if (password == correctPassword){
             console.log("Logged In!")
             setCurrentUser(validEmails[0])
-            console.log(currentUser)
         }else {
             console.log("Incorrect Credentials!")
         }
+        isLoggedIn()
     }
-    
     return (
         <div>
-            <NavBar />
+            <NavBar isLoggedIn={isLoggedIn}/>
             <div className="loginPageDiv">
                 <h1>Welcome back!</h1>
                 <div className="loginPageFormDiv">
