@@ -9,6 +9,18 @@ class ApplicationController < Sinatra::Base
         Game.all.to_json({include: [:reviews]})
     end
 
+    post '/games' do
+        game = Game.create({
+            title:params[:title], 
+            platform:params[:platform], 
+            image:params[:image],
+            description:params[:description]
+            })
+        user = User.find(params[:user_id])
+        user.games<<game
+        game.to_json
+    end
+
     get '/games/:id' do
         Game.find(params[:id]).to_json
     end

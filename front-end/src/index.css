@@ -145,20 +145,13 @@ code {
   border-bottom: 0.09rem solid #000;
 }
 
-.accountPageListLeft {
-  float: left;
+.accountPageMenu {
+  text-align: center; 
   margin: 0 20px 0 0;
   background-color: rgb(240, 240, 240);
   padding: 30px;
   margin-right: 60px;
   margin-left: 90px;
-}
-
-.accountPageListRight {
-  float: left;
-  margin: 0 20px 0 0;
-  background-color: rgb(240, 240, 240);
-  padding: 30px;
 }
 
 .accountPageUl {
@@ -186,9 +179,13 @@ code {
 }
 
 .accountPageLogout {
-  float: right;
-  font-size: medium;
-  font-weight: 700;
+  color: #000;
+  font-size: x-large;
+  text-decoration: none;
+}
+
+.accountPageLogout:hover {
+  text-decoration: underline;
 }
 
 .sendGameDiv {

@@ -1,24 +1,56 @@
-import React from "react";
+import React, {useState} from "react";
 import NavBar from "./NavBar";
 
-function SendGame({isLoggedIn}) {
+function SendGame({isLoggedIn, currentUser}) {
+    const [gameTitle, setGameTitle] = useState()
+    const [gamePlatform, setGamePlatform] = useState()
+    const [gameImageURL, setGameImageURL] = useState()
+    const [gameDescription, setGameDescription] = useState()
+    // const [gameScore, setGameScore] = useState()
+    // const [gameReview, setGameReview] = useState()
+
+    // score: gameScore,
+    // review: gameReview,
+
+    let data = {
+        title: gameTitle,
+        platform: gamePlatform,
+        image: gameImageURL,
+        description: gameDescription,
+        user_id: currentUser.id
+    }
+
+    function createGame(e) {
+        e.preventDefault()
+        const config = {
+            method: "POST",
+            headers: {
+                "Content-type": "application/json",
+                Accepts: "application/json",
+            },
+            body: JSON.stringify(data),
+        };
+
+        fetch("http://localhost:9292/games", config)
+            .then((resp) => resp.json())
+            .then((game) => console.log(game))
+      }
+    
     return (
         <div>
             <NavBar isLoggedIn={isLoggedIn}/>
             <div className="sendGameDiv">
                 <div className="sendGameFormDiv">
-                    <form><p className="sendGameFormEnterAddress">Enter Your Address</p>
-                        <input className="sendGameFormInput" placeholder="First Name"></input>
-                        <input className="sendGameFormInput" placeholder="Last Name"></input>
-                        <input className="sendGameFormInput" placeholder="Address Line 1"></input>
-                        <input className="sendGameFormInput" placeholder="Address Line 2 (optional)"></input>
-                        <input className="sendGameFormInput" placeholder="City"></input>
-                        <input className="sendGameFormInput" placeholder="State"></input>
-                        <input className="sendGameFormInput" placeholder="Zip Code"></input>
-                        <p className="sendGameFormFreeLabel">Your shipping label is free!</p>
-                        <button className="sendGameFormButton">GET MY LABEL</button>
+                    <form><p className="sendGameFormEnterAddress">Enter Your Game Details</p>
+                        <input onChange={(e) => setGameTitle(e.target.value)} className="sendGameFormInput" placeholder="Game title"></input>
+                        <input onChange={(e) => setGamePlatform(e.target.value)} className="sendGameFormInput" placeholder="Game Platform"></input>
+                        <input onChange={(e) => setGameImageURL(e.target.value)} className="sendGameFormInput" placeholder="Image URL"></input>
+                        <input onChange={(e) => setGameDescription(e.target.value)} className="sendGameFormInput" placeholder="Game Description"></input>
+                        {/* <input className="sendGameFormInput" placeholder="Add game rating (optional)"></input>
+                        <input className="sendGameFormInput" placeholder="Add a Review (optional)"></input> */}
+                        <button onClick={(e) => createGame(e)} className="sendGameFormButton">LIST GAME</button>
                     </form>
-                    <p>A shipping label has been sent to your email. Print out and use on any box.</p>
+                    <p className="sendGameFormFreeLabel">Game listed!</p>
                 </div>
             </div>
         </div>
