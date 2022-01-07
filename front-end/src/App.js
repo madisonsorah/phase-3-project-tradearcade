@@ -20,7 +20,24 @@ function App() {
     .then(resp => resp.json())
     .then(users => console.log(users))
   }, []);
-
+  const [allTrades, setAllTrades] = useState([])
+  const [allGames, setAllGames] = useState([])
+  const [allUsers, setAllUSers] = useState([])
+  useEffect(() => {
+      fetch("http://localhost:9292/trades")
+      .then(resp => resp.json())
+      .then(trades => setAllTrades(trades))
+  },[])
+  useEffect(() => {
+      fetch("http://localhost:9292/games")
+      .then(resp => resp.json())
+      .then(games => setAllGames(games))
+  },[])
+  useEffect(() => {
+      fetch("http://localhost:9292/users")
+      .then(resp => resp.json())
+      .then(users => setAllUSers(users))
+  },[])
   const [currentUser, setCurrentUser] = useState(false)
   
   function isLoggedIn() {
@@ -36,7 +53,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage currentUser={currentUser} setCurrentUser={setCurrentUser} isLoggedIn={isLoggedIn}/>} />
-          <Route path="/account" element={<AccountPage isLoggedIn={isLoggedIn} currentUser={currentUser}/>} />
+          <Route path="/account" element={<AccountPage isLoggedIn={isLoggedIn} currentUser={currentUser} allUsers={allUsers} allGames={allGames} allTrades={allTrades}/>} />
           <Route path="/login" element={<LoginPage currentUser={currentUser} setCurrentUser={setCurrentUser} isLoggedIn={isLoggedIn}/>} />
           <Route path="/browsegames" element={<BrowseGames isLoggedIn={isLoggedIn}/>} />
           <Route path="/games/:id" element={<GamePage isLoggedIn={isLoggedIn}/>} />
