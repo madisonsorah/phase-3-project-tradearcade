@@ -59,6 +59,10 @@ class ApplicationController < Sinatra::Base
 
     get '/trades' do
         Trade.all.to_json
+    end 
+
+    get '/trades/:id' do
+        Trade.find(params[:id]).to_json
     end
 
     post '/trades' do
