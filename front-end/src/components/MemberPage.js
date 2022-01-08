@@ -101,7 +101,7 @@ function MemberPage({currentUser, setCurrentUser, isLoggedIn}) {
     })
 
     const pendingTrade = (() => {
-        return tradeSent ? <h4>You have an existing trade with this person</h4> : undefined
+        return tradeSent ? <h4>Trade Request Sent!</h4> : undefined
     })
 
     return (

@@ -45,7 +45,9 @@ function AccountPage({isLoggedIn, currentUser, allTrades, allGames, allUsers, se
     const [tradeWindow, setTradeWindow] = useState(false)
     const [ownerships, setOwnerships] = useState([])
     const [myTrades, setMyTrades] = useState([])
-
+    const configDelete = {
+        method: "DELETE",
+    };
     
     const myTradesPreset = allTrades.filter(t => t.approverID == currentUser.id)
      useEffect(() => {setMyTrades(myTradesPreset)},[])
@@ -106,9 +108,7 @@ function AccountPage({isLoggedIn, currentUser, allTrades, allGames, allUsers, se
             },
             body: JSON.stringify(data2),
         };
-        const configDelete = {
-            method: "DELETE",
-        };
+        
         fetch(`http://localhost:9292/ownerships/${selectedOwnership.id}`, config)
         .then(resp => resp.json())
         .then(data => console.log(data))
@@ -155,10 +155,24 @@ function AccountPage({isLoggedIn, currentUser, allTrades, allGames, allUsers, se
         // setTimeout(setTradeWindow(true),100)
 
         console.log(requester)
-        
+    }
+
+    function handleDeny(trade, e) {
+        // setRequester(requester)
+        // setSelectedTradeOffer(game)
+        // console.log(ownerships)
+        // const selectedOwnership = ownerships.find(o => o.game_id == game.id && o.user_id == requester.id)
+        // console.log(selectedOwnership)
+        // const requesterOwnership = ownerships.find(o => o.game_id == selectedTradeOffer.id && o.user_id == currentUser.id)
+        // console.log(requesterOwnership)
+        // const selectedTrade = myTrades.find(t => t.requesterID == selectedOwnership.user_id && t.approverID == requesterOwnership.user_id)
+
+        fetch(`http://localhost:9292/trades/${trade.id}`, configDelete)
+        e.target.parentElement.remove()
+        setTradeWindow(false)
     }
     const renderMyTrades = myTrades.map((trade) => {
-        return <TradeRequest TradeRequest={setTradeWindow} setTradeWindow={setTradeWindow} trade={trade} allGames={allGames} allUsers={allUsers} myTrades={myTrades} handleAccept={handleAccept}/>
+        return <TradeRequest handleDeny={handleDeny} TradeRequest={setTradeWindow} setTradeWindow={setTradeWindow} trade={trade} allGames={allGames} allUsers={allUsers} myTrades={myTrades} handleAccept={handleAccept}/>
     })
     console.log(renderMyTrades)
     function renderTradesAndEmpty() {
