@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import NavBar from "./NavBar";
+import NavBar from "./NavBar"; 
 import { Link, useNavigate } from "react-router-dom";
 
 function HomePage({currentUser, setCurrentUser, isLoggedIn}) {

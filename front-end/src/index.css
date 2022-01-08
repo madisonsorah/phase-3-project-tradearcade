@@ -1,13 +1,7 @@
 body {
   margin: 0;
   background-color: #410099;
-  color: #fff;
-  font-family: OCR A Std, monospace;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: Menlo, Monaco, 'Courier New', monospace;
 }
 
 .mainNavDiv {
@@ -17,7 +11,20 @@ code {
   padding-top: 10px;
   padding-bottom: 60px;
   width: 1442px;
-  background-color: #000;
+  background-color: #fff;
+}
+
+.navLogoDiv {
+  position: absolute;
+  float: left;
+  padding-top: 10px;
+  padding-left: 20px;
+  text-align: center;
+}
+
+.navLogo {
+  width: 145px;
+  height: 53px;
 }
 
 .navBarUl {
@@ -28,19 +35,14 @@ code {
   list-style-type: none;
   font-size: medium;
   font-weight: 700;
-  color: #fff;
-}
-
-.navBarLi {
-  display: inline;
-  padding: 10px;
+  color: #410099;
 }
 
 .navBarLink {
   display: inline;
   padding: 10px;
   text-decoration: none;
-  color: #fff;
+  color: #410099;
 }
 
 .homePageDiv {
