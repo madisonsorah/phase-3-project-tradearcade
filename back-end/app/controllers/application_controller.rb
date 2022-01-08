@@ -69,6 +69,11 @@ class ApplicationController < Sinatra::Base
         trade = Trade.create(params)
     end
 
+    delete '/trades/:id' do
+        Trade.find(params[:id]).destroy
+    end
+
+
     get '/ownerships/:id' do
         Ownership.find(params[:id]).to_json
     end

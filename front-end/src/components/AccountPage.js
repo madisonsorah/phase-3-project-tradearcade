@@ -63,9 +63,17 @@ function AccountPage({isLoggedIn, currentUser, allTrades, allGames, allUsers}) {
     function handleTrade(game) {
         const selectedOwnership = ownerships.find(o => o.game_id == game.id && o.user_id == requester.id)
         const requesterOwnership = ownerships.find(o => o.game_id == selectedTradeOffer.id && o.user_id == currentUser.id)
+        const selectedTrade = myTrades.find(t => t.requesterID == selectedOwnership.user_id && t.approverID == requesterOwnership.user_id)
         console.log(selectedOwnership)
         console.log(`requesterID=${RequesterID}`)
-        console.log(RequesterID)
+        // console.log(RequesterID)
+        console.log("here")
+        console.log(myTrades)
+        console.log(requesterOwnership.user_id)
+        console.log(selectedOwnership.user_id)
+        console.log("^")
+        
+        console.log(selectedTrade)
        const data = {
             id: selectedOwnership.id,
             game_id: selectedOwnership.game_id,
@@ -92,6 +100,9 @@ function AccountPage({isLoggedIn, currentUser, allTrades, allGames, allUsers}) {
             },
             body: JSON.stringify(data2),
         };
+        const configDelete = {
+            method: "DELETE",
+        };
         fetch(`http://localhost:9292/ownerships/${selectedOwnership.id}`, config)
         .then(resp => resp.json())
         .then(data => console.log(data))
@@ -99,11 +110,11 @@ function AccountPage({isLoggedIn, currentUser, allTrades, allGames, allUsers}) {
         fetch(`http://localhost:9292/ownerships/${requesterOwnership.id}`, config2)
         .then(resp => resp.json())
         .then(data2 => console.log(data2)))
-        // .then(
-
-        // )
+        fetch(`http://localhost:9292/trades/${selectedTrade.id}`, configDelete)
+        
     }
     function handleAccept(game, trade, requester) {
+        console.log(myTrades)
         setSelectedTradeOffer(game)
         console.log(selectedTradeOffer)
         console.log(trade)
