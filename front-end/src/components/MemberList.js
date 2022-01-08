@@ -10,7 +10,7 @@ function MemberList({isLoggedIn}) {
         fetch(`http://localhost:9292/users`)
         .then((response) => response.json())
         .then((userData) => setUsers(userData))
-    })
+    },[])
     
     const renderMembers = searchedUsers().map((user) => (
         <div>
