@@ -123,11 +123,11 @@ function AccountPage({isLoggedIn, currentUser, allTrades, allGames, allUsers, se
         console.log(myTrades)
 
         
-            setTimeout(fetch("http://localhost:9292/trades")
-            .then(resp => resp.json())
-            .then(trades => setAllTrades(trades))
-            .then(setMyTrades(myTradesPreset))
-            .then(console.log(myTrades)),1000)
+            // setTimeout(fetch("http://localhost:9292/trades")
+            // .then(resp => resp.json())
+            // .then(trades => setAllTrades(trades))
+            // .then(setMyTrades(myTradesPreset))
+            // .then(console.log(myTrades)),1000)
 
 
         // const ele = document.querySelector('.gameDiv + .gameDiv')
@@ -160,7 +160,18 @@ function AccountPage({isLoggedIn, currentUser, allTrades, allGames, allUsers, se
     const renderMyTrades = myTrades.map((trade) => {
         return <TradeRequest TradeRequest={setTradeWindow} setTradeWindow={setTradeWindow} trade={trade} allGames={allGames} allUsers={allUsers} myTrades={myTrades} handleAccept={handleAccept}/>
     })
-    
+    console.log(renderMyTrades)
+    function renderTradesAndEmpty() {
+        if (renderMyTrades == false) {
+            return <h2>You do not currently have any trade requests!</h2>
+        } else {
+            return renderMyTrades
+        }
+    }
+    function handleLogout() {
+        setCurrentUser(false)
+        this.reload()
+    }
     return (
         <div>
             <NavBar isLoggedIn={isLoggedIn}/>
@@ -169,7 +180,7 @@ function AccountPage({isLoggedIn, currentUser, allTrades, allGames, allUsers, se
                 <div>
                     <h1 className="accountPageH1">Game Requests</h1>
                     {tradeWindow ? <TradeWindow myGames={myGames} setTradeWindow={setTradeWindow} handleTrade={handleTrade}/> : console.log("noTradeWindow")}
-                    {renderMyTrades}
+                    {renderTradesAndEmpty()}
                 </div>
                 <h1 className="accountPageH1">Menu</h1>
                 <div className="accountPageMenu">
@@ -178,7 +189,7 @@ function AccountPage({isLoggedIn, currentUser, allTrades, allGames, allUsers, se
                         <Link to="/tradehistory" className="accountPageLink">Game Trade History</Link>
                         <Link to="/gamereviews" className="accountPageLink">Game Reviews</Link>
                         <Link to="/gamewishlist" className="accountPageLink">Game Wishlist</Link>
-                        <Link to="/login"className="accountPageLogout" onClick={() => setCurrentUser(false)}>Logout</Link>
+                        <Link to="/login"className="accountPageLogout" onClick={() => handleLogout()}>Logout</Link>
                     </ul>
                 </div>
             </div>
