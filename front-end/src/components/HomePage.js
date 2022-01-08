@@ -55,7 +55,7 @@ function HomePage({currentUser, setCurrentUser, isLoggedIn}) {
         <div>
             <NavBar isLoggedIn={isLoggedIn} />
             <div className="homePageDiv">
-                <h1>Welcome to TradeArcade</h1>
+                <h1 className="homePageWelcome">Welcome to TradeArcade</h1>
                 <p className="homePageP">Sign up to trade games with thousands of community members.</p>
                 <div className="homePageFloatContainer">
                     <div className="homePageFloatLeft">

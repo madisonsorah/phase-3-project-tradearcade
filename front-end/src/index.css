@@ -10,7 +10,7 @@ body {
    z-index: 100;
   padding-top: 10px;
   padding-bottom: 60px;
-  width: 1442px;
+  width: 100%;
   background-color: #000;
   box-shadow: 0 2px 4px 0 #290060;
 }
@@ -61,7 +61,7 @@ body {
   position: absolute;
   display: inline;
   float: right;
-  left: 73%;
+  left: 95%;
   top: 26%;
   padding: 10px;
   font-size: 14px;
@@ -118,12 +118,15 @@ body {
 }
 
 .homePageDiv {
-  margin: auto;
+  padding-top: 100px;
+  height: 695px;
   text-align: center;
-  padding-top: 115px;
-  height: 725px;
   color: #fff;
   background-color: #410099;
+}
+
+.homePageWelcome {
+  text-align: center;
 }
 
 .homePageP {
@@ -132,13 +135,14 @@ body {
 
 .homePageFloatContainer {
   margin: auto;
-  position: absolute;
+  width: 800px;
+  height: 600px;
 }
 
 .homePageFloatLeft {
   float: left;
   margin-top: 25px;
-  width: 50%;
+  width: 400px;
 } 
 
 .homePageMachineImage {
@@ -149,7 +153,7 @@ body {
 .homePageFloatRight {
   float: right;
   margin-top: 25px;
-  width: 50%;
+  width: 400px;
 } 
 
 .homePageForm {
@@ -157,11 +161,14 @@ body {
 }
 
 .homePageFormInput {
-  width: 77%;
+  width: 85%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
-  border: 1px solid #ccc;
+  font-family: Menlo, Monaco, 'Courier New', monospace;
+  color: #fff;
+  border: 1px solid #000;
+  background-color: #000;
   border-radius: 4px;
   box-sizing: border-box;
 }
@@ -170,10 +177,12 @@ body {
  margin-top: 10px;
  margin-bottom: 10px;
  padding: 10px;
+ font-family: Menlo, Monaco, 'Courier New', monospace;
  font-size: medium;
  font-weight: 700;
  background-color: #000;
  color: #fff;
+ border-style:none;
 }
 
 .homePageLogin {
@@ -184,7 +193,7 @@ body {
 .homePageFooter {
   background-color: #000;
   color: #410099;
-  height: 400px;
+  height: 410px;
   box-shadow: 0 -3px 3px 0 #290060;
 }
 
@@ -192,6 +201,7 @@ body {
   position: absolute;
   margin-top: 5px;
   float: left;
+  left: 5%;
   list-style-type: none;
   height: 280px;
 }
@@ -202,9 +212,9 @@ body {
 
 .homePageNewGamesLi {
   display: inline-block;
-  margin-top: 10px;
-  margin-right: 10px;
-  margin-bottom: 10px;
+  margin: 20px;
+  background-color: #290060;
+  color: #fff;
 }
 
 .homePageNewGamesTitle {
