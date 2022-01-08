@@ -139,7 +139,6 @@ body {
   float: left;
   margin-top: 25px;
   width: 50%;
-  background-color: #000;
 } 
 
 .homePageMachineImage {
@@ -183,7 +182,7 @@ body {
 }
 
 .homePageFooter {
-  background-color: #fff;
+  background-color: #000;
   color: #410099;
   height: 400px;
   box-shadow: 0 -3px 3px 0 #290060;
