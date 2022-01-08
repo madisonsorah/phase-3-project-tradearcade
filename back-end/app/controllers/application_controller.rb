@@ -69,6 +69,25 @@ class ApplicationController < Sinatra::Base
         trade = Trade.create(params)
     end
 
+    get '/ownerships/:id' do
+        Ownership.find(params[:id]).to_json
+    end
+
+    patch '/ownerships/:id' do
+       ownership = Ownership.find(params[:id])
+       ownership.update(params)
+       ownership.to_json
+    end
+
+    get '/ownerships/users/:user_id' do
+        Ownership.all.where(user_id: "#{[:user_id]}").to_json
+    end
+
+    patch '/users/:id/games' do
+       user = User.find(params[:id])
+       user.games.update({})
+    end
+
     post "/users" do
         user = User.create({first_name:params[:first_name], last_name:params[:last_name], username:params[:username], email:params[:email], password:params[:password]})
         user.to_json
