@@ -61,8 +61,12 @@ function AccountPage({isLoggedIn, currentUser, allTrades, allGames, allUsers}) {
         .then(ownerships => setOwnerships(ownerships))
     },[])
     function handleTrade(game) {
+        console.log(game)
+        console.log(requester)
         const selectedOwnership = ownerships.find(o => o.game_id == game.id && o.user_id == requester.id)
+        console.log(selectedOwnership)
         const requesterOwnership = ownerships.find(o => o.game_id == selectedTradeOffer.id && o.user_id == currentUser.id)
+        console.log(requesterOwnership)
         const selectedTrade = myTrades.find(t => t.requesterID == selectedOwnership.user_id && t.approverID == requesterOwnership.user_id)
         console.log(selectedOwnership)
         console.log(`requesterID=${RequesterID}`)
@@ -111,8 +115,13 @@ function AccountPage({isLoggedIn, currentUser, allTrades, allGames, allUsers}) {
         .then(resp => resp.json())
         .then(data2 => console.log(data2)))
         fetch(`http://localhost:9292/trades/${selectedTrade.id}`, configDelete)
-        
+
+        // const ele = document.querySelector('.gameDiv + .gameDiv')
+        // ele.remove()
+        setTradeWindow(false)
+        // document.querySelector(`#${selectedTrade.id}`).remove()
     }
+
     function handleAccept(game, trade, requester) {
         console.log(myTrades)
         setSelectedTradeOffer(game)

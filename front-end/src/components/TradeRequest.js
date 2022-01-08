@@ -7,7 +7,7 @@ function TradeRequest({trade, allUsers, myTrades, allGames, tradeWindow, setTrad
     const requester = allUsers.find(u => u.id == trade.requesterID)
     
     return (
-        <div className="gameDiv"> 
+        <div className="gameDiv" id={`${trade.id}`}> 
             <img className="gameImage" src={game.image}></img>
             <Link to={`/games/${game.id}`}>{game.title}</Link>
             <p>{game.platform}</p>
