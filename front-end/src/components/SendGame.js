@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import NavBar from "./NavBar";
 
 function SendGame({isLoggedIn, currentUser}) {
+    const [isSubmitted, setSubmitted] = useState(false)
     const [gameTitle, setGameTitle] = useState()
     const [gamePlatform, setGamePlatform] = useState()
     const [gameImageURL, setGameImageURL] = useState()
@@ -12,7 +13,7 @@ function SendGame({isLoggedIn, currentUser}) {
     // score: gameScore,
     // review: gameReview,
     console.log(currentUser)
-    
+
     let data = {
         title: gameTitle,
         platform: gamePlatform,
@@ -35,9 +36,30 @@ function SendGame({isLoggedIn, currentUser}) {
         fetch("http://localhost:9292/games", config)
             .then((resp) => resp.json())
             .then((game) => console.log(game))
+        
+        setSubmitted((isSubmitted) => !isSubmitted);
       }
-    
-    return (
+
+    if (isSubmitted) {
+        return (
+            <div>
+                <NavBar isLoggedIn={isLoggedIn}/>
+                <div className="sendGameDiv">
+                    <div className="sendGameFormDiv">
+                        <form><p className="sendGameFormEnterAddress">Enter Your Game Details</p>
+                            <input onChange={(e) => setGameTitle(e.target.value)} className="sendGameFormInput" placeholder="Game title"></input>
+                            <input onChange={(e) => setGamePlatform(e.target.value)} className="sendGameFormInput" placeholder="Game Platform"></input>
+                            <input onChange={(e) => setGameImageURL(e.target.value)} className="sendGameFormInput" placeholder="Image URL"></input>
+                            <input onChange={(e) => setGameDescription(e.target.value)} className="sendGameFormInput" placeholder="Game Description"></input>
+                            <button onClick={(e) => createGame(e)} className="sendGameFormButton">LIST GAME</button>
+                            <p className="sendGameFormFreeLabel">Game listed!</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        )
+   } else {
+       return (
         <div>
             <NavBar isLoggedIn={isLoggedIn}/>
             <div className="sendGameDiv">
@@ -47,15 +69,12 @@ function SendGame({isLoggedIn, currentUser}) {
                         <input onChange={(e) => setGamePlatform(e.target.value)} className="sendGameFormInput" placeholder="Game Platform"></input>
                         <input onChange={(e) => setGameImageURL(e.target.value)} className="sendGameFormInput" placeholder="Image URL"></input>
                         <input onChange={(e) => setGameDescription(e.target.value)} className="sendGameFormInput" placeholder="Game Description"></input>
-                        {/* <input className="sendGameFormInput" placeholder="Add game rating (optional)"></input>
-                        <input className="sendGameFormInput" placeholder="Add a Review (optional)"></input> */}
                         <button onClick={(e) => createGame(e)} className="sendGameFormButton">LIST GAME</button>
                     </form>
-                    <p className="sendGameFormFreeLabel">Game listed!</p>
                 </div>
             </div>
         </div>
-    )
+       )}
 }
 
 export default SendGame;

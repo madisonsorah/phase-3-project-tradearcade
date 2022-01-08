@@ -10,10 +10,21 @@ function Reviews({isLoggedIn, currentUser}) {
         .then((reviewData) => setReviews(reviewData))
     }, [])
 
+    function handleDelete(id) {
+        let updatedReviewList = reviewsList.filter((review) => review.id !== id)
+        setReviews(updatedReviewList);
+        const config = {
+          method: "DELETE",
+        }
+        fetch(`http://localhost:9292/reviews/${id}`, config)
+      };
+
+
     const renderReviews = reviewsList.map((review) => (
         <div>
             <p className="reviewsP">{review.game.title}</p>
             <p>"{review.review}" - Rating: {review.score} / 10</p>
+            <button onClick={() => handleDelete(review.id)}>Delete Review</button>
         </div>
         ))
 

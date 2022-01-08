@@ -37,6 +37,10 @@ class ApplicationController < Sinatra::Base
         Review.all.to_json(:include => [:game, :user])
     end
 
+    delete '/reviews/:id' do
+        Review.destroy(params[:id])
+    end
+
     post '/reviews' do
         user = User.find(params[:user_id])
         game = Game.find(params[:game_id])
