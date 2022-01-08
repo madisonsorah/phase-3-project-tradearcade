@@ -26,12 +26,13 @@ function AccountPage({isLoggedIn, currentUser, allTrades, allGames, allUsers}) {
     const [myGames, setMyGames] = useState([])
     const [selectedTradeOffer, setSelectedTradeOffer] = useState()
     const [RequesterID, setRequesterID] = useState()
+    const [requester, setRequester] = useState()
     // const [myGames, setMyGames] = useState([])
-    useEffect(() => {
-        fetch(`http://localhost:9292/users/${currentUser.id}/games`)
-        .then(resp => resp.json())
-        .then(myGames => setMyGames(myGames))
-    },[])
+    // useEffect(() => {
+    //     fetch(`http://localhost:9292/users/${currentUser.id}/games`)
+    //     .then(resp => resp.json())
+    //     .then(myGames => setMyGames(myGames))
+    // },[])
 
     console.log(myGames)
 // setMyGames
@@ -60,14 +61,20 @@ function AccountPage({isLoggedIn, currentUser, allTrades, allGames, allUsers}) {
         .then(ownerships => setOwnerships(ownerships))
     },[])
     function handleTrade(game) {
-        const selectedOwnership = ownerships.find(o => o.game_id == game.id && o.user_id == currentUser.id)
+        const selectedOwnership = ownerships.find(o => o.game_id == game.id && o.user_id == requester.id)
+        const requesterOwnership = ownerships.find(o => o.game_id == selectedTradeOffer.id && o.user_id == currentUser.id)
         console.log(selectedOwnership)
         console.log(`requesterID=${RequesterID}`)
         console.log(RequesterID)
        const data = {
             id: selectedOwnership.id,
             game_id: selectedOwnership.game_id,
-            user_id: RequesterID
+            user_id: currentUser.id
+        }
+        const data2 = {
+            id: requesterOwnership.id,
+            game_id: requesterOwnership.game_id,
+            user_id: requester.id
         }
         const config = {
             method: "PATCH",
@@ -77,16 +84,42 @@ function AccountPage({isLoggedIn, currentUser, allTrades, allGames, allUsers}) {
             },
             body: JSON.stringify(data),
         };
+        const config2 = {
+            method: "PATCH",
+            headers: {
+                "Content-type": "application/json",
+                Accepts: "application/json",
+            },
+            body: JSON.stringify(data2),
+        };
         fetch(`http://localhost:9292/ownerships/${selectedOwnership.id}`, config)
         .then(resp => resp.json())
         .then(data => console.log(data))
+        .then(
+        fetch(`http://localhost:9292/ownerships/${requesterOwnership.id}`, config2)
+        .then(resp => resp.json())
+        .then(data2 => console.log(data2)))
+        // .then(
+
+        // )
     }
     function handleAccept(game, trade, requester) {
-        setTradeWindow(true)
         setSelectedTradeOffer(game)
+        console.log(selectedTradeOffer)
         console.log(trade)
         // console.log(requester)
         setRequesterID(requester.id)
+        setRequester(requester)
+        
+        fetch(`http://localhost:9292/users/${requester.id}/games`)
+        .then(resp => resp.json())
+        .then(myGames => setMyGames(myGames))
+        .then(setTradeWindow(true))
+
+        // setTimeout(setTradeWindow(true),100)
+
+        console.log(requester)
+        
     }
     const renderMyTrades = myTrades.map((trade) => {
         return <TradeRequest TradeRequest={setTradeWindow} setTradeWindow={setTradeWindow} trade={trade} allGames={allGames} allUsers={allUsers} myTrades={myTrades} handleAccept={handleAccept}/>
