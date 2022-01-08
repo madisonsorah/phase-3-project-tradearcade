@@ -51,7 +51,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage currentUser={currentUser} setCurrentUser={setCurrentUser} isLoggedIn={isLoggedIn}/>} />
-          <Route path="/account" element={<AccountPage isLoggedIn={isLoggedIn} currentUser={currentUser} allUsers={allUsers} allGames={allGames} allTrades={allTrades}/>} />
+          <Route path="/account" element={<AccountPage isLoggedIn={isLoggedIn} setCurrentUser={setCurrentUser} currentUser={currentUser} allUsers={allUsers} allGames={allGames} allTrades={allTrades} setAllTrades={setAllTrades}/>} />
           <Route path="/login" element={<LoginPage currentUser={currentUser} setCurrentUser={setCurrentUser} isLoggedIn={isLoggedIn}/>} />
           <Route path="/browsegames" element={<BrowseGames isLoggedIn={isLoggedIn}/>} />
           <Route path="/games/:id" element={<GamePage isLoggedIn={isLoggedIn} currentUser={currentUser}/>} />

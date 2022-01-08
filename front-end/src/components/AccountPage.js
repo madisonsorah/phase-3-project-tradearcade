@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import TradeRequest from "./TradeRequest";
 import TradeWindow from "./TradeWindow";
 
-function AccountPage({isLoggedIn, currentUser, allTrades, allGames, allUsers}) {
+function AccountPage({isLoggedIn, currentUser, allTrades, allGames, allUsers, setAllTrades, setCurrentUser}) {
     // const [allTrades, setAllTrades] = useState([])
     // const [allGames, setAllGames] = useState([])
     // const [allUsers, setAllUSers] = useState([])
@@ -44,12 +44,14 @@ function AccountPage({isLoggedIn, currentUser, allTrades, allGames, allUsers}) {
 
     const [tradeWindow, setTradeWindow] = useState(false)
     const [ownerships, setOwnerships] = useState([])
+    const [myTrades, setMyTrades] = useState([])
 
     
-    const myTrades = allTrades.filter(t => t.approverID == currentUser.id)
+    const myTradesPreset = allTrades.filter(t => t.approverID == currentUser.id)
+     useEffect(() => {setMyTrades(myTradesPreset)},[])
     // console.log(myTrades)
     // console.log(allUsers)
-    // console.log(M)
+    // console.log(M)   
     // const tradeUsers = allUsers.filter(u => u.id == )
     // console.log(tradeUsers)
     // const myTradeGamesID = myTrades.map(t => t.approver_gameID)
@@ -115,11 +117,25 @@ function AccountPage({isLoggedIn, currentUser, allTrades, allGames, allUsers}) {
         .then(resp => resp.json())
         .then(data2 => console.log(data2)))
         fetch(`http://localhost:9292/trades/${selectedTrade.id}`, configDelete)
+        .then(resp => resp.json())
+        .then(trades => setMyTrades(trades))
+
+        console.log(myTrades)
+
+        
+            setTimeout(fetch("http://localhost:9292/trades")
+            .then(resp => resp.json())
+            .then(trades => setAllTrades(trades))
+            .then(setMyTrades(myTradesPreset))
+            .then(console.log(myTrades)),1000)
+
 
         // const ele = document.querySelector('.gameDiv + .gameDiv')
         // ele.remove()
         setTradeWindow(false)
         // document.querySelector(`#${selectedTrade.id}`).remove()
+        // const gamediv = selectedTrade.id
+        // document.querySelector(`#${gamediv}`).remove()
     }
 
     function handleAccept(game, trade, requester) {
@@ -144,6 +160,7 @@ function AccountPage({isLoggedIn, currentUser, allTrades, allGames, allUsers}) {
     const renderMyTrades = myTrades.map((trade) => {
         return <TradeRequest TradeRequest={setTradeWindow} setTradeWindow={setTradeWindow} trade={trade} allGames={allGames} allUsers={allUsers} myTrades={myTrades} handleAccept={handleAccept}/>
     })
+    
     return (
         <div>
             <NavBar isLoggedIn={isLoggedIn}/>
@@ -160,7 +177,8 @@ function AccountPage({isLoggedIn, currentUser, allTrades, allGames, allUsers}) {
                         <Link to="/tradegame" className="accountPageLink">Trade in a Game</Link>
                         <Link to="/tradehistory" className="accountPageLink">Game Trade History</Link>
                         <Link to="/gamereviews" className="accountPageLink">Game Reviews</Link>
-                        <p className="accountPageLogout">Logout</p>
+                        <Link to="/gamewishlist" className="accountPageLink">Game Wishlist</Link>
+                        <Link to="/login"className="accountPageLogout" onClick={() => setCurrentUser(false)}>Logout</Link>
                     </ul>
                 </div>
             </div>

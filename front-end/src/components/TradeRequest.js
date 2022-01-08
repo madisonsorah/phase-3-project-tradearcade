@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 
-function TradeRequest({trade, allUsers, myTrades, allGames, tradeWindow, setTradeWindow, handleAccept}) {
+function TradeRequest({trade, allUsers, myTrades, allGames, tradeWindow, setTradeWindow, handleAccept, forceUpdate}) {
     console.log(trade.id)
     const game = allGames.find(g => g.id == trade.approver_gameID)
     const requester = allUsers.find(u => u.id == trade.requesterID)
