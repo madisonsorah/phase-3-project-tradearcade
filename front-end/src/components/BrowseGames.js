@@ -8,6 +8,7 @@ function BrowseGames({isLoggedIn}) {
     const [allUsers, setAllUsers] = useState([])
     const [displayedGame, setDisplayedGame] = useState(false)
     const [search, setSearch] = useState("")
+    const [platformFilter, setPlatformFilter] = useState("All")
 
     useEffect(() => {
         fetch('http://localhost:9292/games')
@@ -33,7 +34,15 @@ function BrowseGames({isLoggedIn}) {
         }
     }
 
-    const renderedGames = searchedGames().map((game) => (
+    function platformFilterGames() {
+        if(platformFilter == "All") {
+            return searchedGames()
+        } else {
+            return searchedGames().filter(g => g.platform == platformFilter )
+        }
+    }
+
+    const renderedGames = platformFilterGames().map((game) => (
         <Game game={ game } handleGameClick={handleGameClick}/>
     ))
 
@@ -41,6 +50,16 @@ function BrowseGames({isLoggedIn}) {
         <div className="browseGamesDiv">
             <NavBar isLoggedIn={isLoggedIn}/>
             <input value={search} placeholder="Search for Games" onChange={(e) => setSearch(e.target.value)}></input>
+            <div>
+                {/* You can delete the label below if you want */}
+                <label>Choose a Platform:</label> 
+                <select name="platforms" onChange={(e) => setPlatformFilter(e.target.value)}>
+                    <option value="All">All</option>
+                    <option value="Nintendo Switch">Nintendo Switch</option>
+                    <option value="PlayStation 4">PlayStation 4</option>
+                    <option value="Xbox Series X">Xbox Series X</option>
+                </select>
+            </div>
             <div>
                {displayedGame ? <GamePage isLoggedIn={isLoggedIn} displayedGame={displayedGame} setDisplayedGame={setDisplayedGame} allUsers={allUsers} /> : renderedGames }
             </div>
