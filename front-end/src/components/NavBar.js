@@ -6,16 +6,16 @@ import { Link } from "react-router-dom";
 function NavBar({currentUser, setCurrentUser, isLoggedIn}) {
     return (
         <div className="mainNavDiv">
-            <div className="navImgDiv">
-                <Link to= "/" className="navBarLink">
-                    <img alt="TradeArcade Logo" className="navLogo" src={tradearcadelogo}></img>
-                </Link>
-            </div>
+            <div className="navLogoDiv">
+                    <Link to= "/" className="navBarLink">
+                        <img alt="TradeArcade Logo" className="navLogo" src={tradearcadelogo}></img>
+                    </Link>
+                </div>
             <ul className="navBarUl">
-                <Link to="/browsegames" className="navBarLink">Browse Games</Link>
-                <Link to="/members" className="navBarLink">Member List</Link>
-                {isLoggedIn()}
+                <Link to="/browsegames" className="navBarLink">BROWSE GAMES</Link>
+                <Link to="/members" className="navBarLink">MEMBER LIST</Link>
             </ul>
+            {isLoggedIn()}
         </div>
     )
 }

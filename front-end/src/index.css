@@ -12,14 +12,13 @@ body {
   padding-bottom: 60px;
   width: 1442px;
   background-color: #fff;
+  box-shadow: 0 2px 4px 0 #290060;
 }
 
 .navLogoDiv {
   position: absolute;
   float: left;
-  padding-top: 10px;
-  padding-left: 20px;
-  text-align: center;
+  padding-left: 10px;
 }
 
 .navLogo {
@@ -29,9 +28,7 @@ body {
 
 .navBarUl {
   position: absolute;
-  white-space: nowrap;
-  overflow: hidden;
-  float: left;
+  left: 10%;
   list-style-type: none;
   font-size: medium;
   font-weight: 700;
@@ -41,8 +38,45 @@ body {
 .navBarLink {
   display: inline;
   padding: 10px;
+  font-size: 14px;
+  font-weight: 700;
   text-decoration: none;
   color: #410099;
+}
+
+.navBarLoginLink {
+  position: absolute;
+  display: inline;
+  float: right;
+  left: 73%;
+  top: 26%;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  color: #410099;
+}
+
+.navBarAccountLink {
+  display: inline;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  color: #410099;
+}
+
+.navBarLink:visited {
+  display: inline;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  color: #410099;
+}
+
+.navBarLink:hover {
+  color: #290060;
 }
 
 .homePageDiv {
