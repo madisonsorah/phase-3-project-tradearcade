@@ -74,7 +74,7 @@ body {
   position: absolute;
   display: inline;
   float: right;
-  left: 95%;
+  left: 94%;
   top: 26%;
   padding: 10px;
   font-size: 14px;
@@ -104,7 +104,7 @@ body {
   position: absolute;
   display: inline;
   float: right;
-  left: 95%;
+  left: 94%;
   top: 26%;
   padding: 10px;
   font-size: 14px;
@@ -247,7 +247,7 @@ body {
 .loginPageDiv {
   margin: auto;
   text-align: center;
-  padding-top: 150px;
+  padding-top: 100px;
   padding-bottom: 70px;
 }
 
@@ -316,18 +316,18 @@ body {
   margin-top: 150px;
   width: 800px;
   height: 545px;
+  color: #fff;
 }
 
 .accountPageH1 {
   width: 800px;
   padding-bottom: 20px;
-  border-bottom: 0.09rem solid #000;
+  border-bottom: 0.09rem solid #fff;
 }
 
 .accountPageMenu {
   text-align: center; 
   margin: 0 20px 0 0;
-  background-color: rgb(240, 240, 240);
   padding: 30px;
   margin-right: 60px;
   margin-left: 90px;
@@ -347,7 +347,7 @@ body {
   padding: 10px;
   padding-left: 10px;
   padding-right: 10px;
-  color: #000;
+  color: #fff;
   font-size: x-large;
   text-decoration: none;
   box-sizing: border-box;
@@ -358,7 +358,9 @@ body {
 }
 
 .accountPageLogout {
-  color: #000;
+  color: #fff;
+  padding: 10px;
+  display: block;
   font-size: x-large;
   text-decoration: none;
 }
@@ -371,6 +373,8 @@ body {
     margin: auto;
     padding-top: 120px;
     padding-bottom: 70px;
+    text-align: center;
+    color: #fff;
 }
 
 .sendGameFormDiv {
@@ -378,12 +382,17 @@ body {
   width: 400px;
   height: 355px;
   border-radius: 5px;
-  background-color: #fff;
   padding: 5px;
 }
 
-.sendGameFormEnterAddress {
+.homePageForm {
+  margin-top: 45px;
+}
+
+.sendGameFormEnterGameDetails {
+  color: #fff;
   font-weight: 700;
+  font-family: Menlo, Monaco, 'Courier New', monospace;
 }
 
 .sendGameFormInput {
@@ -391,7 +400,10 @@ body {
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
-  border: 1px solid #ccc;
+  font-family: Menlo, Monaco, 'Courier New', monospace;
+  color: #fff;
+  border: 1px solid #000;
+  background-color: #000;
   border-radius: 4px;
   box-sizing: border-box;
 }
@@ -399,14 +411,18 @@ body {
 .sendGameFormFreeLabel {
   text-align: center;
   font-size: medium;
+  font-family: Menlo, Monaco, 'Courier New', monospace;
 }
 
 .sendGameFormButton {
-  margin-left: 145px;
   font-weight: 700;
   padding: 10px;
+  font-family: Menlo, Monaco, 'Courier New', monospace;
+  font-size: medium;
+  font-weight: 700;
   background-color: #000;
   color: #fff;
+  border-style:none;
 }
 
 .tradeHistoryDiv {
