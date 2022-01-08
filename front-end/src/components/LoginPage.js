@@ -31,7 +31,6 @@ function LoginPage({currentUser, setCurrentUser, isLoggedIn}) {
             console.log("Logged In!")
             setCurrentUser(validEmails[0])
             navigate("/account", { replace: true });
-            
         }else {
             console.log("Incorrect Credentials!")
         }
