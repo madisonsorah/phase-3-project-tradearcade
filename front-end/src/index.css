@@ -58,7 +58,11 @@ body {
 }
 
 .navBarAccountLink {
+  position: absolute;
   display: inline;
+  float: right;
+  left: 73%;
+  top: 26%;
   padding: 10px;
   font-size: 14px;
   font-weight: 700;
