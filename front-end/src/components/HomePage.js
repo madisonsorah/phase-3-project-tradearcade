@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import NavBar from "./NavBar"; 
 import { Link, useNavigate } from "react-router-dom";
+import tradearcademachine from "../images/tradearcademachine.png"
 
 function HomePage({currentUser, setCurrentUser, isLoggedIn}) {
     const userData = "http://localhost:9292/users"
@@ -56,20 +57,54 @@ function HomePage({currentUser, setCurrentUser, isLoggedIn}) {
             <div className="homePageDiv">
                 <h1>Welcome to TradeArcade</h1>
                 <p className="homePageP">Sign up to trade games with thousands of community members.</p>
-                <div className="homePageFormDiv">
-                    <form>
-                        <input className="homePageFormInput" placeholder="First Name" onChange={(e) => setFirstName(e.target.value)}></input>
-                        <input className="homePageFormInput" placeholder="Last Name" onChange={(e) => setLastName(e.target.value)}></input>
-                        <input className="homePageFormInput" placeholder="Username" onChange={(e) => setUsername(e.target.value)}></input>
-                        <input className="homePageFormInput" placeholder="Email" onChange={(e) => setEmail(e.target.value)}></input>
-                        <input className="homePageFormInput" placeholder="Password" onChange={(e) => setPassword(e.target.value)}></input>
-                        <button className="homePageFormButton" onClick={(e) => createAccount(e)}>Create Account</button>
-                    </form>
-                </div>
-                <div>
-                    <p>Already have an account? <Link to="/login" className="homePageLogin">Login</Link></p>
+                <div className="homePageFloatContainer">
+                    <div className="homePageFloatLeft">
+                        <img className="homePageMachineImage" src={tradearcademachine}></img>
+                    </div>
+                    <div className="homePageFloatRight">
+                        <form className="homePageForm">
+                            <input className="homePageFormInput" placeholder="First Name" onChange={(e) => setFirstName(e.target.value)}></input>
+                            <input className="homePageFormInput" placeholder="Last Name" onChange={(e) => setLastName(e.target.value)}></input>
+                            <input className="homePageFormInput" placeholder="Username" onChange={(e) => setUsername(e.target.value)}></input>
+                            <input className="homePageFormInput" placeholder="Email" onChange={(e) => setEmail(e.target.value)}></input>
+                            <input className="homePageFormInput" placeholder="Password" onChange={(e) => setPassword(e.target.value)}></input>
+                            <button className="homePageFormButton" onClick={(e) => createAccount(e)}>Create Account</button>
+                        </form>
+                    </div>
+                    <div>
+                        <p>Already have an account? <Link to="/login" className="homePageLogin">Login</Link></p>
+                    </div>
                 </div>
             </div>
+            <div className="homePageFooter">
+                    <ul className="homePageNewGamesUl">
+                        <h2 className="homePageNewGamesH2">Newly Listed Games</h2>
+                        <li className="homePageNewGamesLi">
+                            <Link to="/browsegames">
+                                <img className= "homePageNewGamesImage" src="https://media.gamestop.com/i/gamestop/10177032/FINAL-FANTASY-VII-Remake---PlayStation-4?$pdp2x$" alt="FFVII"></img>
+                            </Link>
+                            <p className="homePageNewGamesTitle">FINAL FANTASY VII Remake</p>
+                        </li>
+                        <li className="homePageNewGamesLi">
+                            <Link to="/browsegames">
+                                <img className= "homePageNewGamesImage" src="https://media.gamestop.com/i/gamestop/11108375/Halo-Infinite---Xbox-Series-X?$pdp2x$" alt="Halo"></img>
+                            </Link>
+                            <p className="homePageNewGamesTitle">Halo Infinite</p>
+                        </li>
+                        <li className="homePageNewGamesLi">
+                            <Link to="/browsegames">
+                                <img className= "homePageNewGamesImage" src="https://media.gamestop.com/i/gamestop/11120692/Pokemon-Brilliant-Diamond---Nintendo-Switch?$pdp2x$" alt="Pokemon"></img>
+                            </Link>
+                            <p className="homePageNewGamesTitle">Pokemon Brilliant Diamond</p>
+                        </li>
+                        <li className="homePageNewGamesLi">
+                            <Link to="/browsegames">
+                                <img className= "homePageZeldaImage" src="https://media.gamestop.com/i/gamestop/10141904/The-Legend-of-Zelda-Breath-of-the-Wild---Nintendo-Switch?$pdp2x$" alt="Zelda"></img>
+                            </Link>
+                            <p className="homePageNewGamesTitle">The Legend of Zelda: Breath of the Wild</p>
+                        </li>
+                    </ul>
+                </div>
         </div>
     )
 }
