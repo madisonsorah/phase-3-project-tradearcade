@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import NavBar from "./NavBar"
 import { Link, useNavigate } from "react-router-dom";
 import { findDOMNode } from "react-dom";
+import tradearcadeinvader from "../images/tradearcadeinvader.png"
 
 function LoginPage({currentUser, setCurrentUser, isLoggedIn}) {
     const [email, setEmail] = useState()
@@ -40,7 +41,8 @@ function LoginPage({currentUser, setCurrentUser, isLoggedIn}) {
         <div>
             <NavBar isLoggedIn={isLoggedIn}/>
             <div className="loginPageDiv">
-                <h1>Welcome back!</h1>
+                <h1 className="loginPageH1">Welcome back!</h1>
+                <img className="loginPageImage" src={tradearcadeinvader}></img>
                 <div className="loginPageFormDiv">
                     <form>
                         <input className="loginPageFormInput" placeholder="Email" onChange={(e) => setEmail(e.target.value)}></input>
@@ -49,7 +51,7 @@ function LoginPage({currentUser, setCurrentUser, isLoggedIn}) {
                     </form>
                 </div>
                 <div>
-                    <p>Don't have an account? <Link to="/" className="loginPageSignUp">Sign up</Link></p>
+                    <p className="loginPageP">Don't have an account? <Link to="/" className="loginPageSignUp">Sign up</Link></p>
                 </div>
             </div>
         </div>

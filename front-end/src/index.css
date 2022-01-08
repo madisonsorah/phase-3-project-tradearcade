@@ -74,7 +74,7 @@ body {
   position: absolute;
   display: inline;
   float: right;
-  left: 73%;
+  left: 95%;
   top: 26%;
   padding: 10px;
   font-size: 14px;
@@ -87,7 +87,7 @@ body {
   position: absolute;
   display: inline;
   float: right;
-  left: 73%;
+  left: 95%;
   top: 26%;
   padding: 10px;
   font-size: 14px;
@@ -104,7 +104,7 @@ body {
   position: absolute;
   display: inline;
   float: right;
-  left: 73%;
+  left: 95%;
   top: 26%;
   padding: 10px;
   font-size: 14px;
@@ -187,7 +187,12 @@ body {
 
 .homePageLogin {
   font-weight: 700;
-  color: #000;
+  color: #290060;
+}
+
+.homePageLogin:hover {
+  font-weight: 700;
+  color: #fff;
 }
 
 .homePageFooter {
@@ -246,39 +251,64 @@ body {
   padding-bottom: 70px;
 }
 
+.loginPageH1 {
+  color: #fff;
+}
+
 .loginPageFormDiv {
   margin: auto;
   width: 400px;
-  height: 255px;
+  height: 190px;
   border-radius: 5px;
-  background-color: #fff;
-  padding: 5px;
-  padding-top: 20px;
+  background-color: #410099;
 }
 
 .loginPageFormInput {
-  width: 100%;
+  width: 85%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
-  border: 1px solid #ccc;
+  font-family: Menlo, Monaco, 'Courier New', monospace;
+  color: #fff;
+  border: 1px solid #000;
+  background-color: #000;
   border-radius: 4px;
   box-sizing: border-box;
 }
 
 .loginPageFormButton {
- margin-top: 10px;
- margin-bottom: 10px;
- padding: 10px;
- font-size: medium;
- font-weight: 700;
- background-color: #000;
- color: #fff;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  font-family: Menlo, Monaco, 'Courier New', monospace;
+  font-size: medium;
+  font-weight: 700;
+  background-color: #000;
+  color: #fff;
+  border-style:none;
+}
+
+.loginPageImage {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 20px;
+}
+
+.loginPageP {
+  color: #fff;
 }
 
 .loginPageSignUp {
   font-weight: 700;
-  color: #000;
+  color: #290060;
+}
+
+.loginPageSignUp:hover {
+  color: #fff;
+}
+
+.loginPageSignup:visited {
+  color: #290060;
 }
 
 .accountPageDiv {
