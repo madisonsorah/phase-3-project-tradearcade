@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import NavBar from "./NavBar";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function HomePage({currentUser, setCurrentUser, isLoggedIn}) {
     const userData = "http://localhost:9292/users"
@@ -10,14 +10,13 @@ function HomePage({currentUser, setCurrentUser, isLoggedIn}) {
     const [username, setUsername] = useState()
     const [email, setEmail] = useState()
     const [password, setPassword] = useState()
-
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetch(userData)
         .then(resp => resp.json())
         .then(users => setAllUsers(users))
     },[])
-
 
     let data = {
         first_name: firstName,
@@ -26,6 +25,7 @@ function HomePage({currentUser, setCurrentUser, isLoggedIn}) {
         email: email,
         password: password
     }
+
     function createAccount(e) {
         e.preventDefault()
         const config = {
@@ -45,6 +45,7 @@ function HomePage({currentUser, setCurrentUser, isLoggedIn}) {
             .then((resp) => resp.json())
             .then((userData) => setCurrentUser(userData))
             .then(console.log(currentUser))
+            navigate("/account", { replace: true })
         }else{
             console.log("email already exists!")
         }

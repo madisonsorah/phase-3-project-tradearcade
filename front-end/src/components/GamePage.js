@@ -3,11 +3,13 @@ import {useParams} from "react-router-dom";
 import { Link } from "react-router-dom";
 import NavBar from "./NavBar";
 
-function GamePage({isLoggedIn}) {
+function GamePage({isLoggedIn, currentUser}) {
     let { id } = useParams();
     const [game, setGame] = useState([]);
     const [reviews, setReviews] = useState([]);
     const [users, setUsers] = useState([])
+    const [gameReview, setGameReview] = useState()
+    const [gameScore, setGameScore] = useState()
     
     useEffect(() => {
         fetch(`http://localhost:9292/games/${id}`)
@@ -23,6 +25,31 @@ function GamePage({isLoggedIn}) {
         .then((userData) => setUsers(userData))
     }, [])
 
+    let data = {
+        review: gameReview,
+        score: gameScore,
+        game_id: id,
+        user_id: currentUser.id
+    }
+
+    function createReview(e) {
+        e.preventDefault()
+        const config = {
+            method: "POST",
+            headers: {
+                "Content-type": "application/json",
+                Accepts: "application/json",
+            },
+            body: JSON.stringify(data),
+        };
+
+        fetch("http://localhost:9292/reviews", config)
+            .then((resp) => resp.json())
+            .then((review) => {
+                setReviews((reviews) => [...reviews, review])
+            })
+      }
+
     const renderMembers = users.map((user) => (
         <div>
             <Link to={`/member/${user.id}`}>{user.username}</Link>
@@ -31,6 +58,7 @@ function GamePage({isLoggedIn}) {
     
     const renderReviews = reviews.map((review) => (
         <div>
+            <p>{review.user.username}</p>
             <p>"{review.review}" - Rating: {review.score} / 10</p>
         </div>
         ))
@@ -45,6 +73,11 @@ function GamePage({isLoggedIn}) {
                 <p>{game.description}</p>
                 <h2>Reviews</h2>
                 {(renderReviews)}
+                <form className="gamePageReviewForm"><p className="gamePageReviewFormP">Leave Review</p>
+                    <input onChange={(e) => setGameReview(e.target.value)} className="gamePageReviewInput" placeholder="Type review.."></input>
+                    <input onChange={(e) => setGameScore(e.target.value)} className="gamePageReviewInput" placeholder="Rating out of 10"></input>
+                    <button onClick={(e) => createReview(e)}>Add Review</button>
+                </form>
                 <h2>Members Who Own</h2>
                 {(renderMembers)}
             </div>

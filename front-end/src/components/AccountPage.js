@@ -174,7 +174,7 @@ function AccountPage({isLoggedIn, currentUser, allTrades, allGames, allUsers, se
                 <h1 className="accountPageH1">Menu</h1>
                 <div className="accountPageMenu">
                     <ul className="accountPageUl">
-                        <Link to="/tradegame" className="accountPageLink">TEST Trade in a Game</Link>
+                        <Link to="/tradegame" className="accountPageLink">Trade in a Game</Link>
                         <Link to="/tradehistory" className="accountPageLink">Game Trade History</Link>
                         <Link to="/gamereviews" className="accountPageLink">Game Reviews</Link>
                         <Link to="/gamewishlist" className="accountPageLink">Game Wishlist</Link>

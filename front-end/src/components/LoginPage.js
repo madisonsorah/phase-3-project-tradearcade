@@ -1,12 +1,13 @@
 import React, {useState, useEffect} from "react";
 import NavBar from "./NavBar"
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { findDOMNode } from "react-dom";
 
 function LoginPage({currentUser, setCurrentUser, isLoggedIn}) {
     const [email, setEmail] = useState()
     const [password, setPassword] = useState()
     const [allUsers, setAllUsers] = useState()
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetch("http://localhost:9292/users")
@@ -29,6 +30,7 @@ function LoginPage({currentUser, setCurrentUser, isLoggedIn}) {
         if (password == correctPassword){
             console.log("Logged In!")
             setCurrentUser(validEmails[0])
+            navigate("/account", { replace: true });
         }else {
             console.log("Incorrect Credentials!")
         }
