@@ -583,7 +583,7 @@ body {
   width: 15px;
   height: 15px;
   float: right;
-  margin-right: -20%;
+  margin-right: -200px;
   margin-top: 4px;
 }
 
@@ -609,11 +609,9 @@ body {
 
 .browseGamesContainer {
   font-family: Menlo, Monaco, 'Courier New', monospace;
-  margin-left: 300px;
-  margin-top: 10px;
+  margin-left: 90px;
+  margin-right: 90px;
   display: inline-block;
-  width: 1000px;
-  height: 800px;
 }
 
 .browseGamesHeader {
@@ -624,6 +622,7 @@ body {
   color:#fff;
   padding-bottom: 20px;
   border-bottom: 1px solid #fff;
+  font-weight: 20;
 }
 
 .gameDiv {
