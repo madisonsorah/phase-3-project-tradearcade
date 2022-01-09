@@ -21,10 +21,10 @@ function Reviews({isLoggedIn, currentUser}) {
 
 
     const renderReviews = reviewsList.map((review) => (
-        <div>
+        <div className="reviewsReview">
             <p className="reviewsP">{review.game.title}</p>
             <p>"{review.review}" - Rating: {review.score} / 10</p>
-            <button onClick={() => handleDelete(review.id)}>Delete Review</button>
+            <button className="reviewsDeleteButton" onClick={() => handleDelete(review.id)}>Delete Review</button>
         </div>
         ))
 
