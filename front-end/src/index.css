@@ -563,8 +563,6 @@ body {
   height: 100%;
   width: 100%;
   overflow: scroll;
-  background-image: url("./images/tradearcaderetroplanets.png");
-  background-size: 300px;
 }
 
 .browseGamesSearch {
@@ -665,9 +663,6 @@ body {
   padding-bottom: 10px;
   height: 100%;
   width: 100%;
-  overflow: scroll;
-  background-image: url("./images/tradearcaderetroplanets.png");
-  background-size: 300px;
 }
 
 .memberListSearch {
