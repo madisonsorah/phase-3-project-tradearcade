@@ -791,13 +791,14 @@ body {
 .memberPageGameImage {
   margin: auto;
   margin-bottom: 20px;
-  width: 145px;
-  height: 200px;
+  width: 195px;
+  height: 270px;
   display: block;
 }
 
 .memberPageGameTitle {
   font-size: medium;
+  font-weight: 700;
   color: #fff;
 }
 
