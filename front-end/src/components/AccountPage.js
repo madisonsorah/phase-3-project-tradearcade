@@ -177,7 +177,7 @@ function AccountPage({isLoggedIn, currentUser, allTrades, allGames, allUsers, se
                 </div>
                 <div>
                     <h2 className="accountPageH2">Game Requests</h2>
-                    {tradeWindow ? <TradeWindow myGames={myGames} setTradeWindow={setTradeWindow} handleTrade={handleTrade}/> : <p>You do not have any game trade requests currently.</p>}
+                    {tradeWindow ? <TradeWindow myGames={myGames} setTradeWindow={setTradeWindow} handleTrade={handleTrade}/> : <p>You do not have any game trade requests.</p>}
                     {renderMyTrades}
                 </div>
             </div>
