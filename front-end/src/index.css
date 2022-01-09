@@ -635,14 +635,14 @@ body {
 
 .gameLink {
   font-weight: 700;
-  font-size: small;
+  font-size: medium;
   margin-top: 20px;
   color: #fff;
 }
 
 .gamePlatform {
   color: #fff;
-  font-size: x-small;
+  font-size: small;
 }
 
 .memberListDiv {
@@ -701,6 +701,10 @@ body {
   display: block;
   text-align: center;
   float: left;
+}
+
+.memberListMember:hover {
+  background-color: #3b008d;
 }
 
 .memberListAvatar {
