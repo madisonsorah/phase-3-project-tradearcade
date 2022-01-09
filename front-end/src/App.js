@@ -39,7 +39,7 @@ function App() {
   const [currentUser, setCurrentUser] = useState(false)
   
   function isLoggedIn() {
-    if(currentUser == false) {
+    if (currentUser == false) {
       return <Link to="/login" className="navBarLoginLink" currentUser={currentUser} setCurrentUser={setCurrentUser}>LOGIN</Link>
     } else {
       return <Link to="/account" className="navBarAccountLink">ACCOUNT</Link>

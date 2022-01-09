@@ -1,8 +1,8 @@
 body {
   margin: 0;
+  user-select: none;
   background-color: #410099;
   font-family: Menlo, Monaco, 'Courier New', monospace;
-  user-select: none;
 }
 
 .mainNavDiv {
@@ -119,21 +119,21 @@ body {
 }
 
 .navBarInvader {
-  width: 38px;
-  height: 30px;
   position: absolute;
   display: inline;
   float: right;
   left: 92%;
   top: 29%;
+  width: 38px;
+  height: 30px;
 }
 
 .homePageDiv {
   padding-top: 100px;
   height: 695px;
+  background-color:#410099;
   text-align: center;
   color: #fff;
-  background-color:#410099;
 }
 
 .homePageWelcome {
@@ -176,24 +176,24 @@ body {
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
-  font-family: Menlo, Monaco, 'Courier New', monospace;
-  color: #fff;
+  box-sizing: border-box;
   border: 1px solid #000;
   background-color: #000;
   border-radius: 4px;
-  box-sizing: border-box;
+  font-family: Menlo, Monaco, 'Courier New', monospace;
+  color: #fff;
 }
 
 .homePageFormButton {
  margin-top: 10px;
  margin-bottom: 20px;
  padding: 10px;
+ background-color: #000;
+ border-style: none;
  font-family: Menlo, Monaco, 'Courier New', monospace;
  font-size: medium;
  font-weight: 700;
- background-color: #000;
  color: #fff;
- border-style:none;
 }
 
 .homePageHaveAccount {
@@ -211,10 +211,10 @@ body {
 }
 
 .homePageFooter {
-  background-color: #000;
-  color: #fff;
   height: 455px;
   box-shadow: 0 -3px 3px 0 #290060;
+  background-color: #000;
+  color: #fff;
 }
 
 .homePageNewGamesUl {
@@ -222,26 +222,26 @@ body {
   margin-top: 5px;
   float: left;
   left: 5%;
-  list-style-type: none;
   height: 280px;
   width: 1400px;
   border-top: 0.09rem solid #fff;
+  list-style-type: none;
 }
 
 .homePageNewGamesH2 {
   padding-bottom: 5px;
   width: 280px;
   margin-left: 80px;
-  display:inline-block;
+  display: inline-block;
 }
 
 .homePageNewGamesLink {
-  font-size: small;
-  font-weight: 700;
-  color: #fff;
   width: 200px;
   margin-bottom: 10px;
   display:inline-block;
+  font-size: small;
+  font-weight: 700;
+  color: #fff;
 }
 
 .homePageNewGamesLi {
@@ -272,9 +272,9 @@ body {
 
 .loginPageDiv {
   margin: auto;
-  text-align: center;
   padding-top: 100px;
   padding-bottom: 70px;
+  text-align: center;
 }
 
 .loginPageH1 {
@@ -294,24 +294,24 @@ body {
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
-  font-family: Menlo, Monaco, 'Courier New', monospace;
-  color: #fff;
+  box-sizing: border-box;
   border: 1px solid #000;
   background-color: #000;
   border-radius: 4px;
-  box-sizing: border-box;
+  font-family: Menlo, Monaco, 'Courier New', monospace;
+  color: #fff;
 }
 
 .loginPageFormButton {
   margin-top: 10px;
   margin-bottom: 10px;
   padding: 10px;
+  border-style: none;
+  background-color: #000;
   font-family: Menlo, Monaco, 'Courier New', monospace;
   font-size: medium;
   font-weight: 700;
-  background-color: #000;
   color: #fff;
-  border-style:none;
 }
 
 .loginPageImage {
@@ -377,13 +377,13 @@ body {
 
 .accountPageLink {
   display: block;
+  box-sizing: border-box;
   padding: 10px;
   padding-left: 10px;
   padding-right: 10px;
   color: #fff;
   font-size: x-large;
   text-decoration: none;
-  box-sizing: border-box;
 }
 
 .accountPageLink:hover {
@@ -391,12 +391,12 @@ body {
 }
 
 .accountPageLogout {
-  color: #fff;
   padding: 10px;
   display: block;
+  text-decoration: none;
   font-size: x-large;
   font-weight: 700;
-  text-decoration: none;
+  color: #fff;
 }
 
 .accountPageLogout:hover {
@@ -408,13 +408,13 @@ body {
     padding-top: 235px;
     padding-left: 105px;
     padding-bottom: 70px;
-    text-align: center;
-    color: #fff;
-    background-image: url("./images/tradearcademachinescreen.png");
-    background-size: 1200px;
-    background-repeat:no-repeat;
     width: 1150px;
     height: 650px;
+    background-image: url("./images/tradearcademachinescreen.png");
+    background-size: 1200px;
+    background-repeat: no-repeat;
+    text-align: center;
+    color: #fff;
 }
 
 .sendGameFormDiv {
@@ -439,31 +439,31 @@ body {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
-  display: inline-block;
-  font-family: Menlo, Monaco, 'Courier New', monospace;
-  color: #fff;
-  border: 1px solid #000;
-  background-color: #000;
   border-radius: 4px;
   box-sizing: border-box;
+  display: inline-block;
+  border: 1px solid #000;
+  background-color: #000;
+  font-family: Menlo, Monaco, 'Courier New', monospace;
+  color: #fff;
 }
 
 .sendGameFormGameListed {
   text-align: center;
-  font-size: medium;
   padding-top: 20px;
+  font-size: medium;
   font-family: Menlo, Monaco, 'Courier New', monospace;
 }
 
 .sendGameFormButton {
-  font-weight: 700;
   padding: 10px;
+  background-color: #000;
+  border-style: none;
+  font-weight: 700;
   font-family: Menlo, Monaco, 'Courier New', monospace;
   font-size: medium;
   font-weight: 700;
-  background-color: #000;
   color: #fff;
-  border-style:none;
 }
 
 .tradeHistoryDiv {
@@ -489,12 +489,12 @@ body {
 }
 
 .tradeHistorySentListUl {
-  list-style-type: none;
   margin: 0;
   padding: 0;
   display: inline-block;
   float: none;
   justify-content: space-between;
+  list-style-type: none;
 }
 
 .tradeHistoryReceivedListDiv {
@@ -524,11 +524,11 @@ body {
 
 .reviewsDiv {
   margin: auto;
-  font-family: Menlo, Monaco, 'Courier New', monospace;
   padding-top: 120px;
   padding-bottom: 70px;
-  color: #fff;
   text-align: center;
+  font-family: Menlo, Monaco, 'Courier New', monospace;
+  color: #fff;
 }
 
 .reviewsReview {
@@ -539,12 +539,12 @@ body {
   margin-top: 10px;
   margin-bottom: 10px;
   padding: 10px;
+  border-style: none;
+  background-color: #000;
   font-family: Menlo, Monaco, 'Courier New', monospace;
   font-size: medium;
   font-weight: 700;
-  background-color: #000;
   color: #fff;
-  border-style:none;
 }
 
 .browseGamesDiv {
@@ -557,13 +557,13 @@ body {
 }
 
 .browseGamesSearch {
-  font-family: Menlo, Monaco, 'Courier New', monospace;
-  color: #fff;
   margin-right: 3%;
   padding: 5px;
   float: right;
   border: 1px solid #fff;
   background-color: #410099;
+  font-family: Menlo, Monaco, 'Courier New', monospace;
+  color: #fff;
 }
 
 .browseGamesSearch::placeholder {
@@ -579,10 +579,10 @@ body {
 }
 
 .browseGamesFilter {
+  margin-right: 10px;
+  float: right;
   font-family: Menlo, Monaco, 'Courier New', monospace;
   color: #fff;
-  margin-right: 10px;
-  float:right;
 }
 
 .browseGamesFilterLabel {
@@ -591,18 +591,18 @@ body {
 }
 
 .browseGamesFilterSelect {
+  padding: 5px;
+  border: 1px solid #fff;
+  background-color: #410099;
   font-family: Menlo, Monaco, 'Courier New', monospace;
   color: #fff;
-  background-color: #410099;
-  border: 1px solid #fff;
-  padding: 5px;
 }
 
 .browseGamesContainer {
-  font-family: Menlo, Monaco, 'Courier New', monospace;
   margin-left: 90px;
   margin-right: 90px;
   display: inline-block;
+  font-family: Menlo, Monaco, 'Courier New', monospace;
 }
 
 .browseGamesList {
@@ -616,10 +616,10 @@ body {
 }
 
 .browseGamesSubHead {
-  color:#fff;
   padding-bottom: 20px;
   border-bottom: 1px solid #fff;
   font-weight: 20;
+  color: #fff;
 }
 
 .gameDiv {
@@ -662,13 +662,13 @@ body {
 }
 
 .memberListSearch {
-  font-family: Menlo, Monaco, 'Courier New', monospace;
-  color: #fff;
   margin-right: 3%;
   padding: 5px;
   float: right;
   border: 1px solid #fff;
   background-color: #410099;
+  font-family: Menlo, Monaco, 'Courier New', monospace;
+  color: #fff;
 }
 
 .memberListSearch::placeholder {
@@ -684,11 +684,11 @@ body {
 }
 
 .memberListContainer {
-  font-family: Menlo, Monaco, 'Courier New', monospace;
   margin-left: 90px;
   margin-right: 90px;
   width: 90%;
   display: inline-block;
+  font-family: Menlo, Monaco, 'Courier New', monospace;
 }
 
 .memberListHeader {
@@ -696,10 +696,10 @@ body {
 }
 
 .memberListSubHead {
-  color:#fff;
   padding-bottom: 20px;
   border-bottom: 1px solid #fff;
   font-weight: 20;
+  color: #fff;
 }
 
 .memberListMember {
@@ -762,9 +762,9 @@ body {
   height: 700px;
   margin-right: 20px;
   padding-left: 20px;
+  border: 0.09rem solid #410099;
   background-color: #000;
   color: #fff;
-  border: 0.09rem solid #410099;
 } 
 
 .memberPageAvatar {
@@ -797,8 +797,8 @@ body {
 }
 
 .memberPageGameTitle {
-  color: #fff;
   font-size: medium;
+  color: #fff;
 }
 
 .memberPagePlatform {
@@ -808,12 +808,12 @@ body {
 .memberPageButton {
   font-weight: 700;
   padding: 10px;
+  border: 0.09rem solid #410099;
+  background-color: #000;
   font-family: Menlo, Monaco, 'Courier New', monospace;
   font-size: small;
   font-weight: 700;
-  background-color: #000;
   color: #fff;
-  border: 0.09rem solid #410099;
 }
 
 .memberPageH2 {
@@ -880,13 +880,13 @@ body {
   width: 85%;
   padding: 12px 20px;
   margin: 8px 0;
-  font-family: Menlo, Monaco, 'Courier New', monospace;
-  color: #fff;
   border: 1px solid #000;
   background-color: #000;
   border-radius: 4px;
   display: inline-block;
   box-sizing: border-box;
+  font-family: Menlo, Monaco, 'Courier New', monospace;
+  color: #fff;
 }
 
 .gamePageMember {
@@ -907,12 +907,12 @@ body {
   margin-top: 10px;
   margin-bottom: 10px;
   padding: 10px;
+  border-style: none;
+  background-color: #000;
   font-family: Menlo, Monaco, 'Courier New', monospace;
   font-size: medium;
   font-weight: 700;
-  background-color: #000;
   color: #fff;
-  border-style:none;
 }
 
 
