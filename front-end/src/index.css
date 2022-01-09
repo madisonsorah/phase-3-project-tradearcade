@@ -245,22 +245,25 @@ body {
 
 .homePageNewGamesLi {
   display: inline-block;
-  margin: 20px;
-  margin-left: 60px;
+  padding: 20px;
+  margin-left: 40px;
   color: #fff;
 }
 
+.homePageNewGamesLi:hover {
+  background-color: rgb(24, 24, 24);
+}
+
 .homePageNewGamesTitle {
-  padding: 5px;
   text-align: center;
-  font-size: small;
+  font-size: medium;
   font-weight: 700;
 }
 
 .homePageNewGamesImage {
   margin: auto;
   margin-bottom: 20px;
-  margin-top: 20px;
+  margin-top: 10px;
   width: 195px;
   height: 270px;
   display: block;
