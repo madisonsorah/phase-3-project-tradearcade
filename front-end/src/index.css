@@ -824,36 +824,50 @@ body {
   margin: auto;
   padding-top: 120px;
   padding-bottom: 70px;
-  text-align: center;
   color: #fff;
 }
 
 .gamePageFloatContainer {
   margin: auto;
-  width: 800px;
-  height: 450px;
+  width: 1000px;
+  height: 500px;
+  padding: 20px;
+  border: 0.09rem solid #fff;
 }
 
 .gamePageFloatLeft {
   float: left;
-  margin-top: 25px;
-  width: 400px;
+  width: 350px;
+  text-align: center;
 } 
 
 .gamePageFloatRight {
   float: right;
-  margin-top: 25px;
-  width: 400px;
+  width: 600px;
 } 
 
 .gamePageImage {
-  width: 250px;
-  height: 380px;
+  width: 330px;
+  height: 480px;
+}
+
+.gamePageReviewContainer {
+  margin: auto;
+  width: 1000px;
+  height: 100%;
+  padding: 20px;
+}
+
+.gamePageReviewsHeader {
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #fff;
 }
 
 .gamePageReviewForm {
   width: 400px;
-  margin-left: 600px;
+  margin-left: 300px;
+  margin-top: 40px;
 }
 
 .gamePageReviewFormP {
@@ -879,12 +893,13 @@ body {
   color: #fff;
 }
 
-.gamePageReviewsHeader {
-  margin-top: 45px;
+.reviewsUserP {
+  font-weight: 700;
+  text-align: center;
 }
 
-.reviewsP {
-  font-weight: 700;
+.reviewsReviewP {
+  text-align: center;
 }
 
 .gamePageReviewFormButton {

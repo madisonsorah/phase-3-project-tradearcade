@@ -58,8 +58,8 @@ function GamePage({isLoggedIn, currentUser}) {
     
     const renderReviews = reviews.map((review) => (
         <div>
-            <p>{review.user.username}</p>
-            <p>"{review.review}" - Rating: {review.score} / 10</p>
+            <p className="reviewsUserP">{review.user.username}</p>
+            <p className="reviewsReviewP">"{review.review}" - Rating: {review.score} / 10</p>
         </div>
         ))
 
@@ -74,17 +74,20 @@ function GamePage({isLoggedIn, currentUser}) {
                     <div className="gamePageFloatRight">
                         <h2>{game.title}</h2>
                         <h4>{game.platform}</h4>
-                        <p>{game.description}</p></div>
+                        <p>{game.description}</p>
+                        <h4>Members Who Own</h4>
+                        {(renderMembers)}
+                    </div>
                 </div>
-                <h2>Members Who Own</h2>
-                {(renderMembers)}
-                <h2 className="gamePageReviewsHeader">Reviews</h2>
-                {(renderReviews)}
-                <form className="gamePageReviewForm"><p className="gamePageReviewFormP">Leave Review</p>
-                    <input onChange={(e) => setGameReview(e.target.value)} className="gamePageReviewInput" placeholder="Type review.."></input>
-                    <input onChange={(e) => setGameScore(e.target.value)} className="gamePageReviewInput" placeholder="Rating out of 10"></input>
-                    <button className="gamePageReviewFormButton" onClick={(e) => createReview(e)}>Add Review</button>
-                </form>
+                <div className="gamePageReviewContainer">
+                    <h2 className="gamePageReviewsHeader">Reviews</h2>
+                    {(renderReviews)}
+                    <form className="gamePageReviewForm"><p className="gamePageReviewFormP">Leave Review</p>
+                        <input onChange={(e) => setGameReview(e.target.value)} className="gamePageReviewInput" placeholder="Type review.."></input>
+                        <input onChange={(e) => setGameScore(e.target.value)} className="gamePageReviewInput" placeholder="Rating out of 10"></input>
+                        <button className="gamePageReviewFormButton" onClick={(e) => createReview(e)}>Add Review</button>
+                    </form>
+                </div>
             </div>
             <button onClick={() => (console.log(game))}>Console Log Game</button>
             <button onClick={() => console.log(reviews)}>Console Log Reviews</button>
