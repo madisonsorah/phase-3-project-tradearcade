@@ -697,7 +697,6 @@ body {
 .memberPageDiv {
   margin: auto;
   padding-top: 100px;
-  padding-bottom: 70px;
   background-color: #000;
   height: 800px;
   width: 100%;
@@ -725,16 +724,19 @@ body {
   float: right;
   margin-top: 25px;
   width: 78%;
+  height: 700px;
   margin-right: 20px;
   padding-left: 20px;
   background-color: #000;
   color: #fff;
+  border: 0.09rem solid #fff;
 } 
 
 .memberPageAvatar {
-  width: 220px;
-  height: 180px;
-  padding-bottom: 20px;
+  width: 150px;
+  height: 110px;
+  padding: 20px;
+  border: 0.09rem solid #410099;
 }
 
 .memberGameUl {
@@ -780,7 +782,8 @@ body {
 }
 
 .memberPageH2 {
-
+  padding-bottom: 10px;
+  width: 1000px;
 }
 
 .gamePageDiv {
