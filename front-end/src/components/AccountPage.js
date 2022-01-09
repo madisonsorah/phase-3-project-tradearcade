@@ -182,7 +182,7 @@ function AccountPage({isLoggedIn, currentUser, allTrades, allGames, allUsers, se
     console.log(renderMyTrades)
     function renderTradesAndEmpty() {
         if (renderMyTrades == false) {
-            return <h2>You do not currently have any trade requests!</h2>
+            return <p>You do not currently have any trade requests!</p>
         } else {
             return renderMyTrades
         }
@@ -208,7 +208,7 @@ function AccountPage({isLoggedIn, currentUser, allTrades, allGames, allUsers, se
                 </div>
                 <div>
                     <h2 className="accountPageH2">Game Requests</h2>
-                    {tradeWindow ? <TradeWindow myGames={myGames} setTradeWindow={setTradeWindow} handleTrade={handleTrade}/> : <p>You do not have any game trade requests.</p>}
+                    {tradeWindow ? <TradeWindow myGames={myGames} setTradeWindow={setTradeWindow} handleTrade={handleTrade}/> : undefined}
                     {renderTradesAndEmpty()}
                 </div>
             </div>
