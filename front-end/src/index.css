@@ -788,6 +788,10 @@ body {
   display: inline-block;
 }
 
+.memberGameLi:hover {
+  background-color: rgb(24, 24, 24);
+}
+
 .memberPageGameImage {
   margin: auto;
   margin-bottom: 20px;
@@ -812,7 +816,7 @@ body {
   border: 0.09rem solid #410099;
   background-color: #000;
   font-family: Menlo, Monaco, 'Courier New', monospace;
-  font-size: small;
+  font-size: medium;
   font-weight: 700;
   color: #fff;
 }
