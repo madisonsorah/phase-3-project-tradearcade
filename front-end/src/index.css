@@ -405,10 +405,16 @@ body {
 
 .sendGameDiv {
     margin: auto;
-    padding-top: 120px;
+    padding-top: 235px;
+    padding-left: 105px;
     padding-bottom: 70px;
     text-align: center;
     color: #fff;
+    background-image: url("./images/tradearcademachinescreen.png");
+    background-size: 1200px;
+    background-repeat:no-repeat;
+    width: 1150px;
+    height: 650px;
 }
 
 .sendGameFormDiv {
