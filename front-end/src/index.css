@@ -530,7 +530,8 @@ body {
   height: 100%;
   width: 100%;
   overflow: scroll;
-  background-color: #000;
+  background-image: url("./images/tradearcaderetroplanets.png");
+  background-size: 400px;
 }
 
 .browseGamesSearch {
@@ -570,9 +571,12 @@ body {
 
 .browseGamesContainer {
   font-family: Menlo, Monaco, 'Courier New', monospace;
+  background-color: #000;
+  margin-left: 200px;
   text-align: center;
   display: inline-block;
-  width: 100%;
+  width: 1000px;
+  height: 800px;
 }
 
 .browseGamesHeader {
@@ -608,6 +612,7 @@ body {
 
 .gamePlatform {
   color: #fff;
+  font-size: x-small;
 }
 
 .memberPageDiv {
