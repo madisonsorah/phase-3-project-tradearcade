@@ -558,7 +558,7 @@ body {
 
 .browseGamesDiv {
   margin: auto;
-  padding-top: 80px;
+  padding-top: 100px;
   padding-bottom: 10px;
   height: 100%;
   width: 100%;
@@ -617,7 +617,7 @@ body {
 .browseGamesList {
   margin: 50px;
   height: 100%;
-  width: 100%;
+  width: 1335px;
 }
 
 .browseGamesHeader {
@@ -659,7 +659,7 @@ body {
 
 .memberListDiv {
   margin: auto;
-  padding-top: 80px;
+  padding-top: 100px;
   padding-bottom: 10px;
   height: 100%;
   width: 100%;
