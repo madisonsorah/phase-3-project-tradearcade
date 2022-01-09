@@ -537,7 +537,7 @@ body {
 .browseGamesSearch {
   font-family: Menlo, Monaco, 'Courier New', monospace;
   color: #fff;
-  margin-right: 19%;
+  margin-right: 21%;
   margin-top: 10px;
   padding: 5px;
   float: right;
@@ -547,6 +547,14 @@ body {
 
 .browseGamesSearch::placeholder {
   opacity: 2;
+}
+
+.browseGamesSearchIcon {
+  width: 16px;
+  height: 15px;
+  float: right;
+  margin-right: -13%;
+  margin-top: 1%;
 }
 
 .browseGamesFilter {
@@ -632,7 +640,7 @@ body {
 .memberListSearch {
   font-family: Menlo, Monaco, 'Courier New', monospace;
   color: #fff;
-  margin-right: 20%;
+  margin-right: 21%;
   margin-top: 10px;
   padding: 5px;
   float: right;
@@ -642,6 +650,14 @@ body {
 
 .memberListSearch::placeholder {
   opacity: 2;
+}
+
+.memberListSearchIcon {
+  width: 16px;
+  height: 15px;
+  float: right;
+  margin-right: -13%;
+  margin-top: 1%;
 }
 
 .memberListContainer {
@@ -709,24 +725,83 @@ body {
   display: block;
 }
 
+.gamePageDiv {
+  margin: auto;
+  padding-top: 120px;
+  padding-bottom: 70px;
+  text-align: center;
+  color: #fff;
+}
+
+.gamePageFloatContainer {
+  margin: auto;
+  width: 800px;
+  height: 450px;
+}
+
+.gamePageFloatLeft {
+  float: left;
+  margin-top: 25px;
+  width: 400px;
+} 
+
+.gamePageFloatRight {
+  float: right;
+  margin-top: 25px;
+  width: 400px;
+} 
+
+.gamePageImage {
+  width: 250px;
+  height: 400px;
+}
+
 .gamePageReviewForm {
   width: 400px;
+  margin-left: 600px;
 }
 
 .gamePageReviewFormP {
-  font-weight: 700;
+  margin: auto;
+  background-color: #410099;
 }
 
 .gamePageReviewInput {
-  width: 300px;
+  width: 85%;
   padding: 12px 20px;
   margin: 8px 0;
-  border: 1px solid #ccc;
+  font-family: Menlo, Monaco, 'Courier New', monospace;
+  color: #fff;
+  border: 1px solid #000;
+  background-color: #000;
   border-radius: 4px;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+.gamePageMember {
+  font-size: medium;
+  color: #fff;
+}
+
+.gamePageReviewsHeader {
+  margin-top: 45px;
 }
 
 .reviewsP {
   font-weight: 700;
+}
+
+.gamePageReviewFormButton {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  font-family: Menlo, Monaco, 'Courier New', monospace;
+  font-size: medium;
+  font-weight: 700;
+  background-color: #000;
+  color: #fff;
+  border-style:none;
 }
 
 

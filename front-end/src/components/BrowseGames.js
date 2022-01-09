@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import NavBar from "./NavBar"
 import Game from "./Game"
 import GamePage from "./GamePage"
+import tradearcadesearchicon from "../images/tradearcadesearchicon.png"
 
 function BrowseGames({isLoggedIn}) {
     const [games, setGames] = useState([])
@@ -50,6 +51,7 @@ function BrowseGames({isLoggedIn}) {
         <div className="browseGamesDiv">
             <NavBar isLoggedIn={isLoggedIn}/>
             <input className="browseGamesSearch" value={search} placeholder="Search for Games" onChange={(e) => setSearch(e.target.value)}></input>
+            <img className="browseGamesSearchIcon" src={tradearcadesearchicon}></img>
             <div className="browseGamesFilter">
                 <label className="browseGamesFilterLabel">Filter by Platform </label> 
                 <select className="browseGamesFilterSelect" name="platforms" onChange={(e) => setPlatformFilter(e.target.value)}>

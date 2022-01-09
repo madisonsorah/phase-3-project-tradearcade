@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 import NavBar from "./NavBar";
 import tradearcadeinvaderavatar from "../images/tradearcadeinvaderavatar.png"
+import tradearcadesearchicon from "../images/tradearcadesearchicon.png"
 
 function MemberList({isLoggedIn}) {
     const [users, setUsers] = useState([])
@@ -33,6 +34,7 @@ function MemberList({isLoggedIn}) {
             <NavBar isLoggedIn={isLoggedIn}/>
             <div className="memberListDiv">
                 <input className="memberListSearch" value={search} placeholder="Search for Members" onChange={(e) => setSearch(e.target.value)}></input>
+                <img className="memberListSearchIcon" src={tradearcadesearchicon}></img>
                 <div className="memberListContainer">
                 <h1 className="memberListHeader">Current Members</h1>
                     {renderMembers}

@@ -52,7 +52,7 @@ function GamePage({isLoggedIn, currentUser}) {
 
     const renderMembers = users.map((user) => (
         <div>
-            <Link to={`/member/${user.id}`}>{user.username}</Link>
+            <Link className="gamePageMember" to={`/member/${user.id}`}>{user.username}</Link>
         </div>
     ))
     
@@ -67,19 +67,24 @@ function GamePage({isLoggedIn, currentUser}) {
         <div>
             <NavBar isLoggedIn={isLoggedIn} />
             <div className="gamePageDiv">
-                <h1>{game.title}</h1>
-                <img src={game.image} alt={game.title}></img>
-                <h4>{game.platform}</h4>
-                <p>{game.description}</p>
-                <h2>Reviews</h2>
+                <div className="gamePageFloatContainer">
+                    <div className="gamePageFloatLeft">
+                    <img className="gamePageImage" src={game.image} alt={game.title}></img>
+                    </div>
+                    <div className="gamePageFloatRight">
+                        <h2>{game.title}</h2>
+                        <h4>{game.platform}</h4>
+                        <p>{game.description}</p></div>
+                </div>
+                <h2>Members Who Own</h2>
+                {(renderMembers)}
+                <h2 className="gamePageReviewsHeader">Reviews</h2>
                 {(renderReviews)}
                 <form className="gamePageReviewForm"><p className="gamePageReviewFormP">Leave Review</p>
                     <input onChange={(e) => setGameReview(e.target.value)} className="gamePageReviewInput" placeholder="Type review.."></input>
                     <input onChange={(e) => setGameScore(e.target.value)} className="gamePageReviewInput" placeholder="Rating out of 10"></input>
-                    <button onClick={(e) => createReview(e)}>Add Review</button>
+                    <button className="gamePageReviewFormButton" onClick={(e) => createReview(e)}>Add Review</button>
                 </form>
-                <h2>Members Who Own</h2>
-                {(renderMembers)}
             </div>
             <button onClick={() => (console.log(game))}>Console Log Game</button>
             <button onClick={() => console.log(reviews)}>Console Log Reviews</button>
