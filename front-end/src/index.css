@@ -573,7 +573,7 @@ body {
   padding: 5px;
   float: right;
   border: 1px solid #fff;
-  background-color: #000;
+  background-color: #410099;
 }
 
 .browseGamesSearch::placeholder {
@@ -604,7 +604,7 @@ body {
 .browseGamesFilterSelect {
   font-family: Menlo, Monaco, 'Courier New', monospace;
   color: #fff;
-  background-color:#000;
+  background-color: #410099;
   border: 1px solid #fff;
   padding: 5px;
 }
