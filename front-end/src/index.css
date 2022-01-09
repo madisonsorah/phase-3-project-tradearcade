@@ -698,8 +698,13 @@ body {
 
 .memberListHeader {
   color: #fff;
-  border-bottom: 1px solid #fff;
+}
+
+.memberListSubHead {
+  color:#fff;
   padding-bottom: 20px;
+  border-bottom: 1px solid #fff;
+  font-weight: 20;
 }
 
 .memberListMember {
