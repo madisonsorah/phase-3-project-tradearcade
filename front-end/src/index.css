@@ -493,6 +493,45 @@ body {
   padding-bottom: 10px;
   height: 800px;
   overflow: scroll;
+  background-color: #000;
+}
+
+.browseGamesSearch {
+  font-family: Menlo, Monaco, 'Courier New', monospace;
+  color: #fff;
+  margin-left: 10px;
+  border: 1px solid #fff;
+  background-color: #000;
+  display: inline-block;
+}
+
+.browseGamesFilter {
+  font-family: Menlo, Monaco, 'Courier New', monospace;
+  color: #fff;
+  margin-left: 10px;
+  background-color: #000;
+  display: inline-block;
+}
+
+.browseGamesFilterLabel {
+  font-size: small;
+}
+
+.browseGamesContainer {
+  font-family: Menlo, Monaco, 'Courier New', monospace;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+}
+
+.browseGamesHeader {
+  color: #fff;
+  text-align: center;
+}
+
+.browseGamesSubHead {
+  color:#fff;
+  text-align: center;
 }
 
 .gameDiv {
