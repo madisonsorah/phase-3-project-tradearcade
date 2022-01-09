@@ -5,6 +5,7 @@ import TradeHistoryGame from "./TradeHistoryGame";
 function TradeHistory({isLoggedIn, currentUser}) {
     const [sentGames, setSentGames] = useState([])
     const [receivedGames, setReceivedGames] = useState([])
+    
     useEffect(() => {
         fetch("http://localhost:9292/tradehistory")
         .then(resp => resp.json())

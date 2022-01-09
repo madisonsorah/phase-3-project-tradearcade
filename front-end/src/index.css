@@ -468,8 +468,9 @@ body {
 
 .tradeHistoryDiv {
   margin: auto;
-  padding-top: 120px;
+  padding-top: 100px;
   padding-bottom: 70px;
+  color: #fff;
 }
 
 .tradeHistorySentListDiv {
@@ -477,15 +478,20 @@ body {
 }
 
 .tradeHistorySentListH1 {
-  border-bottom: 0.09rem solid #000;
-  width: 1000px;
+  width: 1300px;
   padding-bottom: 10px;
+  border-bottom: 0.09rem solid #fff;
 }
 
 .tradeHistorySentListLi {
   margin: 10px;
   padding: 20px;
   display: inline-block;
+  color: #fff;
+}
+
+.tradeHistorySentListLi:hover {
+  background-color: #3b008d;
 }
 
 .tradeHistorySentListUl {
@@ -502,9 +508,9 @@ body {
 }
 
 .tradeHistoryReceivedListH1 {
-  border-bottom: 0.09rem solid #000;
-  width: 1000px;
+  width: 1300px;
   padding-bottom: 10px;
+  border-bottom: 0.09rem solid #fff;
 }
 
 .tradeHistoryReceivedListLi {
@@ -520,6 +526,16 @@ body {
   display: inline-block;
   float: none;
   justify-content: space-between;
+}
+
+.tradeHistoryLink {
+  font-weight: 700;
+  font-size: medium;
+  color: #fff;
+}
+
+.tradeHistoryPlatform {
+  font-size: small;
 }
 
 .reviewsDiv {
