@@ -223,13 +223,15 @@ body {
   left: 5%;
   list-style-type: none;
   height: 280px;
+  width: 1400px;
+  border-top: 0.09rem solid #fff;
 }
 
 .homePageNewGamesH2 {
   padding-bottom: 5px;
   width: 280px;
-  margin-left: 40px;
-  display:inline-block
+  margin-left: 80px;
+  display:inline-block;
 }
 
 .homePageNewGamesLink {
@@ -258,6 +260,7 @@ body {
 .homePageNewGamesImage {
   margin: auto;
   margin-bottom: 20px;
+  margin-top: 20px;
   width: 195px;
   height: 270px;
   display: block;
