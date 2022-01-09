@@ -22,7 +22,7 @@ function MemberPage({currentUser, setCurrentUser, isLoggedIn}) {
         } else if (currentUser.id == undefined) {
             console.log("Not Logged in")
         } else {
-          return <button onClick={() => tradeGame(game)}>Request Trade</button>
+          return <button className="memberPageButton" onClick={() => tradeGame(game)}>Request Trade</button>
         }
     }
 
@@ -83,8 +83,8 @@ function MemberPage({currentUser, setCurrentUser, isLoggedIn}) {
         return (
             <li className="memberGameLi">
                 <img className="memberPageGameImage" src={game.image}></img>
-                <Link to={`/games/${game.id}`}>{game.title}</Link>
-                <p>{game.platform}</p>
+                <Link className="memberPageGameTitle" to={`/games/${game.id}`}>{game.title}</Link>
+                <p className="memberPagePlatform">{game.platform}</p>
                 {renderRequestTradeButtons(game)}
                 {/* {console.log(game)} */}
             </li>
@@ -102,7 +102,7 @@ function MemberPage({currentUser, setCurrentUser, isLoggedIn}) {
                         <h3>{user.username}</h3>
                     </div>
                     <div className="memberPageFloatRight">
-                        <h2>Games Available For Trade</h2>
+                        <h2 className="memberPageH2">Games Available For Trade</h2>
                         <ul>
                             {renderedUserGames}
                         </ul>

@@ -225,19 +225,16 @@ body {
 .homePageNewGamesLink {
   font-size: small;
   font-weight: 700;
-  color: #410099;
+  color: #fff;
   width: 200px;
   margin-bottom: 10px;
   display:inline-block;
 }
 
-.homePageNewGamesLink:hover {
-  color: #fff;
-}
-
 .homePageNewGamesLi {
   display: inline-block;
-  margin: 30px;
+  margin: 20px;
+  margin-left: 60px;
   color: #fff;
 }
 
@@ -701,6 +698,9 @@ body {
   margin: auto;
   padding-top: 100px;
   padding-bottom: 70px;
+  background-color: #000;
+  height: 800px;
+  width: 100%;
 }
 
 .memberPageFloatContainer {
@@ -757,6 +757,30 @@ body {
   width: 145px;
   height: 200px;
   display: block;
+}
+
+.memberPageGameTitle {
+  color: #fff;
+  font-size: medium;
+}
+
+.memberPagePlatform {
+  font-size: small;
+}
+
+.memberPageButton {
+  font-weight: 700;
+  padding: 10px;
+  font-family: Menlo, Monaco, 'Courier New', monospace;
+  font-size: small;
+  font-weight: 700;
+  background-color: #000;
+  color: #fff;
+  border: 0.09rem solid #410099;
+}
+
+.memberPageH2 {
+
 }
 
 .gamePageDiv {
