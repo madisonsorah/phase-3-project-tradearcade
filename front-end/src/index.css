@@ -875,10 +875,13 @@ body {
   width: 400px;
   margin-left: 300px;
   margin-top: 40px;
+  text-align: center;
 }
 
 .gamePageReviewFormP {
   margin: auto;
+  text-align: center;
+  font-weight: 700;
   background-color: #410099;
 }
 
