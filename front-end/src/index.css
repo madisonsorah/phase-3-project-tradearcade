@@ -663,6 +663,7 @@ body {
   padding-bottom: 10px;
   height: 100%;
   width: 100%;
+  overflow: scroll;
 }
 
 .memberListSearch {
@@ -683,17 +684,16 @@ body {
   width: 15px;
   height: 15px;
   float: right;
-  margin-right: -20%;
-  margin-top: 4px;
+  margin-right: -14%;
+  margin-top: 5px;
 }
 
 .memberListContainer {
   font-family: Menlo, Monaco, 'Courier New', monospace;
-  margin-left: 20%;
-  margin-top: 10px;
+  margin-left: 90px;
+  margin-right: 90px;
+  width: 90%;
   display: inline-block;
-  width: 1000px;
-  height: 800px;
 }
 
 .memberListHeader {
@@ -711,8 +711,8 @@ body {
 }
 
 .memberListAvatar {
-  width: 120px;
-  height: 100px;
+  width: 180px;
+  height: 150px;
   margin: auto;
   margin-bottom: 20px;
   display: block;
