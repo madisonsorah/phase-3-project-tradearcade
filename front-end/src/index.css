@@ -621,6 +621,10 @@ body {
   display: inline-block;
 }
 
+.gameDiv:hover {
+  background-color: #3b008d;
+}
+
 .gameImage {
   margin: auto;
   margin-bottom: 20px;
