@@ -89,8 +89,6 @@ function GamePage({isLoggedIn, currentUser}) {
                     </form>
                 </div>
             </div>
-            <button onClick={() => (console.log(game))}>Console Log Game</button>
-            <button onClick={() => console.log(reviews)}>Console Log Reviews</button>
             <Link to="/browsegames">Back</Link>
         </div>
     )
