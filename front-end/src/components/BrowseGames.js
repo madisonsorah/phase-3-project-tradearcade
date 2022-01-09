@@ -50,9 +50,12 @@ function BrowseGames({isLoggedIn}) {
     return (
         <div className="browseGamesDiv">
             <NavBar isLoggedIn={isLoggedIn}/>
-            <input className="browseGamesSearch" value={search} placeholder="Search for Games" onChange={(e) => setSearch(e.target.value)}></input>
-            <img className="browseGamesSearchIcon" src={tradearcadesearchicon}></img>
-            <div className="browseGamesFilter">
+            <div className="browseGamesContainer">
+                <h1 className="browseGamesHeader">Games</h1>
+                <h3 className="browseGamesSubHead">Game titles available for trade.</h3>
+                <input className="browseGamesSearch" value={search} placeholder="Search for Games" onChange={(e) => setSearch(e.target.value)}></input>
+                <img className="browseGamesSearchIcon" src={tradearcadesearchicon}></img>
+                <div className="browseGamesFilter">
                 <label className="browseGamesFilterLabel">Filter by Platform </label> 
                 <select className="browseGamesFilterSelect" name="platforms" onChange={(e) => setPlatformFilter(e.target.value)}>
                     <option value="All">All</option>
@@ -61,9 +64,6 @@ function BrowseGames({isLoggedIn}) {
                     <option value="Xbox Series X">Xbox Series X</option>
                 </select>
             </div>
-            <div className="browseGamesContainer">
-                <h1 className="browseGamesHeader">Games</h1>
-                <h3 className="browseGamesSubHead">Game titles available for trade.</h3>
                {displayedGame ? <GamePage isLoggedIn={isLoggedIn} displayedGame={displayedGame} setDisplayedGame={setDisplayedGame} allUsers={allUsers} /> : renderedGames }
             </div>
         </div>

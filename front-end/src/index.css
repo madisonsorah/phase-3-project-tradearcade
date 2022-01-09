@@ -568,8 +568,7 @@ body {
 .browseGamesSearch {
   font-family: Menlo, Monaco, 'Courier New', monospace;
   color: #fff;
-  margin-right: 21%;
-  margin-top: 10px;
+  margin-right: 3%;
   padding: 5px;
   float: right;
   border: 1px solid #fff;
@@ -581,18 +580,17 @@ body {
 }
 
 .browseGamesSearchIcon {
-  width: 16px;
+  width: 15px;
   height: 15px;
   float: right;
-  margin-right: -13%;
-  margin-top: 1%;
+  margin-right: -20%;
+  margin-top: 4px;
 }
 
 .browseGamesFilter {
   font-family: Menlo, Monaco, 'Courier New', monospace;
   color: #fff;
   margin-right: 10px;
-  margin-top: 10px;
   float:right;
 }
 
@@ -624,6 +622,8 @@ body {
 
 .browseGamesSubHead {
   color:#fff;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #fff;
 }
 
 .gameDiv {
@@ -664,7 +664,7 @@ body {
   font-family: Menlo, Monaco, 'Courier New', monospace;
   color: #fff;
   margin-right: 3%;
-  padding: 8px;
+  padding: 5px;
   float: right;
   border: 1px solid #fff;
   background-color: #410099;
@@ -678,8 +678,8 @@ body {
   width: 15px;
   height: 15px;
   float: right;
-  margin-right: -21%;
-  margin-top: 9px;
+  margin-right: -20%;
+  margin-top: 4px;
 }
 
 .memberListContainer {
