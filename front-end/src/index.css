@@ -526,13 +526,21 @@ body {
   margin: auto;
   padding-top: 120px;
   padding-bottom: 70px;
-  text-align: center;
+  margin-left: 100px;
   font-family: Menlo, Monaco, 'Courier New', monospace;
   color: #fff;
 }
 
+.reviewsHeader {
+  border-bottom: 0.09rem solid #fff;
+  width: 1300px;
+  padding-bottom: 20px;
+}
+
 .reviewsReview {
   padding: 30px;
+  border: 0.09rem solid #fff;
+  width: 500px;
 }
 
 .reviewsDeleteButton {
