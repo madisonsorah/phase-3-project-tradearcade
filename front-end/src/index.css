@@ -503,6 +503,14 @@ body {
   list-style-type: none;
 }
 
+.tradeHistorySentListUl2 {
+  margin-left: -30%;
+  width: 1300px;
+  height: 1000px;
+  display: inline-block;
+  justify-content: space-between;
+}
+
 .tradeHistoryReceivedListDiv {
   margin-left: 50px;
 }
@@ -531,6 +539,19 @@ body {
 .tradeHistoryLink {
   font-weight: 700;
   font-size: medium;
+  color: #fff;
+}
+
+.tradeHistoryButton {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  padding: 10px;
+  border-style: none;
+  background-color: #000;
+  font-family: Menlo, Monaco, 'Courier New', monospace;
+  font-size: medium;
+  font-weight: 700;
   color: #fff;
 }
 

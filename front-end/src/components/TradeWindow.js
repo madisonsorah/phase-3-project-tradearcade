@@ -7,7 +7,7 @@ function TradeWindow({myGames, setTradeWindow, handleTrade}) {
     ))
 
     return (
-        <div className="gameDiv"> 
+        <div className="tradeHistorySentListUl2"> 
             {renderedGames}
             <button onClick={() => setTradeWindow(false)}>Close</button>
         </div>

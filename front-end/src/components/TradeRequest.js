@@ -9,11 +9,11 @@ function TradeRequest({trade, allUsers, myTrades, allGames, tradeWindow, setTrad
     return (
         <div className="gameDiv" id={`${trade.id}`}> 
             <img className="gameImage" src={game.image}></img>
-            <Link to={`/games/${game.id}`}>{game.title}</Link>
-            <p>{game.platform}</p>
-            <p>Requested By: {requester.username}</p>
-            <button onClick={() => handleAccept(game, trade, requester)}>Accept</button>
-            <button>Deny</button>
+            <Link className="tradeHistoryLink" to={`/games/${game.id}`}>{game.title}</Link>
+            <p className="tradeHistoryPlatform">{game.platform}</p>
+            <p className="tradeHistoryPlatform">Requested By: {requester.username}</p>
+            <button className="tradeHistoryButton" onClick={() => handleAccept(game, trade, requester)}>Accept</button>
+            <button className="tradeHistoryButton">Deny</button>
         </div>
     )
 }
