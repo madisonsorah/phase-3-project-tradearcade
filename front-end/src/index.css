@@ -712,7 +712,7 @@ body {
   float: left;
   width: 15%;
   margin-top: 25px;
-  margin-left: 40px;
+  margin-left: 20px;
   padding-left: 20px;
   padding-top: 20px;
   padding-bottom: 48px;
@@ -729,7 +729,7 @@ body {
   padding-left: 20px;
   background-color: #000;
   color: #fff;
-  border: 0.09rem solid #fff;
+  border: 0.09rem solid #410099;
 } 
 
 .memberPageAvatar {
