@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 
-function TradeRequest({trade, allUsers, myTrades, allGames, tradeWindow, setTradeWindow, handleAccept, forceUpdate}) {
+function TradeRequest({trade, allUsers, myTrades, allGames, tradeWindow, setTradeWindow, handleAccept, handleDeny}) {
     console.log(trade.id)
     const game = allGames.find(g => g.id == trade.approver_gameID)
     const requester = allUsers.find(u => u.id == trade.requesterID)
@@ -13,7 +13,7 @@ function TradeRequest({trade, allUsers, myTrades, allGames, tradeWindow, setTrad
             <p className="tradeHistoryPlatform">{game.platform}</p>
             <p className="tradeHistoryPlatform">Requested By: {requester.username}</p>
             <button className="tradeHistoryButton" onClick={() => handleAccept(game, trade, requester)}>Accept</button>
-            <button className="tradeHistoryButton">Deny</button>
+            <button className="tradeHistoryButton" onClick={(e) => handleDeny(trade, e)}>Deny</button>
         </div>
     )
 }

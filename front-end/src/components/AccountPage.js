@@ -48,6 +48,10 @@ function AccountPage({isLoggedIn, currentUser, allTrades, allGames, allUsers, se
     const [tradeWindow, setTradeWindow] = useState(false)
     const [ownerships, setOwnerships] = useState([])
     const [myTrades, setMyTrades] = useState([])
+    const configDelete = {
+        method: "DELETE",
+    };
+   
     const myTradesPreset = allTrades.filter(t => t.approverID == currentUser.id)
     useEffect(() => {setMyTrades(myTradesPreset)}, [])
 
@@ -112,10 +116,7 @@ function AccountPage({isLoggedIn, currentUser, allTrades, allGames, allUsers, se
             },
             body: JSON.stringify(data2),
         };
-        const configDelete = {
-            method: "DELETE",
-        };
-
+      
         fetch(`http://localhost:9292/ownerships/${selectedOwnership.id}`, config)
         .then(resp => resp.json())
         .then(data => console.log(data))
@@ -128,12 +129,6 @@ function AccountPage({isLoggedIn, currentUser, allTrades, allGames, allUsers, se
         .then(trades => setMyTrades(trades))
 
         console.log(myTrades)
-        
-        setTimeout(fetch("http://localhost:9292/trades")
-            .then(resp => resp.json())
-            .then(trades => setAllTrades(trades))
-            .then(setMyTrades(myTradesPreset))
-            .then(console.log(myTrades)),1000)
 
         // const ele = document.querySelector('.gameDiv + .gameDiv')
         // ele.remove()
@@ -165,23 +160,57 @@ function AccountPage({isLoggedIn, currentUser, allTrades, allGames, allUsers, se
 
         console.log(requester)
     }
+
+    function handleDeny(trade, e) {
+        // setRequester(requester)
+        // setSelectedTradeOffer(game)
+        // console.log(ownerships)
+        // const selectedOwnership = ownerships.find(o => o.game_id == game.id && o.user_id == requester.id)
+        // console.log(selectedOwnership)
+        // const requesterOwnership = ownerships.find(o => o.game_id == selectedTradeOffer.id && o.user_id == currentUser.id)
+        // console.log(requesterOwnership)
+        // const selectedTrade = myTrades.find(t => t.requesterID == selectedOwnership.user_id && t.approverID == requesterOwnership.user_id)
+
+        fetch(`http://localhost:9292/trades/${trade.id}`, configDelete)
+        e.target.parentElement.remove()
+        setTradeWindow(false)
+    }
     
     const renderMyTrades = myTrades.map((trade) => {
-        return <TradeRequest TradeRequest={setTradeWindow} setTradeWindow={setTradeWindow} trade={trade} allGames={allGames} allUsers={allUsers} myTrades={myTrades} handleAccept={handleAccept}/>
+        return <TradeRequest handleDeny={handleDeny} TradeRequest={setTradeWindow} setTradeWindow={setTradeWindow} trade={trade} allGames={allGames} allUsers={allUsers} myTrades={myTrades} handleAccept={handleAccept}/>
     })
-    
+    console.log(renderMyTrades)
+    function renderTradesAndEmpty() {
+        if (renderMyTrades == false) {
+            return <h2>You do not currently have any trade requests!</h2>
+        } else {
+            return renderMyTrades
+        }
+    }
+    function handleLogout() {
+        setCurrentUser(false)
+        this.reload()
+    }
     return (
         <div>
             <NavBar isLoggedIn={isLoggedIn}/>
             <div className="accountPageDiv">
                 <h1 className="accountPageH1">My Account</h1>
+
+                <div>
+                    <h1 className="accountPageH1">Game Requests</h1>
+                    {tradeWindow ? <TradeWindow myGames={myGames} setTradeWindow={setTradeWindow} handleTrade={handleTrade}/> : console.log("noTradeWindow")}
+                    {renderTradesAndEmpty()}
+                </div>
                 <h2 className="accountPageH2">Menu</h2>
+
                 <div className="accountPageMenu">
                     <ul className="accountPageUl">
                         <Link to="/tradegame" className="accountPageLink">Trade in a Game</Link>
                         <Link to="/tradehistory" className="accountPageLink">Game Trade History</Link>
                         <Link to="/gamereviews" className="accountPageLink">Game Reviews</Link>
-                        <Link to="/login" className="accountPageLogout" onClick={() => setCurrentUser(false)}>Logout</Link>
+                        <Link to="/gamewishlist" className="accountPageLink">Game Wishlist</Link>
+                        <Link to="/login"className="accountPageLogout" onClick={() => handleLogout()}>Logout</Link>
                     </ul>
                 </div>
                 <div>

@@ -10,6 +10,7 @@ function MemberPage({currentUser, setCurrentUser, isLoggedIn}) {
     const [games, setGames] = useState([]);
     const [ownPage, setOwnPage] = useState(false)
     const [existingTrades ,setExistingTrades] = useState([])
+    const [tradeSent, setTradeSent] = useState(false)
 
     useEffect(() => {
         fetch("http://localhost:9292/trades")
@@ -22,7 +23,8 @@ function MemberPage({currentUser, setCurrentUser, isLoggedIn}) {
         } else if (currentUser.id == undefined) {
             console.log("Not Logged in")
         } else {
-          return <button className="memberPageButton" onClick={() => tradeGame(game)}>Request Trade</button>
+          return tradeSent ? console.log(`TradeSent?${tradeSent}`) : <button className="memberPageButton" onClick={() => tradeGame(game)}>Request Trade</button>
+            // return <button onClick={() => tradeGame(game)}>Request Trade</button>
         }
     }
 
@@ -50,6 +52,7 @@ function MemberPage({currentUser, setCurrentUser, isLoggedIn}) {
             body: JSON.stringify(tradeRequest),
         };
         if (matchingTrade == undefined){
+            setTradeSent(true)
             fetch("http://localhost:9292/trades", config)
             .then((resp) => resp.json())
             .then((trades) => console.log(trades))
@@ -57,8 +60,12 @@ function MemberPage({currentUser, setCurrentUser, isLoggedIn}) {
                 fetch("http://localhost:9292/trades")
                 .then(resp => resp.json())
                 .then(trades => setExistingTrades(trades)))
-        } else if (matchingTrade.requesterID == tradeRequest.requesterID && matchingTrade.approverID == tradeRequest.approverID) {
+        } else if(tradeSent == true) {
             console.log("You already have an ongoing trade with this person")
+        }
+        else if(matchingTrade.requesterID == tradeRequest.requesterID && matchingTrade.approverID == tradeRequest.approverID) {
+            console.log("You already have an ongoing trade with this person")
+            setTradeSent(true)
         } else {
         fetch("http://localhost:9292/trades", config)
             .then((resp) => resp.json())
@@ -67,6 +74,8 @@ function MemberPage({currentUser, setCurrentUser, isLoggedIn}) {
                 fetch("http://localhost:9292/trades")
                 .then(resp => resp.json())
                 .then(trades => setExistingTrades(trades)))
+                console.log("final else")
+                setTradeSent(true)
     }}
 
     useEffect(() => {
@@ -91,6 +100,10 @@ function MemberPage({currentUser, setCurrentUser, isLoggedIn}) {
         )
     })
 
+    const pendingTrade = (() => {
+        return tradeSent ? <h4>Trade Request Sent!</h4> : undefined
+    })
+
     return (
         <div> 
             <NavBar isLoggedIn={isLoggedIn} />
@@ -100,6 +113,7 @@ function MemberPage({currentUser, setCurrentUser, isLoggedIn}) {
                         <img className="memberPageAvatar" src={tradearcadeinvaderavatar}></img>
                         <h1>{user.first_name} {user.last_name}</h1>
                         <h3>{user.username}</h3>
+                        {pendingTrade()}
                         <p>{user.email}</p>
                     </div>
                     <div className="memberPageFloatRight">
