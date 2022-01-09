@@ -1,10 +1,11 @@
 import React, {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 import NavBar from "./NavBar";
+import tradearcadeinvaderavatar from "../images/tradearcadeinvaderavatar.png"
 
 function MemberPage({currentUser, setCurrentUser, isLoggedIn}) {
-    let { id } = useParams();
+    let {id} = useParams();
     const [user, setUser] = useState([]);
     const [games, setGames] = useState([]);
     const [ownPage, setOwnPage] = useState(false)
@@ -22,7 +23,7 @@ function MemberPage({currentUser, setCurrentUser, isLoggedIn}) {
         } else if (currentUser.id == undefined) {
             console.log("Not Logged in")
         } else {
-          return tradeSent ? console.log(`TradeSent?${tradeSent}`) : <button onClick={() => tradeGame(game)}>Request Trade</button>
+          return tradeSent ? console.log(`TradeSent?${tradeSent}`) : <button className="memberPageButton" onClick={() => tradeGame(game)}>Request Trade</button>
             // return <button onClick={() => tradeGame(game)}>Request Trade</button>
         }
     }
@@ -59,7 +60,6 @@ function MemberPage({currentUser, setCurrentUser, isLoggedIn}) {
                 fetch("http://localhost:9292/trades")
                 .then(resp => resp.json())
                 .then(trades => setExistingTrades(trades)))
-
         } else if(tradeSent == true) {
             console.log("You already have an ongoing trade with this person")
         }
@@ -91,9 +91,9 @@ function MemberPage({currentUser, setCurrentUser, isLoggedIn}) {
     const renderedUserGames = games.map((game) =>  {
         return (
             <li className="memberGameLi">
-                <img className="memberGameImage" src={game.image}></img>
-                <Link to={`/games/${game.id}`}>{game.title}</Link>
-                <p>{game.platform}</p>
+                <img className="memberPageGameImage" src={game.image}></img>
+                <Link className="memberPageGameTitle" to={`/games/${game.id}`}>{game.title}</Link>
+                <p className="memberPagePlatform">{game.platform}</p>
                 {renderRequestTradeButtons(game)}
                 {/* {console.log(game)} */}
             </li>
@@ -108,15 +108,21 @@ function MemberPage({currentUser, setCurrentUser, isLoggedIn}) {
         <div> 
             <NavBar isLoggedIn={isLoggedIn} />
             <div className="memberPageDiv">
-                <img alt="avatar"></img>
-                <h1>{user.first_name} {user.last_name}</h1>
-                <h3>{user.username}</h3>
-                {pendingTrade()}
-                {user.bio ? (<p>{user.bio}</p>) : null}
-                <h2>Games Available For Trade</h2>
-                <ul>
-                    {renderedUserGames}
-                </ul>
+                <div className="memberPageFloatContainer">
+                    <div className="memberPageFloatLeft">
+                        <img className="memberPageAvatar" src={tradearcadeinvaderavatar}></img>
+                        <h1>{user.first_name} {user.last_name}</h1>
+                        <h3>{user.username}</h3>
+                        {pendingTrade()}
+                        <p>{user.email}</p>
+                    </div>
+                    <div className="memberPageFloatRight">
+                        <h2 className="memberPageH2">Games Available For Trade</h2>
+                        <ul>
+                            {renderedUserGames}
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     )

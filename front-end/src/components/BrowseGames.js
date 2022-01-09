@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useState} from "react";
 import NavBar from "./NavBar"
 import Game from "./Game"
 import GamePage from "./GamePage"
+import tradearcadesearchicon from "../images/tradearcadesearchicon.png"
 
 function BrowseGames({isLoggedIn}) {
     const [games, setGames] = useState([])
@@ -27,7 +28,7 @@ function BrowseGames({isLoggedIn}) {
     }
 
     function searchedGames() {
-        if(search == ""){
+        if (search == ""){
             return games
         } else {
             return games.filter(game => game.title.toLowerCase().includes(search.toLowerCase()))
@@ -35,7 +36,7 @@ function BrowseGames({isLoggedIn}) {
     }
 
     function platformFilterGames() {
-        if(platformFilter == "All") {
+        if (platformFilter == "All") {
             return searchedGames()
         } else {
             return searchedGames().filter(g => g.platform == platformFilter )
@@ -49,19 +50,23 @@ function BrowseGames({isLoggedIn}) {
     return (
         <div className="browseGamesDiv">
             <NavBar isLoggedIn={isLoggedIn}/>
-            <input value={search} placeholder="Search for Games" onChange={(e) => setSearch(e.target.value)}></input>
-            <div>
-                {/* You can delete the label below if you want */}
-                <label>Choose a Platform:</label> 
-                <select name="platforms" onChange={(e) => setPlatformFilter(e.target.value)}>
-                    <option value="All">All</option>
-                    <option value="Nintendo Switch">Nintendo Switch</option>
-                    <option value="PlayStation 4">PlayStation 4</option>
-                    <option value="Xbox Series X">Xbox Series X</option>
-                </select>
-            </div>
-            <div>
-               {displayedGame ? <GamePage isLoggedIn={isLoggedIn} displayedGame={displayedGame} setDisplayedGame={setDisplayedGame} allUsers={allUsers} /> : renderedGames }
+            <div className="browseGamesContainer">
+                <h1 className="browseGamesHeader">Games</h1>
+                <h3 className="browseGamesSubHead">Game titles available for trade.</h3>
+                <input className="browseGamesSearch" value={search} placeholder="Search for Games" onChange={(e) => setSearch(e.target.value)}></input>
+                <img className="browseGamesSearchIcon" src={tradearcadesearchicon}></img>
+                <div className="browseGamesFilter">
+                    <label className="browseGamesFilterLabel">Filter by Platform </label> 
+                    <select className="browseGamesFilterSelect" name="platforms" onChange={(e) => setPlatformFilter(e.target.value)}>
+                        <option value="All">All</option>
+                        <option value="Nintendo Switch">Nintendo Switch</option>
+                        <option value="PlayStation 4">PlayStation 4</option>
+                        <option value="Xbox Series X">Xbox Series X</option>
+                    </select>
+                </div>
+                <div className="browseGamesList">
+                    {displayedGame ? <GamePage isLoggedIn={isLoggedIn} displayedGame={displayedGame} setDisplayedGame={setDisplayedGame} allUsers={allUsers} /> : renderedGames }
+                </div>
             </div>
         </div>
     )

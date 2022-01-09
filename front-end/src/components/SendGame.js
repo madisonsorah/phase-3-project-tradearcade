@@ -46,13 +46,13 @@ function SendGame({isLoggedIn, currentUser}) {
                 <NavBar isLoggedIn={isLoggedIn}/>
                 <div className="sendGameDiv">
                     <div className="sendGameFormDiv">
-                        <form><p className="sendGameFormEnterAddress">Enter Your Game Details</p>
+                        <form><h2 className="sendGameFormEnterGameDetails">Enter Your Game Details</h2>
                             <input onChange={(e) => setGameTitle(e.target.value)} className="sendGameFormInput" placeholder="Game title"></input>
                             <input onChange={(e) => setGamePlatform(e.target.value)} className="sendGameFormInput" placeholder="Game Platform"></input>
                             <input onChange={(e) => setGameImageURL(e.target.value)} className="sendGameFormInput" placeholder="Image URL"></input>
                             <input onChange={(e) => setGameDescription(e.target.value)} className="sendGameFormInput" placeholder="Game Description"></input>
-                            <button onClick={(e) => createGame(e)} className="sendGameFormButton">LIST GAME</button>
-                            <p className="sendGameFormFreeLabel">Game listed!</p>
+                            <button onClick={(e) => createGame(e)} className="sendGameFormButton">List Game</button>
+                            <p className="sendGameFormGameListed">Game listed!</p>
                         </form>
                     </div>
                 </div>
@@ -64,8 +64,8 @@ function SendGame({isLoggedIn, currentUser}) {
             <NavBar isLoggedIn={isLoggedIn}/>
             <div className="sendGameDiv">
                 <div className="sendGameFormDiv">
-                    <form><p className="sendGameFormEnterAddress">Enter Your Game Details</p>
-                        <input onChange={(e) => setGameTitle(e.target.value)} className="sendGameFormInput" placeholder="Game title"></input>
+                    <form><h2 className="sendGameFormEnterGameDetails">Enter Your Game Details</h2>
+                        <input onChange={(e) => setGameTitle(e.target.value)} className="sendGameFormInput" placeholder="Game Title"></input>
                         <input onChange={(e) => setGamePlatform(e.target.value)} className="sendGameFormInput" placeholder="Game Platform"></input>
                         <input onChange={(e) => setGameImageURL(e.target.value)} className="sendGameFormInput" placeholder="Image URL"></input>
                         <input onChange={(e) => setGameDescription(e.target.value)} className="sendGameFormInput" placeholder="Game Description"></input>

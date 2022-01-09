@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import NavBar from "./NavBar"
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 import TradeRequest from "./TradeRequest";
 import TradeWindow from "./TradeWindow";
 
@@ -23,10 +23,12 @@ function AccountPage({isLoggedIn, currentUser, allTrades, allGames, allUsers, se
     //     .then(resp => resp.json())
     //     .then(users => setAllUSers(users))
     // },[])
+    
     const [myGames, setMyGames] = useState([])
     const [selectedTradeOffer, setSelectedTradeOffer] = useState()
     const [RequesterID, setRequesterID] = useState()
     const [requester, setRequester] = useState()
+
     // const [myGames, setMyGames] = useState([])
     // useEffect(() => {
     //     fetch(`http://localhost:9292/users/${currentUser.id}/games`)
@@ -35,7 +37,8 @@ function AccountPage({isLoggedIn, currentUser, allTrades, allGames, allUsers, se
     // },[])
 
     console.log(myGames)
-// setMyGames
+
+    // setMyGames
     // const myOwnerships = ownerships.filter(o => o.user_id == currentUser.id)
     // const myGames = allGames.filter(g => g.id == myOwnerships)
     // console.log(myOwnerships)
@@ -48,9 +51,10 @@ function AccountPage({isLoggedIn, currentUser, allTrades, allGames, allUsers, se
     const configDelete = {
         method: "DELETE",
     };
-    
+   
     const myTradesPreset = allTrades.filter(t => t.approverID == currentUser.id)
-     useEffect(() => {setMyTrades(myTradesPreset)},[])
+    useEffect(() => {setMyTrades(myTradesPreset)}, [])
+
     // console.log(myTrades)
     // console.log(allUsers)
     // console.log(M)   
@@ -59,11 +63,13 @@ function AccountPage({isLoggedIn, currentUser, allTrades, allGames, allUsers, se
     // const myTradeGamesID = myTrades.map(t => t.approver_gameID)
     // const myTradeRequesters = myTrades.map(t => t.requesterID)
     // const myTradeGames = allGames.filter(g => g.id == myTradeGamesID)
+
     useEffect(() => {
         fetch("http://localhost:9292/ownerships")
         .then(resp => resp.json())
         .then(ownerships => setOwnerships(ownerships))
     },[])
+
     function handleTrade(game) {
         console.log(game)
         console.log(requester)
@@ -74,15 +80,17 @@ function AccountPage({isLoggedIn, currentUser, allTrades, allGames, allUsers, se
         const selectedTrade = myTrades.find(t => t.requesterID == selectedOwnership.user_id && t.approverID == requesterOwnership.user_id)
         console.log(selectedOwnership)
         console.log(`requesterID=${RequesterID}`)
+
         // console.log(RequesterID)
+        
         console.log("here")
         console.log(myTrades)
         console.log(requesterOwnership.user_id)
         console.log(selectedOwnership.user_id)
         console.log("^")
-        
         console.log(selectedTrade)
-       const data = {
+
+        const data = {
             id: selectedOwnership.id,
             game_id: selectedOwnership.game_id,
             user_id: currentUser.id
@@ -108,7 +116,7 @@ function AccountPage({isLoggedIn, currentUser, allTrades, allGames, allUsers, se
             },
             body: JSON.stringify(data2),
         };
-        
+      
         fetch(`http://localhost:9292/ownerships/${selectedOwnership.id}`, config)
         .then(resp => resp.json())
         .then(data => console.log(data))
@@ -122,17 +130,11 @@ function AccountPage({isLoggedIn, currentUser, allTrades, allGames, allUsers, se
 
         console.log(myTrades)
 
-        
-            // setTimeout(fetch("http://localhost:9292/trades")
-            // .then(resp => resp.json())
-            // .then(trades => setAllTrades(trades))
-            // .then(setMyTrades(myTradesPreset))
-            // .then(console.log(myTrades)),1000)
-
-
         // const ele = document.querySelector('.gameDiv + .gameDiv')
         // ele.remove()
+
         setTradeWindow(false)
+
         // document.querySelector(`#${selectedTrade.id}`).remove()
         // const gamediv = selectedTrade.id
         // document.querySelector(`#${gamediv}`).remove()
@@ -143,7 +145,9 @@ function AccountPage({isLoggedIn, currentUser, allTrades, allGames, allUsers, se
         setSelectedTradeOffer(game)
         console.log(selectedTradeOffer)
         console.log(trade)
+
         // console.log(requester)
+
         setRequesterID(requester.id)
         setRequester(requester)
         
@@ -171,6 +175,7 @@ function AccountPage({isLoggedIn, currentUser, allTrades, allGames, allUsers, se
         e.target.parentElement.remove()
         setTradeWindow(false)
     }
+    
     const renderMyTrades = myTrades.map((trade) => {
         return <TradeRequest handleDeny={handleDeny} TradeRequest={setTradeWindow} setTradeWindow={setTradeWindow} trade={trade} allGames={allGames} allUsers={allUsers} myTrades={myTrades} handleAccept={handleAccept}/>
     })
@@ -191,12 +196,14 @@ function AccountPage({isLoggedIn, currentUser, allTrades, allGames, allUsers, se
             <NavBar isLoggedIn={isLoggedIn}/>
             <div className="accountPageDiv">
                 <h1 className="accountPageH1">My Account</h1>
+
                 <div>
                     <h1 className="accountPageH1">Game Requests</h1>
                     {tradeWindow ? <TradeWindow myGames={myGames} setTradeWindow={setTradeWindow} handleTrade={handleTrade}/> : console.log("noTradeWindow")}
                     {renderTradesAndEmpty()}
                 </div>
-                <h1 className="accountPageH1">Menu</h1>
+                <h2 className="accountPageH2">Menu</h2>
+
                 <div className="accountPageMenu">
                     <ul className="accountPageUl">
                         <Link to="/tradegame" className="accountPageLink">Trade in a Game</Link>
@@ -205,6 +212,11 @@ function AccountPage({isLoggedIn, currentUser, allTrades, allGames, allUsers, se
                         <Link to="/gamewishlist" className="accountPageLink">Game Wishlist</Link>
                         <Link to="/login"className="accountPageLogout" onClick={() => handleLogout()}>Logout</Link>
                     </ul>
+                </div>
+                <div>
+                    <h2 className="accountPageH2">Game Requests</h2>
+                    {tradeWindow ? <TradeWindow myGames={myGames} setTradeWindow={setTradeWindow} handleTrade={handleTrade}/> : <p>You do not have any game trade requests.</p>}
+                    {renderMyTrades}
                 </div>
             </div>
         </div>
