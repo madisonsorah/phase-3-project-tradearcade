@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
 import { Link } from "react-router-dom";
 import NavBar from "./NavBar";
+import tradearcadeinvaderavatar from "../images/tradearcadeinvaderavatar.png"
 
 function MemberPage({currentUser, setCurrentUser, isLoggedIn}) {
     let { id } = useParams();
@@ -81,7 +82,7 @@ function MemberPage({currentUser, setCurrentUser, isLoggedIn}) {
     const renderedUserGames = games.map((game) =>  {
         return (
             <li className="memberGameLi">
-                <img className="memberGameImage" src={game.image}></img>
+                <img className="memberPageGameImage" src={game.image}></img>
                 <Link to={`/games/${game.id}`}>{game.title}</Link>
                 <p>{game.platform}</p>
                 {renderRequestTradeButtons(game)}
@@ -94,14 +95,19 @@ function MemberPage({currentUser, setCurrentUser, isLoggedIn}) {
         <div> 
             <NavBar isLoggedIn={isLoggedIn} />
             <div className="memberPageDiv">
-                <img alt="avatar"></img>
-                <h1>{user.first_name} {user.last_name}</h1>
-                <h3>{user.username}</h3>
-                {user.bio ? (<p>{user.bio}</p>) : null}
-                <h2>Games Available For Trade</h2>
-                <ul>
-                    {renderedUserGames}
-                </ul>
+                <div className="memberPageFloatContainer">
+                    <div className="memberPageFloatLeft">
+                        <img className="memberPageAvatar" src={tradearcadeinvaderavatar}></img>
+                        <h1>{user.first_name} {user.last_name}</h1>
+                        <h3>{user.username}</h3>
+                    </div>
+                    <div className="memberPageFloatRight">
+                        <h2>Games Available For Trade</h2>
+                        <ul>
+                            {renderedUserGames}
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     )
