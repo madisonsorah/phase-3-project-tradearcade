@@ -59,7 +59,7 @@ function LoginPage({currentUser, setCurrentUser, isLoggedIn}) {
                 <ul className="homePageNewGamesUl">
                     <li className="homePageNewGamesLi">
                         <Link to="/browsegames">
-                            <img className= "homePageFFVIIImage" src="https://m.media-amazon.com/images/I/61F14y0nXAS._AC_SX466_.jpg" alt="FFVII"></img>
+                            <img className="homePageNewGamesImage" src="https://m.media-amazon.com/images/I/61F14y0nXAS._AC_SX466_.jpg" alt="FFVII"></img>
                         </Link>
                         <p className="homePageNewGamesTitle">FINAL FANTASY VII Remake</p>
                     </li>
@@ -71,13 +71,13 @@ function LoginPage({currentUser, setCurrentUser, isLoggedIn}) {
                     </li>
                     <li className="homePageNewGamesLi">
                         <Link to="/browsegames">
-                            <img className= "homePagePokemonImage" src="https://cdn.shopify.com/s/files/1/0027/8298/6309/products/pokemon_brilliant_diamond_box_art.jpg?v=1637159188" alt="Pokemon"></img>
+                            <img className= "homePageNewGamesImage" src="https://cdn.shopify.com/s/files/1/0027/8298/6309/products/pokemon_brilliant_diamond_box_art.jpg?v=1637159188" alt="Pokemon"></img>
                         </Link>
                         <p className="homePageNewGamesTitle">Pokemon Brilliant Diamond</p>
                     </li>
                     <li className="homePageNewGamesLi">
                         <Link to="/browsegames">
-                            <img className= "homePageZeldaImage" src="https://i.redd.it/jhp467u1f7ay.jpg" alt="Zelda"></img>
+                            <img className= "homePageNewGamesImage" src="https://i.redd.it/jhp467u1f7ay.jpg" alt="Zelda"></img>
                         </Link>
                         <p className="homePageNewGamesTitle">The Legend of Zelda: Breath of the Wild</p>
                     </li>
