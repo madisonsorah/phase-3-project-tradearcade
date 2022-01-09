@@ -196,17 +196,10 @@ function AccountPage({isLoggedIn, currentUser, allTrades, allGames, allUsers, se
             <NavBar isLoggedIn={isLoggedIn}/>
             <div className="accountPageDiv">
                 <h1 className="accountPageH1">My Account</h1>
-
-                <div>
-                    <h1 className="accountPageH1">Game Requests</h1>
-                    {tradeWindow ? <TradeWindow myGames={myGames} setTradeWindow={setTradeWindow} handleTrade={handleTrade}/> : console.log("noTradeWindow")}
-                    {renderTradesAndEmpty()}
-                </div>
                 <h2 className="accountPageH2">Menu</h2>
-
                 <div className="accountPageMenu">
                     <ul className="accountPageUl">
-                        <Link to="/tradegame" className="accountPageLink">Trade in a Game</Link>
+                        <Link to="/listgame" className="accountPageLink">List a Game</Link>
                         <Link to="/tradehistory" className="accountPageLink">Game Trade History</Link>
                         <Link to="/gamereviews" className="accountPageLink">Game Reviews</Link>
                         <Link to="/gamewishlist" className="accountPageLink">Game Wishlist</Link>
@@ -216,7 +209,7 @@ function AccountPage({isLoggedIn, currentUser, allTrades, allGames, allUsers, se
                 <div>
                     <h2 className="accountPageH2">Game Requests</h2>
                     {tradeWindow ? <TradeWindow myGames={myGames} setTradeWindow={setTradeWindow} handleTrade={handleTrade}/> : <p>You do not have any game trade requests.</p>}
-                    {renderMyTrades}
+                    {renderTradesAndEmpty()}
                 </div>
             </div>
         </div>

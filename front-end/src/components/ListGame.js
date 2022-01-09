@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import NavBar from "./NavBar";
 
-function SendGame({isLoggedIn, currentUser}) {
+function ListGame({isLoggedIn, currentUser}) {
     const [isSubmitted, setSubmitted] = useState(false)
     const [gameTitle, setGameTitle] = useState()
     const [gamePlatform, setGamePlatform] = useState()
@@ -77,4 +77,4 @@ function SendGame({isLoggedIn, currentUser}) {
        )}
 }
 
-export default SendGame;
+export default ListGame;

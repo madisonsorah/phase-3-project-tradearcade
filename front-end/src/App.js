@@ -9,7 +9,7 @@ import GamePage from './components/GamePage';
 import MemberPage from './components/MemberPage';
 import MemberList from './components/MemberList';
 import TradeHistory from './components/TradeHistory';
-import SendGame from './components/SendGame';
+import ListGame from './components/ListGame';
 import Reviews from './components/Reviews';
 
 function App() {
@@ -58,7 +58,7 @@ function App() {
           <Route path="/member/:id" element={<MemberPage currentUser={currentUser} setCurrentUser={setCurrentUser} isLoggedIn={isLoggedIn}/>} />
           <Route path="/members" element={<MemberList isLoggedIn={isLoggedIn}/>} />
           <Route path="/tradehistory" element={<TradeHistory isLoggedIn={isLoggedIn} currentUser={currentUser}/>} />
-          <Route path="/tradegame" element={<SendGame isLoggedIn={isLoggedIn} currentUser={currentUser}/>} />
+          <Route path="/listgame" element={<ListGame isLoggedIn={isLoggedIn} currentUser={currentUser}/>} />
           <Route path="/gamereviews" element={<Reviews isLoggedIn={isLoggedIn} currentUser={currentUser}/>} />
         </Routes>
       </BrowserRouter>
