@@ -41,7 +41,7 @@ body {
   font-size: 14px;
   font-weight: 700;
   text-decoration: none;
-  color: #410099;
+  color: #fff;
 }
 
 .navBarLink:visited {
@@ -50,11 +50,11 @@ body {
   font-size: 14px;
   font-weight: 700;
   text-decoration: none;
-  color: #410099;
+  color: #fff;
 }
 
 .navBarLink:hover {
-  color: #290060;
+  color: #410099;
 }
 
 .navBarLoginLink {
@@ -67,7 +67,7 @@ body {
   font-size: 14px;
   font-weight: 700;
   text-decoration: none;
-  color: #410099;
+  color: #fff;
 }
 
 .navBarAccountLink {
@@ -80,7 +80,7 @@ body {
   font-size: 14px;
   font-weight: 700;
   text-decoration: none;
-  color: #410099;
+  color: #fff;
 }
 
 .navBarLoginLink:visited {
@@ -93,11 +93,11 @@ body {
   font-size: 14px;
   font-weight: 700;
   text-decoration: none;
-  color: #410099;
+  color: #fff;
 }
 
 .navBarLoginLink:hover {
-  color: #290060;
+  color: #410099;
 }
 
 .navBarAccountLink:visited {
@@ -110,11 +110,11 @@ body {
   font-size: 14px;
   font-weight: 700;
   text-decoration: none;
-  color: #410099;
+  color: #fff;
 }
 
 .navBarAccountLink:hover {
-  color: #290060;
+  color: #410099;
 }
 
 .homePageDiv {
@@ -197,7 +197,7 @@ body {
 
 .homePageFooter {
   background-color: #000;
-  color: #410099;
+  color: #fff;
   height: 410px;
   box-shadow: 0 -3px 3px 0 #290060;
 }
@@ -213,12 +213,23 @@ body {
 
 .homePageNewGamesH2 {
   padding-bottom: 5px;
+  width: 280px;
+  margin-left: 40px;
+  display:inline-block
+}
+
+.homePageNewGamesLink {
+  font-size: small;
+  font-weight: 700;
+  color: #410099;
+  width: 200px;
+  margin-bottom: 10px;
+  display:inline-block;
 }
 
 .homePageNewGamesLi {
   display: inline-block;
-  margin: 20px;
-  background-color: #290060;
+  margin: 30px;
   color: #fff;
 }
 
@@ -232,15 +243,31 @@ body {
 .homePageNewGamesImage {
   margin: auto;
   padding: 15px;
-  width: 200px;
+  width: 145px;
   height: 200px;
 }
 
 .homePageZeldaImage {
   margin: auto;
   padding: 15px;
-  margin-left: 45px;
-  width: 200px;
+  margin-left: 70px;
+  width: 145px;
+  height: 200px;
+}
+
+.homePageFFVIIImage {
+  margin: auto;
+  padding: 15px;
+  margin-left: 10px;
+  width: 145px;
+  height: 200px;
+}
+
+.homePagePokemonImage {
+  margin: auto;
+  padding: 15px;
+  margin-left: 15px;
+  width: 145px;
   height: 200px;
 }
 
@@ -558,7 +585,7 @@ body {
 .gameImage {
   margin: auto;
   margin-bottom: 20px;
-  width: 150px;
+  width: 145px;
   height: 200px;
   display: block;
 }

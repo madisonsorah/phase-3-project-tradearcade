@@ -77,29 +77,29 @@ function HomePage({currentUser, setCurrentUser, isLoggedIn}) {
                 </div>
             </div>
             <div className="homePageFooter">
+            <h2 className="homePageNewGamesH2">Newly Listed Games</h2><Link className="homePageNewGamesLink" to="/browsegames"><p className="homePageNewGamesLinkP">See Full List</p></Link>
                     <ul className="homePageNewGamesUl">
-                        <h2 className="homePageNewGamesH2">Newly Listed Games</h2>
                         <li className="homePageNewGamesLi">
                             <Link to="/browsegames">
-                                <img className= "homePageNewGamesImage" src="https://media.gamestop.com/i/gamestop/10177032/FINAL-FANTASY-VII-Remake---PlayStation-4?$pdp2x$" alt="FFVII"></img>
+                                <img className= "homePageFFVIIImage" src="https://m.media-amazon.com/images/I/61F14y0nXAS._AC_SX466_.jpg" alt="FFVII"></img>
                             </Link>
                             <p className="homePageNewGamesTitle">FINAL FANTASY VII Remake</p>
                         </li>
                         <li className="homePageNewGamesLi">
                             <Link to="/browsegames">
-                                <img className= "homePageNewGamesImage" src="https://media.gamestop.com/i/gamestop/11108375/Halo-Infinite---Xbox-Series-X?$pdp2x$" alt="Halo"></img>
+                                <img className= "homePageNewGamesImage" src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6414/6414163_sd.jpg" alt="Halo"></img>
                             </Link>
                             <p className="homePageNewGamesTitle">Halo Infinite</p>
                         </li>
                         <li className="homePageNewGamesLi">
                             <Link to="/browsegames">
-                                <img className= "homePageNewGamesImage" src="https://media.gamestop.com/i/gamestop/11120692/Pokemon-Brilliant-Diamond---Nintendo-Switch?$pdp2x$" alt="Pokemon"></img>
+                                <img className= "homePagePokemonImage" src="https://cdn.shopify.com/s/files/1/0027/8298/6309/products/pokemon_brilliant_diamond_box_art.jpg?v=1637159188" alt="Pokemon"></img>
                             </Link>
                             <p className="homePageNewGamesTitle">Pokemon Brilliant Diamond</p>
                         </li>
                         <li className="homePageNewGamesLi">
                             <Link to="/browsegames">
-                                <img className= "homePageZeldaImage" src="https://media.gamestop.com/i/gamestop/10141904/The-Legend-of-Zelda-Breath-of-the-Wild---Nintendo-Switch?$pdp2x$" alt="Zelda"></img>
+                                <img className= "homePageZeldaImage" src="https://i.redd.it/jhp467u1f7ay.jpg" alt="Zelda"></img>
                             </Link>
                             <p className="homePageNewGamesTitle">The Legend of Zelda: Breath of the Wild</p>
                         </li>
