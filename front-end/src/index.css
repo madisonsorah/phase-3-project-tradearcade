@@ -448,9 +448,10 @@ body {
   box-sizing: border-box;
 }
 
-.sendGameFormFreeLabel {
+.sendGameFormGameListed {
   text-align: center;
   font-size: medium;
+  padding-top: 20px;
   font-family: Menlo, Monaco, 'Courier New', monospace;
 }
 
