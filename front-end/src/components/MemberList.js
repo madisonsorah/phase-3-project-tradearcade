@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 import NavBar from "./NavBar";
-import tradearcadeinvaderavatar from "../images/tradearcadeinvaderavatar.png"
+import tradearcadeinvader from "../images/tradearcadeinvader.png"
 import tradearcadesearchicon from "../images/tradearcadesearchicon.png"
 
 function MemberList({isLoggedIn}) {
@@ -16,7 +16,7 @@ function MemberList({isLoggedIn}) {
     
     const renderMembers = searchedUsers().map((user) => (
         <div className="memberListMember">
-            <img className="memberListAvatar" src={tradearcadeinvaderavatar}></img>
+            <img className="memberListAvatar" src={tradearcadeinvader}></img>
             <Link className="memberListLink" to={`/member/${user.id}`}>{user.username}</Link>
         </div>
     ))
@@ -33,10 +33,10 @@ function MemberList({isLoggedIn}) {
         <div>
             <NavBar isLoggedIn={isLoggedIn}/>
             <div className="memberListDiv">
-                <input className="memberListSearch" value={search} placeholder="Search for Members" onChange={(e) => setSearch(e.target.value)}></input>
-                <img className="memberListSearchIcon" src={tradearcadesearchicon}></img>
                 <div className="memberListContainer">
                 <h1 className="memberListHeader">Current Members</h1>
+                <input className="memberListSearch" value={search} placeholder="Search for Members" onChange={(e) => setSearch(e.target.value)}></input>
+                <img className="memberListSearchIcon" src={tradearcadesearchicon}></img>
                     {renderMembers}
                 </div>
             </div>
