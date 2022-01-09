@@ -827,17 +827,6 @@ body {
   text-align: center;
   color: #fff;
 }
-.gameLink {
-  font-weight: 700;
-  font-size: small;
-  margin-top: 20px;
-  color: #fff;
-}
-
-.gamePlatform {
-  color: #fff;
-  font-size: x-small;
-}
 
 .gamePageFloatContainer {
   margin: auto;
