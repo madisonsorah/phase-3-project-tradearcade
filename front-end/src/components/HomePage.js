@@ -55,9 +55,9 @@ function HomePage({currentUser, setCurrentUser, isLoggedIn}) {
         <div>
             <NavBar isLoggedIn={isLoggedIn} />
             <div className="homePageDiv">
+                <div className="homePageFloatContainer">
                 <h1 className="homePageWelcome">Welcome to TradeArcade</h1>
                 <p className="homePageP">Sign up to trade games with thousands of community members.</p>
-                <div className="homePageFloatContainer">
                     <div className="homePageFloatLeft">
                         <img className="homePageMachineImage" src={tradearcademachine}></img>
                     </div>
