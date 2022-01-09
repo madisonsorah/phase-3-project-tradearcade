@@ -5,7 +5,7 @@ function Game({game}) {
     return (
         <div className="gameDiv"> 
             <img className="gameImage" src={game.image}></img>
-            <Link to={`/games/${game.id}`}>{game.title}</Link>
+            <Link className="gameLink" to={`/games/${game.id}`}>{game.title}</Link>
             <p>{game.platform}</p>
         </div>
     )

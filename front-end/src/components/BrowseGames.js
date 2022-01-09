@@ -52,7 +52,7 @@ function BrowseGames({isLoggedIn}) {
             <input className="browseGamesSearch" value={search} placeholder="Search for Games" onChange={(e) => setSearch(e.target.value)}></input>
             <div className="browseGamesFilter">
                 <label className="browseGamesFilterLabel">Filter by Platform </label> 
-                <select name="platforms" onChange={(e) => setPlatformFilter(e.target.value)}>
+                <select className="browseGamesFilterSelect" name="platforms" onChange={(e) => setPlatformFilter(e.target.value)}>
                     <option value="All">All</option>
                     <option value="Nintendo Switch">Nintendo Switch</option>
                     <option value="PlayStation 4">PlayStation 4</option>

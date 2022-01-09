@@ -491,7 +491,8 @@ body {
   margin: auto;
   padding-top: 80px;
   padding-bottom: 10px;
-  height: 800px;
+  height: 100%;
+  width: 100%;
   overflow: scroll;
   background-color: #000;
 }
@@ -499,22 +500,36 @@ body {
 .browseGamesSearch {
   font-family: Menlo, Monaco, 'Courier New', monospace;
   color: #fff;
-  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  float: right;
   border: 1px solid #fff;
   background-color: #000;
-  display: inline-block;
+}
+
+.browseGamesSearch::placeholder {
+  opacity: 2;
 }
 
 .browseGamesFilter {
   font-family: Menlo, Monaco, 'Courier New', monospace;
   color: #fff;
-  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
   background-color: #000;
-  display: inline-block;
+  float:right;
 }
 
 .browseGamesFilterLabel {
   font-size: small;
+  font-weight: 700;
+}
+
+.browseGamesFilterSelect {
+  font-family: Menlo, Monaco, 'Courier New', monospace;
+  color: #fff;
+  background-color:#000;
+  border: 1px solid #fff;
 }
 
 .browseGamesContainer {
@@ -542,10 +557,21 @@ body {
 
 .gameImage {
   margin: auto;
-  padding: 5px;
-  width: 200px;
+  margin-bottom: 20px;
+  width: 150px;
   height: 200px;
   display: block;
+}
+
+.gameLink {
+  font-weight: 700;
+  font-size: small;
+  margin-top: 20px;
+  color: #fff;
+}
+
+.gamePlatform {
+  color: #fff;
 }
 
 .memberPageDiv {
