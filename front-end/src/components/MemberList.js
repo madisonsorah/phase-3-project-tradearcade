@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 import NavBar from "./NavBar";
 import tradearcadeinvader from "../images/tradearcadeinvader.png"
 import tradearcadesearchicon from "../images/tradearcadesearchicon.png"
@@ -34,10 +34,10 @@ function MemberList({isLoggedIn}) {
             <NavBar isLoggedIn={isLoggedIn}/>
             <div className="memberListDiv">
                 <div className="memberListContainer">
-                <h1 className="memberListHeader">Current Members</h1>
-                <h3 className="memberListSubHead">Active members in our community.</h3>
-                <input className="memberListSearch" value={search} placeholder="Search for Members" onChange={(e) => setSearch(e.target.value)}></input>
-                <img className="memberListSearchIcon" src={tradearcadesearchicon}></img>
+                    <h1 className="memberListHeader">Current Members</h1>
+                    <h3 className="memberListSubHead">Active members in our community.</h3>
+                    <input className="memberListSearch" value={search} placeholder="Search for Members" onChange={(e) => setSearch(e.target.value)}></input>
+                    <img className="memberListSearchIcon" src={tradearcadesearchicon}></img>
                     {renderMembers}
                 </div>
             </div>

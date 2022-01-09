@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import NavBar from "./NavBar"; 
-import { Link, useNavigate } from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import tradearcademachine from "../images/tradearcademachine.png"
 
 function HomePage({currentUser, setCurrentUser, isLoggedIn}) {
@@ -40,14 +40,14 @@ function HomePage({currentUser, setCurrentUser, isLoggedIn}) {
         console.log(data)
         const matchingEmail = allUsers.find(u => u.email == email)
         console.log(matchingEmail)
-        if(matchingEmail == undefined) {
+        if (matchingEmail == undefined) {
             //If there is no email match, and the inputted email is unique, this will run
             fetch(userData, config)
             .then((resp) => resp.json())
             .then((userData) => setCurrentUser(userData))
             .then(console.log(currentUser))
             navigate("/account", { replace: true })
-        }else{
+        } else {
             console.log("email already exists!")
         }
       }

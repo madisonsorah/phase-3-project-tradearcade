@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 import NavBar from "./NavBar";
 import tradearcadeinvaderavatar from "../images/tradearcadeinvaderavatar.png"
 
 function MemberPage({currentUser, setCurrentUser, isLoggedIn}) {
-    let { id } = useParams();
+    let {id} = useParams();
     const [user, setUser] = useState([]);
     const [games, setGames] = useState([]);
     const [ownPage, setOwnPage] = useState(false)
@@ -57,7 +57,7 @@ function MemberPage({currentUser, setCurrentUser, isLoggedIn}) {
                 fetch("http://localhost:9292/trades")
                 .then(resp => resp.json())
                 .then(trades => setExistingTrades(trades)))
-        }else if(matchingTrade.requesterID == tradeRequest.requesterID && matchingTrade.approverID == tradeRequest.approverID) {
+        } else if (matchingTrade.requesterID == tradeRequest.requesterID && matchingTrade.approverID == tradeRequest.approverID) {
             console.log("You already have an ongoing trade with this person")
         } else {
         fetch("http://localhost:9292/trades", config)

@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from "react";
 import {useParams} from "react-router-dom";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 import NavBar from "./NavBar";
 
 function GamePage({isLoggedIn, currentUser}) {
-    let { id } = useParams();
+    let {id} = useParams();
     const [game, setGame] = useState([]);
     const [reviews, setReviews] = useState([]);
     const [users, setUsers] = useState([])
@@ -69,7 +69,7 @@ function GamePage({isLoggedIn, currentUser}) {
             <div className="gamePageDiv">
                 <div className="gamePageFloatContainer">
                     <div className="gamePageFloatLeft">
-                    <img className="gamePageImage" src={game.image} alt={game.title}></img>
+                        <img className="gamePageImage" src={game.image} alt={game.title}></img>
                     </div>
                     <div className="gamePageFloatRight">
                         <h2>{game.title}</h2>
