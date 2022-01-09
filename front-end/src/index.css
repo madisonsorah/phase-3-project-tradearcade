@@ -614,6 +614,12 @@ body {
   display: inline-block;
 }
 
+.browseGamesList {
+  margin: 50px;
+  height: 100%;
+  width: 100%;
+}
+
 .browseGamesHeader {
   color: #fff;
 }
@@ -634,8 +640,8 @@ body {
 .gameImage {
   margin: auto;
   margin-bottom: 20px;
-  width: 145px;
-  height: 200px;
+  width: 195px;
+  height: 270px;
   display: block;
 }
 

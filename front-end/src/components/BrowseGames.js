@@ -64,7 +64,9 @@ function BrowseGames({isLoggedIn}) {
                     <option value="Xbox Series X">Xbox Series X</option>
                 </select>
             </div>
-               {displayedGame ? <GamePage isLoggedIn={isLoggedIn} displayedGame={displayedGame} setDisplayedGame={setDisplayedGame} allUsers={allUsers} /> : renderedGames }
+            <div className="browseGamesList">
+                {displayedGame ? <GamePage isLoggedIn={isLoggedIn} displayedGame={displayedGame} setDisplayedGame={setDisplayedGame} allUsers={allUsers} /> : renderedGames }
+            </div>
             </div>
         </div>
     )
