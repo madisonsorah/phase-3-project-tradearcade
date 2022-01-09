@@ -51,7 +51,7 @@ function ListGame({isLoggedIn, currentUser}) {
                             <input onChange={(e) => setGamePlatform(e.target.value)} className="sendGameFormInput" placeholder="Game Platform"></input>
                             <input onChange={(e) => setGameImageURL(e.target.value)} className="sendGameFormInput" placeholder="Image URL"></input>
                             <input onChange={(e) => setGameDescription(e.target.value)} className="sendGameFormInput" placeholder="Game Description"></input>
-                            <button onClick={(e) => createGame(e)} className="sendGameFormButton">List Game</button>
+                            <button onClick={(e) => createGame(e)} className="sendGameFormButton">LIST GAME</button>
                             <p className="sendGameFormGameListed">Game listed!</p>
                         </form>
                     </div>
