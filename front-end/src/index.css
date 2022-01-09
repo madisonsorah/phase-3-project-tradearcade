@@ -537,8 +537,9 @@ body {
 .browseGamesSearch {
   font-family: Menlo, Monaco, 'Courier New', monospace;
   color: #fff;
-  margin-right: 10px;
+  margin-right: 19%;
   margin-top: 10px;
+  padding: 5px;
   float: right;
   border: 1px solid #fff;
   background-color: #000;
@@ -567,12 +568,14 @@ body {
   color: #fff;
   background-color:#000;
   border: 1px solid #fff;
+  padding: 5px;
 }
 
 .browseGamesContainer {
   font-family: Menlo, Monaco, 'Courier New', monospace;
   background-color: #000;
-  margin-left: 200px;
+  margin-left: 300px;
+  margin-top: 10px;
   text-align: center;
   display: inline-block;
   width: 1000px;
@@ -615,6 +618,69 @@ body {
   font-size: x-small;
 }
 
+.memberListDiv {
+  margin: auto;
+  padding-top: 80px;
+  padding-bottom: 10px;
+  height: 100%;
+  width: 100%;
+  overflow: scroll;
+  background-image: url("./images/tradearcaderetroplanets.png");
+  background-size: 400px;
+}
+
+.memberListSearch {
+  font-family: Menlo, Monaco, 'Courier New', monospace;
+  color: #fff;
+  margin-right: 20%;
+  margin-top: 10px;
+  padding: 5px;
+  float: right;
+  border: 1px solid #fff;
+  background-color: #000;
+}
+
+.memberListSearch::placeholder {
+  opacity: 2;
+}
+
+.memberListContainer {
+  font-family: Menlo, Monaco, 'Courier New', monospace;
+  background-color: #000;
+  margin-left: 300px;
+  margin-top: 10px;
+  text-align: center;
+  display: inline-block;
+  width: 1000px;
+  height: 800px;
+}
+
+.memberListHeader {
+  color: #fff;
+  text-align: center;
+}
+
+.memberListMember {
+  margin: 10px;
+  padding: 20px;
+  display: block;
+}
+
+.memberListAvatar {
+  width: 120px;
+  height: 100px;
+  margin: auto;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.memberListLink {
+  font-weight: 700;
+  font-size: small;
+  margin-top: 20px;
+  color: #fff;
+}
+
 .memberPageDiv {
   margin: auto;
   padding-top: 120px;
@@ -641,12 +707,6 @@ body {
   width: 200px;
   height: 200px;
   display: block;
-}
-
-.memberListDiv {
-  margin: auto;
-  padding-top: 120px;
-  padding-bottom: 70px;
 }
 
 .gamePageReviewForm {

@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 import NavBar from "./NavBar";
+import tradearcadeinvaderavatar from "../images/tradearcadeinvaderavatar.png"
 
 function MemberList({isLoggedIn}) {
     const [users, setUsers] = useState([])
@@ -13,8 +14,9 @@ function MemberList({isLoggedIn}) {
     },[])
     
     const renderMembers = searchedUsers().map((user) => (
-        <div>
-            <Link to={`/member/${user.id}`}>{user.username}</Link>
+        <div className="memberListMember">
+            <img className="memberListAvatar" src={tradearcadeinvaderavatar}></img>
+            <Link className="memberListLink" to={`/member/${user.id}`}>{user.username}</Link>
         </div>
     ))
 
@@ -30,8 +32,11 @@ function MemberList({isLoggedIn}) {
         <div>
             <NavBar isLoggedIn={isLoggedIn}/>
             <div className="memberListDiv">
-                <input value={search} placeholder="Search for Members" onChange={(e) => setSearch(e.target.value)}></input>
-                {renderMembers}
+                <input className="memberListSearch" value={search} placeholder="Search for Members" onChange={(e) => setSearch(e.target.value)}></input>
+                <div className="memberListContainer">
+                <h1 className="memberListHeader">Current Members</h1>
+                    {renderMembers}
+                </div>
             </div>
         </div>
     )
