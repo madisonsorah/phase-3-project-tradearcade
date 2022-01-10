@@ -15,7 +15,7 @@ body {
   padding-bottom: 60px;
   width: 100%;
   background-color: #000;
-  box-shadow: 0 2px 4px 0 #290060;
+  box-shadow: 0 2px 4px 0 #1d0143;
 }
 
 .navLogoDiv {
@@ -212,8 +212,8 @@ body {
 }
 
 .homePageFooter {
-  height: 455px;
-  box-shadow: 0 -3px 3px 0 #290060;
+  height: 510px;
+  box-shadow: 0 -3px 3px 0 #1d0143;
   background-color: #000;
   color: #fff;
 }
@@ -224,7 +224,7 @@ body {
   float: left;
   left: 5%;
   height: 280px;
-  border-top: 0.09rem solid #fff;
+  border-top: 0.09rem solid #4b00b8;
   list-style-type: none;
 }
 
@@ -247,12 +247,14 @@ body {
 .homePageNewGamesLi {
   display: inline-block;
   padding: 20px;
-  margin-left: 10px;
+  margin: 10px;
+  margin-top: 20px;
   color: #fff;
+  border: 1px solid #220053;
 }
 
 .homePageNewGamesLi:hover {
-  background-color: rgb(24, 24, 24);
+  background-color: #220053;
 }
 
 .homePageNewGamesTitle {
@@ -354,7 +356,7 @@ body {
   width: 800px;
   padding-bottom: 30px;
   padding-top: 30px;
-  border-bottom: 0.09rem solid #fff;
+  border-bottom: 1px solid #4b00b8;
 }
 
 .accountPageMenu {
@@ -478,7 +480,7 @@ body {
 .tradeHistorySentListH1 {
   width: 1300px;
   padding-bottom: 10px;
-  border-bottom: 0.09rem solid #fff;
+  border-bottom: 1px solid #4b00b8;
 }
 
 .tradeHistorySentListLi {
@@ -502,7 +504,7 @@ body {
 }
 
 .tradeHistorySentListUl2 {
-  margin-left: -6%;
+  margin-left: -32%;
   width: 1300px;
   height: 1000px;
   display: inline-block;
@@ -516,7 +518,7 @@ body {
 .tradeHistoryReceivedListH1 {
   width: 1300px;
   padding-bottom: 10px;
-  border-bottom: 0.09rem solid #fff;
+  border-bottom: 1px solid #4b00b8;
 }
 
 .tradeHistoryReceivedListLi {
@@ -574,7 +576,7 @@ body {
 }
 
 .reviewsHeader {
-  border-bottom: 0.09rem solid #fff;
+  border-bottom: 1px solid #4b00b8;
   margin-left: 70px;
   margin-right: 70px;
   padding-bottom: 20px;
@@ -582,7 +584,7 @@ body {
 
 .reviewsReview {
   padding: 30px;
-  border: 0.09rem solid #fff;
+  border: 1px solid #4b00b8;
   width: 500px;
   margin-left: 70px;
   margin: 10px;
@@ -590,6 +592,10 @@ body {
   display: block;
   text-align: center;
   float: left;
+}
+
+.reviewsReview:hover {
+  background-color: #4b00b8;
 }
 
 .reviewsP {
@@ -615,6 +621,9 @@ body {
   height: 100%;
   width: 100%;
   overflow: scroll;
+  background-image: url(./images/tradearcadegradiant.png);
+  background-size: 2800px;
+  background-repeat: no-repeat;
 }
 
 .browseGamesSearch {
@@ -683,7 +692,7 @@ body {
 
 .browseGamesSubHead {
   padding-bottom: 20px;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid #4b00b8;
   font-weight: 20;
   color: #fff;
 }
@@ -694,11 +703,30 @@ body {
   padding: 20px;
   margin: 10px;
   display: inline-block;
+  border: 1px solid #4b00b8;
   text-align: center;
 }
 
 .gameDiv:hover {
-  background-color: #3b008d;
+  background-color: #4b00b8;
+}
+
+.gameDiv2 {
+  height: 440px;
+  padding: 20px;
+  margin: 10px;
+  display: inline-block;
+  border: 1px solid #4b00b8;
+  text-align: center;
+}
+
+.gameDiv2:hover {
+  background-color: #4b00b8;
+}
+
+.div {
+  margin: auto;
+  left: 50%;
 }
 
 .gameImage {
@@ -769,7 +797,7 @@ body {
 
 .memberListSubHead {
   padding-bottom: 20px;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid #4b00b8;
   font-weight: 20;
   color: #fff;
 }
@@ -780,10 +808,11 @@ body {
   display: block;
   text-align: center;
   float: left;
+  border: 1px solid #4b00b8;
 }
 
 .memberListMember:hover {
-  background-color: #3b008d;
+  background-color: #4b00b8;
 }
 
 .memberListAvatar {
@@ -811,7 +840,7 @@ body {
 .memberPageFloatContainer {
   margin: auto;
   width: 100%;
-  height: 800px;
+  height: 1200px;
 }
 
 .memberPageFloatLeft {
@@ -835,7 +864,7 @@ body {
   padding-left: 20px;
   padding-bottom: 20px;
   width: 78%;
-  border: 0.09rem solid #410099;
+  border: 0.09rem solid #4b00b8;
   background-color: #000;
   color: #fff;
 } 
@@ -844,7 +873,6 @@ body {
   width: 150px;
   height: 110px;
   padding: 20px;
-  border: 0.09rem solid #410099;
 }
 
 .memberPageEmail {
@@ -852,21 +880,27 @@ body {
 }
 
 .memberGameUl {
-  margin: auto;
-  padding-top: 80px;
-  padding-bottom: 10px;
-  height: 800px;
-  overflow: scroll;
+  width: 1200px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: 90px;
+  margin-left: 90px;
+  display: inline-block;
+  font-family: Menlo, Monaco, 'Courier New', monospace;
 }
 
 .memberGameLi {
-  margin: 10px;
+  flex: 0 0 25%;
+  max-width: 25%;
   padding: 20px;
+  margin: 10px;
   display: inline-block;
+  border: 1px solid #220053;
+  text-align: center;
 }
 
 .memberGameLi:hover {
-  background-color: rgb(24, 24, 24);
+  background-color: #220053;
 }
 
 .memberPageGameImage {
@@ -875,6 +909,9 @@ body {
   width: 195px;
   height: 270px;
   display: block;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .memberPageGameTitle {
@@ -890,7 +927,7 @@ body {
 .memberPageButton {
   font-weight: 700;
   padding: 10px;
-  border: 0.09rem solid #410099;
+  border: 0.09rem solid #220053;
   background-color: #000;
   font-family: Menlo, Monaco, 'Courier New', monospace;
   font-size: medium;
@@ -901,7 +938,7 @@ body {
 .memberPageH2 {
   padding-bottom: 20px;
   width: 1100px;
-  border-bottom: 0.09rem solid #fff;
+  border-bottom: 0.09rem solid #4b00b8;
 }
 
 .gamePageDiv {
@@ -916,7 +953,7 @@ body {
   width: 1000px;
   height: 500px;
   padding: 40px;
-  background-color: #000
+  border: 1px solid #4b00b8;
 }
 
 .gamePageFloatLeft {
@@ -938,7 +975,7 @@ body {
 .gamePagePlatform {
   font-weight: 20;
   padding-bottom: 10px;
-  border-bottom: 0.09rem solid #fff;
+  border-bottom: 1px solid #4b00b8;
   width: 575px;
 }
 
@@ -958,7 +995,8 @@ body {
 .gamePageReviewsHeader {
   margin-bottom: 40px;
   padding-bottom: 20px;
-  border-bottom: 1px solid #fff;
+  width: 1000px;
+  border-bottom: 1px solid #4b00b8;
 }
 
 .gamePageReviewForm {

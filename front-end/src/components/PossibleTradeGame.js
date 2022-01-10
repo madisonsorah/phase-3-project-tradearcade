@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 
 function PossibleTradeGame({game, handleTrade}) {
     return (
-        <div className="gameDiv"> 
+        <div className="gameDiv2"> 
             <img className="gameImage" src={game.image}></img>
             <Link className="tradeHistoryLink" to={`/games/${game.id}`}>{game.title}</Link>
             <p className="tradeHistoryPlatform">{game.platform}</p>

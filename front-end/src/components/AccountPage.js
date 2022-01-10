@@ -206,7 +206,7 @@ function AccountPage({isLoggedIn, currentUser, allTrades, allGames, allUsers, se
                         <Link to="/login"className="accountPageLogout" onClick={() => handleLogout()}>Logout</Link>
                     </ul>
                 </div>
-                <div>
+                <div className="div">
                     <h2 className="accountPageH2">Game Requests</h2>
                     {tradeWindow ? <TradeWindow myGames={myGames} setTradeWindow={setTradeWindow} handleTrade={handleTrade}/> : undefined}
                     {renderTradesAndEmpty()}

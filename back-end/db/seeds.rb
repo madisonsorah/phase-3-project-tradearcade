@@ -17,10 +17,10 @@ platform: "PlayStation 4",
 description: "NieR: Automata tells the story of androids 2B, 9S and A2 and their battle to reclaim the machine-driven dystopia overrun by powerful machines. Humanity has been driven from the Earth by mechanical beings from another world. In a final effort to take back the planet, the human resistance sends a force of android soldiers to destroy the invaders. Now, a war between machines and androids rages on... A war that could soon unveil a long-forgotten truth of the world.", 
 image: "https://i5.walmartimages.com/asr/a9f0b4e8-5c2f-4900-b571-7d7a908f949a.496dda3fb0ff389bc28217f9c3ed0b79.jpeg")
 
-Game.create(title: "FINAL FANTASY VII Remake", 
+Game.create(title: "Ni No Kuni: Wrath of the White Witch", 
 platform: "PlayStation 4", 
-description: "The first entry in a multi-part saga, delivering a level of depth inconceivable for the original. The mind-blowing story, unforgettable characters, epic battles and technical excellence collide. The world has fallen under the control of the Shinra Electric Power Company, a shadowy corporation controlling the planet's very life force as mako energy. In the sprawling city of Midgar, an anti-Shinra organization calling themselves Avalanche has stepped up its resistance. Cloud Strife, a former member of Shinra's elite SOLDIER unit now turned mercenary, lends his aid to the group, unaware of the epic consequences that await him.", 
-image: "https://m.media-amazon.com/images/I/61F14y0nXAS._AC_SX466_.jpg")
+description: "Journey back to the other world in Ni no Kuni: Wrath of the White Witch Remastered. LEVEL-5's classic tale returns better than ever, with improved graphics and performance, on PS4 and PC. Join Oliver as he embarks on an adventure through a world inhabited by new friends and ferocious foes alike in the hopes of bringing back his mother after a tragic incident. With a copy of the Wizard's Companion in his hand and his trusty friend Drippy by his side, he will travel across this rich fantasy world to tame familiars, take on enemies, and overcome the countless challenges that stand between him and his mother's salvation.", 
+image: "https://gameplanet-53f8.kxcdn.com/media/catalog/product/cache/4/image/9df78eab33525d08d6e5fb8d27136e95/n/i/ni-no-kuni-remastered-ps4_1_1_1.jpg")
 
 Game.create(title: "Super Smash Bros. Ultimate", 
 platform: "Nintendo Switch", 
