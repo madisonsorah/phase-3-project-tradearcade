@@ -660,8 +660,11 @@ body {
 }
 
 .browseGamesContainer {
-  margin-left: 70px;
-  margin-right: 70px;
+  width: 1200px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: 90px;
+  margin-left: 90px;
   display: inline-block;
   font-family: Menlo, Monaco, 'Courier New', monospace;
 }
@@ -669,11 +672,9 @@ body {
 .browseGamesList {
   margin: 50px;
   height: 100%;
-  width: 1200px;
   display: flex;
-    flex-wrap: wrap;
-    margin-right: -15px;
-    margin-left: -15px;
+  flex-wrap: wrap;
+  margin-left: 115px;
 }
 
 .browseGamesHeader {
@@ -689,8 +690,9 @@ body {
 
 .gameDiv {
   flex: 0 0 25%;
-    max-width: 25%;
+  max-width: 25%;
   padding: 20px;
+  margin: 10px;
   display: inline-block;
   text-align: center;
 }
