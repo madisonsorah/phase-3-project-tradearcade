@@ -114,7 +114,7 @@ function MemberPage({currentUser, setCurrentUser, isLoggedIn}) {
                         <h1>{user.first_name} {user.last_name}</h1>
                         <h3>{user.username}</h3>
                         {pendingTrade()}
-                        <p>{user.email}</p>
+                        <p className="memberPageEmail">{user.email}</p>
                     </div>
                     <div className="memberPageFloatRight">
                         <h2 className="memberPageH2">Games Available For Trade</h2>

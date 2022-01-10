@@ -202,7 +202,6 @@ function AccountPage({isLoggedIn, currentUser, allTrades, allGames, allUsers, se
                         <Link to="/listgame" className="accountPageLink">List a Game</Link>
                         <Link to="/tradehistory" className="accountPageLink">Game Trade History</Link>
                         <Link to="/gamereviews" className="accountPageLink">Game Reviews</Link>
-                        <Link to="/gamewishlist" className="accountPageLink">Game Wishlist</Link>
                         <Link to="/login"className="accountPageLogout" onClick={() => handleLogout()}>Logout</Link>
                     </ul>
                 </div>

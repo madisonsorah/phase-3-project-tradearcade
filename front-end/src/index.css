@@ -816,6 +816,7 @@ body {
   padding-bottom: 48px;
   background-color: #000;
   color: #fff;
+  overflow-wrap: break-word;
 } 
 
 .memberPageFloatRight {
@@ -836,6 +837,10 @@ body {
   height: 110px;
   padding: 20px;
   border: 0.09rem solid #410099;
+}
+
+.memberPageEmail {
+  font-size: small;
 }
 
 .memberGameUl {
