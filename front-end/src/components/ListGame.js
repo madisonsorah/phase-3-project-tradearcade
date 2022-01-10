@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import {Link, useNavigate} from "react-router-dom";
 import NavBar from "./NavBar";
 
 function ListGame({isLoggedIn, currentUser}) {
@@ -7,6 +8,7 @@ function ListGame({isLoggedIn, currentUser}) {
     const [gamePlatform, setGamePlatform] = useState()
     const [gameImageURL, setGameImageURL] = useState()
     const [gameDescription, setGameDescription] = useState()
+    const navigate = useNavigate();
     // const [gameScore, setGameScore] = useState()
     // const [gameReview, setGameReview] = useState()
 
@@ -38,6 +40,7 @@ function ListGame({isLoggedIn, currentUser}) {
             .then((game) => console.log(game))
         
         setSubmitted((isSubmitted) => !isSubmitted);
+        navigate(`/member/${currentUser.id}`, { replace: true })
       }
 
     if (isSubmitted) {
@@ -46,7 +49,7 @@ function ListGame({isLoggedIn, currentUser}) {
                 <NavBar isLoggedIn={isLoggedIn}/>
                 <div className="sendGameDiv">
                     <div className="sendGameFormDiv">
-                        <form><h2 className="sendGameFormEnterGameDetails">Enter Your Game Details</h2>
+                        <form className="sendGameFormReset"><h2 className="sendGameFormEnterGameDetails">Enter Your Game Details</h2>
                             <input onChange={(e) => setGameTitle(e.target.value)} className="sendGameFormInput" placeholder="Game title"></input>
                             <input onChange={(e) => setGamePlatform(e.target.value)} className="sendGameFormInput" placeholder="Game Platform"></input>
                             <input onChange={(e) => setGameImageURL(e.target.value)} className="sendGameFormInput" placeholder="Image URL"></input>

@@ -53,9 +53,5 @@ Ownership.create(game_id: 4, user_id: 1)
 Ownership.create(game_id: 5, user_id: 1)
 Ownership.create(game_id: 6, user_id: 1)
 
-#histories
-History.create(game_id: 1, user_id: 1, game_sent: false, game_received: true)
-History.create(game_id: 1, user_id: 2, game_sent: true, game_received: false)
-
 
 puts "Seeding Done!"
