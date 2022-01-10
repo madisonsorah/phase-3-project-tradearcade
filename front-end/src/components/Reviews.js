@@ -33,7 +33,7 @@ function Reviews({isLoggedIn, currentUser}) {
             <NavBar isLoggedIn={isLoggedIn}/>
             <div className="reviewsDiv">
                 <h1 className="reviewsHeader">My Game Reviews</h1>
-                <div>
+                <div className="reviewsContainer">
                     {renderReviews}
                 </div>
             </div>

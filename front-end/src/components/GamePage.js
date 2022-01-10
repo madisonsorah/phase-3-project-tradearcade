@@ -73,8 +73,8 @@ function GamePage({isLoggedIn, currentUser}) {
                     </div>
                     <div className="gamePageFloatRight">
                         <h2>{game.title}</h2>
-                        <h4>{game.platform}</h4>
-                        <p>{game.description}</p>
+                        <h4 className="gamePagePlatform">{game.platform}</h4>
+                        <p className="gamePageDescription">{game.description}</p>
                         <h4>Members Who Own</h4>
                         {(renderMembers)}
                     </div>
