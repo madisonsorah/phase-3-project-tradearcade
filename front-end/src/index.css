@@ -670,6 +670,10 @@ body {
   margin: 50px;
   height: 100%;
   width: 1200px;
+  display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
 }
 
 .browseGamesHeader {
@@ -684,9 +688,11 @@ body {
 }
 
 .gameDiv {
-  margin: 10px;
+  flex: 0 0 25%;
+    max-width: 25%;
   padding: 20px;
   display: inline-block;
+  text-align: center;
 }
 
 .gameDiv:hover {
@@ -907,8 +913,8 @@ body {
   margin: auto;
   width: 1000px;
   height: 500px;
-  padding: 20px;
-  background-color: #220051
+  padding: 40px;
+  background-color: #000
 }
 
 .gamePageFloatLeft {
