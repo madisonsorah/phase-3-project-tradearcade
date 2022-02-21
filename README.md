@@ -1,2 +1,1 @@
-# tradearcade
-TradeArcade is a community for borrowing and reviewing games. Members can create a profile and send in a pre-loved game in exchange for a game sent in by another member. Once members have played a borrowed game, they can leave a review for other members to reference and send it back in to continue to refresh their game collection. Members within the community can also follow each other and swap games directly. 
+TradeArcade is a social community for trading and reviewing games. Members can create a profile, send in a pre-owned game for trade and leave reviews on games they have played. Members within the community can also follow each other and trade games directly. 
